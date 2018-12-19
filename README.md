@@ -1,3 +1,5 @@
+permalink: /index.html
+
 Made by Dean Torkelson
 
 

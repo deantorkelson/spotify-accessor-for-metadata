@@ -8,6 +8,10 @@
     "express": "~4.16.0",
     "cors": "^2.8.4",
     "querystring": "~0.2.0",
-    "request": "~2.83.0"
+    "request": "~2.83.0",
+    "cryptiles": "~>4.1.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
