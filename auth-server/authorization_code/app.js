@@ -14,8 +14,10 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
 var client_id = 'bd8456f05dad436290f9ca89f3cf8d16'; // Your client id
-var client_secret = 'a3924216d2c34585823c34fd98496573'; // Your secret
+var client_secret = ''; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+
+var access_token;
 
 /**
  * Generates a random string containing numbers and letters
@@ -89,7 +91,7 @@ app.get('/callback', function(req, res) {
     request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
 
-        var access_token = body.access_token,
+        access_token = body.access_token,
             refresh_token = body.refresh_token;
 
         var options = {
@@ -135,13 +137,17 @@ app.get('/refresh_token', function(req, res) {
 
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
+      access_token = body.access_token;
       res.send({
         'access_token': access_token
       });
     }
   });
 });
+
+function get_token(){
+  return access_token;
+}
 
 console.log('Listening on 8888');
 app.listen(8888);
