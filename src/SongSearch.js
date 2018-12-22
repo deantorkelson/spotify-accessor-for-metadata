@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class SongSearch extends React.Component{
+class SongSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -9,23 +9,24 @@ class SongSearch extends React.Component{
         this.handleChange = this.handleChange.bind(this);
     }
 
-    handleSubmit(){
+    handleSubmit() {
         alert(this.state.value);
     }
 
-    handleChange(event){
+    handleChange(event) {
         this.setState({value: event.target.value});
     }
 
-    render(){
-        return (<form onSubmit={this.handleSubmit}>
-            <label>
-                Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit"/>
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Name:
+                    <input type="text" value={this.state.value} onChange={this.handleChange}/>
+                </label>
+                <input type="submit" value="Submit"/>
 
-        </form>);
+            </form>);
     }
 }
 
