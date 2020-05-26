@@ -1,0 +1,8 @@
+spotify green: #22ca5d
+dark blue: #263D5D
+orange: #F56A0F
+crimson: #B52421
+brick: #7B1D1D
+
+Main font: Open Sans
+Title font: 
