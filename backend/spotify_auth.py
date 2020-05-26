@@ -1,30 +1,30 @@
-import os
 import requests
 import json
-from oauthlib.oauth2 import BackendApplicationClient as BAC
-from requests_oauthlib import OAuth2Session
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
-class SpotifyAuth:
-    def __init__(self, base_url, token_url):
-        get_api_config()
-        self.base_url = base_url
-        client = BAC(client_id=key)
-        self.oauth = OAuth2Session(client=client)
-        self.oauth.fetch_token(
-            token_url=base_url + token_url, client_secret=secret, client_id=key
-        )
-    
+class Spotify:
+    def __init__(self):
+        self.get_api_config()
+        credentials = SpotifyClientCredentials(client_id=self.id, client_secret=self.secret)
+        self.spotify = spotipy.Spotify(client_credentials_manager=credentials)
+
     def get_api_config(self):
         with open('../config.json') as config:
             data = json.load(config)
             self.id = data['id']
             self.secret = data['secret']
 
-    def close(self):
-        self.oauth.close()
+    def search(self, name):
+        return self.spotify.search(name)
 
-    def get(self, url):
-        return self.get_raw(url).text
+    def __str__(self):
+        return 'id::' + self.id + ' secret::' + self.secret
 
-    def get_raw(self, url):
-        return self.oauth.get(self.base_url + url)
+def main():
+    spotify = Spotify()
+    search_result = spotify.search("The Killers")
+    print(search_result)
+
+if __name__ == '__main__':
+    main()
