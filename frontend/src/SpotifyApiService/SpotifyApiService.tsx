@@ -1,9 +1,12 @@
 export class SpotifyApiService {
 
+    private api_url: string;
     constructor() {
-        // setup connection to backend
+        this.api_url = 'http://127.0.0.1:5000'
     }
 
-    // call backend methods for getting spotify data
+    public search(searchQuery: string): Promise<Response> {
+        return fetch(this.api_url + `/search/${searchQuery}`)
+    }
 
 }
