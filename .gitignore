@@ -6,3 +6,4 @@ backend/__pycache__
 .vscode
 
 config.json
+scratch.*
