@@ -4,20 +4,33 @@
 
 .input-prompt {
     padding-right: 10px;
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: bold;
 }
 
 .input {
-    box-sizing: border-box;
+    width: 25% !important;
+    margin-bottom: 10px;
 }
 
-input[type="text"]
-{
-    font-size: 1.5em;
-    min-height: 100%;
+.submit {
+    height: 20px;
 }
 
 .album-art {
     height: 80px;
+    border-radius: 3px;
+}
+
+.main-content {
+    display: flex;
+}
+
+.column {
+    width: 50%;
+}
+
+.btn .btn-outline-secondary {
+    padding: 0;
+    margin: 6px 12px;
 }

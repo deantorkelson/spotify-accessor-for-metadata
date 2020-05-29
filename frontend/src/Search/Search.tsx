@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button'
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures } from '../models/AudioFeatures';
 import SampleTrackSearch from '../static/sample-data/SampleTrackSearch.json'
+import blackLogo from '../static/black-logo.png'
 import './Search.css'
 
 interface SearchState {
@@ -27,69 +28,72 @@ export class Search extends React.Component<{}, SearchState> {
 
   searchSubmit() {
     this.spotifyApiService.searchTracks(this.searchQuery).then(data => {
-      this.setState({searchResults: data.tracks.items});
+      this.setState({ searchResults: data.tracks.items });
     });
   }
 
-  createSearchResultList(): JSX.Element[] {
+  createSearchResultList(): JSX.Element {
     if (this.state.searchResults.length === 0) {
-      return [<div key='-1'>No search results found.</div>]
+      return <div key='-1'>No search results found.</div>
     }
-    return this.state.searchResults.map((result: SearchResultItem) => this.createSearchResult(result));
+    return (
+      <div className='result-list'>
+        {this.state.searchResults.map((result: SearchResultItem) => this.createSearchResult(result))}
+      </div>
+    )
   }
 
 
   createSearchResult(result: SearchResultItem): JSX.Element {
     return (
       <div key={result.uri}>
-        <button onClick={() => this.fetchTrackMetadata(result.uri)}>
-        <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`}/>
+        <Button variant='outline-secondary' onClick={() => this.fetchTrackMetadata(result.uri)}>
+          <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
           <div>
             {result.name}
           </div>
           <div>
             {result.artists[0].name} • {result.album.name}
           </div>
-        </button>
+        </Button>
       </div>
     );
   }
 
   fetchTrackMetadata(songUri: string) {
     this.spotifyApiService.fetchTrackMetadata(songUri).then(data => {
-      this.setState({metadata: data});
+      this.setState({ metadata: data });
     })
   }
 
   displayMetadata() {
-    return <div>metadata goes here<br/><br/><br/>moredata</div>
+    return <div>metadata goes here<br /><br /><br />moredata</div>
   }
 
   render() {
     return (
       <div className='search-page'>
-        <span className='input-prompt'>
+        <div className='input-prompt'>
           Enter the name of the track to search for:
-        </span>
-        <span className='input'>
-          <Form>
-            <Form.Group>
-              <Form.Control
-                type="text"
-                plaintext
-                onChange={(value: any) =>
-                  this.searchQuery = value.target.value
-                }
-              />
-            </Form.Group>
-          </Form>
-          <Button variant="primary" type="submit" onClick={() => this.searchSubmit()}>
-            Submit
+        </div>
+        <Form className='input' inline>
+          <Form.Control 
+            type="text"
+            onChange={(value: any) =>
+              this.searchQuery = value.target.value
+            }
+          />
+          <Button variant="outline-success" type="submit" onClick={() => this.searchSubmit()}>
+            <img className='submit' src={blackLogo} alt='Submit' />
           </Button>
-        </span>
-        <div>
-          {this.createSearchResultList()}
-          {this.displayMetadata()}
+        </Form>
+        <div className='main-content'>
+          <div className='column'>
+            {this.createSearchResultList()}
+          </div>
+          <div className='column'>
+            {this.displayMetadata()}
+          </div>
         </div>
       </div>
     );
