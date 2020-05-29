@@ -14,10 +14,13 @@
 
 .title {
     font-weight: 800;
+    margin: 6px 0 5px 0;
 }
 
 .links {
     display: flex;
+    padding-right: 15px;
+    margin: 5px 0 5px 0;
 }
 
 .logo {
@@ -26,7 +29,7 @@
 
 .logo-img {
     padding-right: 10px;
-    height: 75px;
+    height: 60px;
 }
 
 li {
@@ -37,4 +40,8 @@ li {
 a {
     color: whitesmoke;
     text-decoration: none;
+}
+
+a:hover {
+    color: #66d68e;
 }

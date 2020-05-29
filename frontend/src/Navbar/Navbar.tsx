@@ -11,7 +11,7 @@ export class Navbar extends React.Component<{}, {}> {
       <div className='navbar'>
         <Link className='logo' to='/'>
           <img className='logo-img' src={greenLogo} alt={'Logo for S.A.M.'}/>
-          <h1 className='title'>  Spotify Accessor for Metadata</h1>
+          <h1 className='title'>Spotify Accessor for Metadata</h1>
         </Link>
         <ul className='links'>
           <li>
