@@ -2,15 +2,13 @@ import React from 'react'
 import SpotifyApiService from '../SpotifyApiService/SpotifyApiService'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import Modal from 'react-modal'
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures } from '../models/AudioFeatures';
+import SampleTrackSearch from '../static/sample-data/SampleTrackSearch.json'
 import './Search.css'
-
 
 interface SearchState {
   searchResults: SearchResultItem[];
-  modalIsOpen: boolean;
   metadata: AudioFeatures;
 }
 
@@ -21,11 +19,9 @@ export class Search extends React.Component<{}, SearchState> {
 
   constructor(props: any) {
     super(props);
-    this.closeModal = this.closeModal.bind(this);
     this.state = {
-      searchResults: [],
-      metadata: {} as AudioFeatures,
-      modalIsOpen: false
+      searchResults: SampleTrackSearch.tracks.items,
+      metadata: {} as AudioFeatures
     }
   }
 
@@ -42,19 +38,11 @@ export class Search extends React.Component<{}, SearchState> {
     return this.state.searchResults.map((result: SearchResultItem) => this.createSearchResult(result));
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
-
-  closeModal() {
-    this.setState({modalIsOpen: false});
-  }
-
 
   createSearchResult(result: SearchResultItem): JSX.Element {
     return (
       <div key={result.uri}>
-        <button onClick={() => this.fetchAndDisplayTrackMetadata(result.uri)}>
+        <button onClick={() => this.fetchTrackMetadata(result.uri)}>
         <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`}/>
           <div>
             {result.name}
@@ -67,39 +55,42 @@ export class Search extends React.Component<{}, SearchState> {
     );
   }
 
-  fetchAndDisplayTrackMetadata(songUri: string) {
+  fetchTrackMetadata(songUri: string) {
     this.spotifyApiService.fetchTrackMetadata(songUri).then(data => {
-      this.setState({metadata: data, modalIsOpen: true});
+      this.setState({metadata: data});
     })
+  }
+
+  displayMetadata() {
+    return <div>metadata goes here<br/><br/><br/>moredata</div>
   }
 
   render() {
     return (
-      <div>
-        Enter the name of the track to search for:<br />
-        <Form.Control
-          type="text"
-          placeholder="Enter a track name..."
-          onChange={(value: any) =>
-            this.searchQuery = value.target.value
-          }
-        />
-        <Button variant="primary" type="submit" onClick={() => this.searchSubmit()}>
-          Submit
-        </Button>
-        {this.createSearchResultList()}
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          shouldCloseOnOverlayClick={true}
-          contentLabel="Track Metadata">
-          <Button className='header-button' variant='primary' onClick={() => this.closeModal()}>
-            Close
+      <div className='search-page'>
+        <span className='input-prompt'>
+          Enter the name of the track to search for:
+        </span>
+        <span className='input'>
+          <Form>
+            <Form.Group>
+              <Form.Control
+                type="text"
+                plaintext
+                onChange={(value: any) =>
+                  this.searchQuery = value.target.value
+                }
+              />
+            </Form.Group>
+          </Form>
+          <Button variant="primary" type="submit" onClick={() => this.searchSubmit()}>
+            Submit
           </Button>
-          <div>
-           {JSON.stringify(this.state.metadata)}
-          </div>
-        </Modal>
+        </span>
+        <div>
+          {this.createSearchResultList()}
+          {this.displayMetadata()}
+        </div>
       </div>
     );
   }
