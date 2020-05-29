@@ -54,10 +54,16 @@ export class Navbar extends React.Component<NavbarProps, NavbarState> {
   render() {
     return (
       <div className='navbar'>
-        <span className='title'>Spotify Accessor for Metadata</span>
+        <Link className='logo' to='/'>
+          <img className='logo-img' src={this.state.logo} alt={'Logo for S.A.M.'}/>
+          <h1 className='title'>  Spotify Accessor for Metadata</h1>
+        </Link>
         <ul className='links'>
           <li>
-            <Link to='/search'>Search</Link>
+            <Link to='/'>HOME</Link>
+          </li>
+          <li>
+            <Link to='/search'>SEARCH</Link>
           </li>
         </ul>
       </div>

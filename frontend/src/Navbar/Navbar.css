@@ -6,6 +6,10 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: nowrap;
+    justify-content: space-between;
+    color: whitesmoke;
+    background-color: #222326;
+    padding: 8px;
 }
 
 .title {
@@ -13,8 +17,24 @@
 }
 
 .links {
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: right;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo-img {
+    padding-right: 10px;
+    height: 75px;
+}
+
+li {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
 }
