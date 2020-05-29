@@ -11,5 +11,10 @@ spotify = Spotify()
 def search(search_query):
    return spotify.search(search_query)
 
+@app.route('/fetchTrackMetadata/<string:track_uri>/')
+@cross_origin()
+def fetch_track_metadata(track_uri):
+   return spotify.fetch_track_metadata(track_uri)[0]
+
 if __name__ == '__main__':
     app.run()

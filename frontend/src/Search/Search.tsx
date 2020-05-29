@@ -4,11 +4,13 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-modal'
 import { SearchResultItem } from '../models/SearchResultItem';
+import { AudioFeatures } from '../models/AudioFeatures';
+
 
 interface SearchState {
   searchResults: SearchResultItem[];
   modalIsOpen: boolean;
-  metadata: string;
+  metadata: AudioFeatures;
 }
 
 export class Search extends React.Component<{}, SearchState> {
@@ -18,11 +20,10 @@ export class Search extends React.Component<{}, SearchState> {
 
   constructor(props: any) {
     super(props);
-    this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.state = {
       searchResults: [],
-      metadata: 'No track metadata to display at this time.',
+      metadata: {} as AudioFeatures,
       modalIsOpen: false
     }
   }
@@ -52,7 +53,7 @@ export class Search extends React.Component<{}, SearchState> {
   createSearchResult(result: SearchResultItem): JSX.Element {
     return (
       <div key={result.uri}>
-        <img src={result.album.images[0].url} />
+        <img src={result.album.images[0].url} alt={`Album art for ${result.album.name}`}/>
         <button onClick={() => this.fetchAndDisplayTrackMetadata(result.uri)}>
           <div>
             {result.name}
@@ -67,8 +68,7 @@ export class Search extends React.Component<{}, SearchState> {
 
   fetchAndDisplayTrackMetadata(songUri: string) {
     this.spotifyApiService.fetchTrackMetadata(songUri).then(data => {
-      this.setState({metadata: data});
-      this.openModal();
+      this.setState({metadata: data, modalIsOpen: true});
     })
   }
 
@@ -95,7 +95,9 @@ export class Search extends React.Component<{}, SearchState> {
           <Button className='header-button' variant='primary' onClick={() => this.closeModal()}>
             Close
           </Button>
-          {this.state.metadata}
+          <div>
+           {JSON.stringify(this.state.metadata)}
+          </div>
         </Modal>
       </div>
     );
