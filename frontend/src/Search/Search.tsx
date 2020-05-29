@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-modal'
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures } from '../models/AudioFeatures';
+import './Search.css'
+import Navbar, { LogoColor } from '../Navbar/Navbar'
 
 
 interface SearchState {
@@ -53,8 +55,8 @@ export class Search extends React.Component<{}, SearchState> {
   createSearchResult(result: SearchResultItem): JSX.Element {
     return (
       <div key={result.uri}>
-        <img src={result.album.images[0].url} alt={`Album art for ${result.album.name}`}/>
         <button onClick={() => this.fetchAndDisplayTrackMetadata(result.uri)}>
+        <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`}/>
           <div>
             {result.name}
           </div>
@@ -75,6 +77,7 @@ export class Search extends React.Component<{}, SearchState> {
   render() {
     return (
       <div>
+        <Navbar logoColor={LogoColor.CRIMSON}/>
         Enter the name of the track to search for:<br />
         <Form.Control
           type="text"
