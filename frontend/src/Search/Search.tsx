@@ -6,7 +6,6 @@ import Modal from 'react-modal'
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures } from '../models/AudioFeatures';
 import './Search.css'
-import Navbar, { LogoColor } from '../Navbar/Navbar'
 
 
 interface SearchState {
@@ -77,7 +76,6 @@ export class Search extends React.Component<{}, SearchState> {
   render() {
     return (
       <div>
-        <Navbar logoColor={LogoColor.CRIMSON}/>
         Enter the name of the track to search for:<br />
         <Form.Control
           type="text"
