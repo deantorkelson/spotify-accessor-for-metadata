@@ -4,7 +4,6 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures } from '../models/AudioFeatures';
-import SampleTrackSearch from '../static/sample-data/SampleTrackSearch.json'
 import blackLogo from '../static/black-logo.png'
 import './Search.css'
 
@@ -21,7 +20,7 @@ export class Search extends React.Component<{}, SearchState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      searchResults: SampleTrackSearch.tracks.items,
+      searchResults: [],
       metadata: {} as AudioFeatures
     }
   }
@@ -48,12 +47,16 @@ export class Search extends React.Component<{}, SearchState> {
     return (
       <div key={result.uri}>
         <Button variant='outline-secondary' onClick={() => this.fetchTrackMetadata(result.uri)}>
-          <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
-          <div>
-            {result.name}
-          </div>
-          <div>
-            {result.artists[0].name} • {result.album.name}
+          <div className='result'>
+            <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
+            <span>
+              <div>
+                {result.name}
+              </div>
+              <div>
+                {result.artists[0].name} • {result.album.name}
+              </div>
+            </span>
           </div>
         </Button>
       </div>
@@ -77,14 +80,14 @@ export class Search extends React.Component<{}, SearchState> {
           Enter the name of the track to search for:
         </div>
         <Form className='input' inline>
-          <Form.Control 
+          <Form.Control
             type="text"
             onChange={(value: any) =>
               this.searchQuery = value.target.value
             }
           />
-          <Button variant="outline-success" type="submit" onClick={() => this.searchSubmit()}>
-            <img className='submit' src={blackLogo} alt='Submit' />
+          <Button className='submit' variant="outline-success" type="submit" onClick={() => this.searchSubmit()}>
+            <img className='submit-img' src={blackLogo} alt='Submit' />
           </Button>
         </Form>
         <div className='main-content'>

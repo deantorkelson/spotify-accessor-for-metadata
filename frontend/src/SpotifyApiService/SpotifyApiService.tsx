@@ -1,5 +1,3 @@
-import SampleTrackSearch from '../static/sample-data/SampleTrackSearch.json'
-
 export class SpotifyApiService {
     private api_url: string;
 
@@ -8,8 +6,7 @@ export class SpotifyApiService {
     }
 
     public searchTracks(searchQuery: string): Promise<any> {
-        return new Promise((resolve) => resolve(SampleTrackSearch));
-        // return fetch(this.api_url + `/search/${searchQuery}`).then(response => response.json());
+        return fetch(this.api_url + `/search/${searchQuery}`).then(response => response.json());
     }
 
     public fetchTrackMetadata(trackUri: string): Promise<any> {

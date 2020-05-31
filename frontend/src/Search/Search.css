@@ -9,17 +9,18 @@
 }
 
 .input {
-    width: 25% !important;
     margin-bottom: 10px;
+
 }
 
-.submit {
-    height: 20px;
+.submit-img {
+    height: 30px;
 }
 
 .album-art {
     height: 80px;
     border-radius: 3px;
+    margin-right: 10px
 }
 
 .main-content {
@@ -30,7 +31,16 @@
     width: 50%;
 }
 
-.btn .btn-outline-secondary {
-    padding: 0;
-    margin: 6px 12px;
+.submit {
+    padding: 3px !important;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-outline-secondary {
+    margin-bottom: 5px;
 }
