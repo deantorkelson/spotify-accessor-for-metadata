@@ -1,7 +1,7 @@
 export interface AudioFeatures {
     duration_ms: number;
-    key: string;
-    mode: string;
+    key: number;
+    mode: number;
     time_signature: number;
     acousticness : number,
     danceability : number,

@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button'
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures } from '../models/AudioFeatures';
 import blackLogo from '../static/black-logo.png'
+import SampleTrackMetadata from '../static/sample-data/SampleTrackMetadata.json'
+import Slider from '@material-ui/core/Slider'
 import './Search.css'
 
 interface SearchState {
@@ -21,14 +23,15 @@ export class Search extends React.Component<{}, SearchState> {
     super(props);
     this.state = {
       searchResults: [],
-      metadata: {} as AudioFeatures
+      metadata: SampleTrackMetadata
     }
   }
 
   searchSubmit() {
-    this.spotifyApiService.searchTracks(this.searchQuery).then(data => {
-      this.setState({ searchResults: data.tracks.items });
-    });
+    if (this.searchQuery)
+      this.spotifyApiService.searchTracks(this.searchQuery).then(data => {
+        this.setState({ searchResults: data.tracks.items });
+      });
   }
 
   createSearchResultList(): JSX.Element {
@@ -70,7 +73,28 @@ export class Search extends React.Component<{}, SearchState> {
   }
 
   displayMetadata() {
-    return <div>metadata goes here<br /><br /><br />moredata</div>
+    let metadata = this.state.metadata;
+    return (
+      <div>
+        <h3>Audio Features:</h3>
+        <h6>Acousticness</h6>
+        <Slider disabled value={metadata.acousticness} max={1}/>
+        <h6>Danceability</h6>
+        <Slider disabled value={metadata.danceability} max={1}/>
+        <h6>Energy</h6>
+        <Slider disabled value={metadata.energy} max={1}/>
+        <h6>Instrumentalness</h6>
+        <Slider disabled value={metadata.instrumentalness} max={1}/>
+        <h6>Liveness</h6>
+        <Slider disabled value={metadata.liveness} max={1}/>
+        <h6>Loudness</h6>
+        <Slider disabled value={metadata.loudness * -1} max={60}/>
+        <h6>Speechiness</h6>
+        <Slider disabled value={metadata.speechiness} max={1}/>
+        <h6>Valence</h6>
+        <Slider disabled value={metadata.valence} max={1}/>
+      </div>
+    );
   }
 
   render() {
@@ -86,7 +110,7 @@ export class Search extends React.Component<{}, SearchState> {
               this.searchQuery = value.target.value
             }
           />
-          <Button className='submit' variant="outline-success" type="submit" onClick={() => this.searchSubmit()}>
+          <Button className='submit' variant="outline-success" onClick={() => this.searchSubmit()}>
             <img className='submit-img' src={blackLogo} alt='Submit' />
           </Button>
         </Form>

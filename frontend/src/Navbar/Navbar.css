@@ -38,10 +38,10 @@ li {
 }
 
 a {
-    color: whitesmoke;
+    color: whitesmoke !important;
     text-decoration: none;
 }
 
 a:hover {
-    color: #66d68e;
+    color: #66d68e !important;
 }
