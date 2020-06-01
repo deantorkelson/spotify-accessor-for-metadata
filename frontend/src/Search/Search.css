@@ -25,10 +25,11 @@
 
 .main-content {
     display: flex;
+    justify-content: space-between;
 }
 
 .column {
-    width: 50%;
+    width: 48%;
 }
 
 .submit {
@@ -43,4 +44,25 @@
 
 .btn-outline-secondary {
     margin-bottom: 5px;
+}
+
+.MuiSlider-rail {
+    background-color: #222326 !important;
+}
+
+.MuiSlider-thumb.Mui-disabled {
+    height: 14px !important;
+    width: 14px !important;
+    background-color: #22ca5d !important;
+    margin-top: -5px !important;
+    margin-left: -6px !important;
+}
+
+.reduced-column {
+    width: 46%;
+}
+
+.value-sliders {
+    display: flex;
+    justify-content: space-between;
 }

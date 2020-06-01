@@ -14,7 +14,11 @@ export interface AudioFeatures {
     tempo : number
 }
 
-export function keyNumberToString(key: number) {
+export function getKeyAndMode(key: number, mode: number): string {
+    return `${keyNumberToString(key)} ${modeNumberToString(mode)}`
+}
+
+function keyNumberToString(key: number) {
     switch (key) {
         case 0:
             return "C";
