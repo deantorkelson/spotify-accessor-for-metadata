@@ -3,3 +3,7 @@
 .App {
   font-family: "Open Sans",sans-serif;
 }
+
+.page {
+  padding: 20px 30px;
+}

@@ -1,7 +1,3 @@
-.search-page {
-    padding: 20px 30px;
-}
-
 .input-prompt {
     padding-right: 10px;
     font-size: 1.25em;
@@ -72,6 +68,6 @@
 }
 
 hr {
-    border-top: 3px solid #7B1D1D !important;
+    border-top: 3px solid #ababab !important;
     width: 95%;
 }

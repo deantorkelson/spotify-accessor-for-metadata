@@ -194,7 +194,7 @@ export class Search extends React.Component<{}, SearchState> {
 
   render() {
     return (
-      <div className='search-page'>
+      <div className='page'>
         <div className='input-prompt'>
           Enter the name of the track to search for:
         </div>
