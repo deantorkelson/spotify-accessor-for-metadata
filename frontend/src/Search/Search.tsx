@@ -12,6 +12,7 @@ import './Search.css'
 
 interface SearchState {
   searchResults: SearchResultItem[];
+  metadataTitle: string;
   metadata: AudioFeatures;
 }
 
@@ -24,15 +25,26 @@ export class Search extends React.Component<{}, SearchState> {
     super(props);
     this.state = {
       searchResults: [],
+      metadataTitle: '',
       metadata: {} as AudioFeatures
     }
   }
 
-  searchSubmit() {
+  searchSubmit(): void {
     if (this.searchQuery)
       this.spotifyApiService.searchTracks(this.searchQuery).then(data => {
         this.setState({ searchResults: data.tracks.items });
       });
+  }
+
+  fetchTrackMetadataAndSetTitle(songUri: string, trackName: string, artistName: string): void {
+    this.spotifyApiService.fetchTrackMetadata(songUri).then(data => {
+      this.setState(
+        {
+          metadata: data,
+          metadataTitle: `${trackName} by ${artistName}`
+        });
+    })
   }
 
   createSearchResultList(): JSX.Element {
@@ -50,7 +62,7 @@ export class Search extends React.Component<{}, SearchState> {
   createSearchResult(result: SearchResultItem): JSX.Element {
     return (
       <div key={result.uri}>
-        <Button variant='outline-secondary' onClick={() => this.fetchTrackMetadata(result.uri)}>
+        <Button variant='outline-secondary' onClick={() => this.fetchTrackMetadataAndSetTitle(result.uri, result.name, result.artists[0].name)}>
           <div className='result'>
             <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
             <span>
@@ -67,13 +79,15 @@ export class Search extends React.Component<{}, SearchState> {
     );
   }
 
-  fetchTrackMetadata(songUri: string) {
-    this.spotifyApiService.fetchTrackMetadata(songUri).then(data => {
-      this.setState({ metadata: data });
-    })
+  displayTitle(): JSX.Element {
+    return (
+      <h2>
+        {this.state.metadataTitle}
+      </h2>
+    );
   }
 
-  displayMetadata() {
+  displayTrackMetadata(): JSX.Element {
     let metadata = this.state.metadata;
     if (!metadata.duration_ms)
       return <div>Please search for and select a song to view its metadata.</div>
@@ -93,57 +107,65 @@ export class Search extends React.Component<{}, SearchState> {
         <h5>Beats/measure: {metadata.time_signature}</h5>
         <div className='value-sliders'>
           <div className='reduced-column'>
-          <span className='attribute-title'>Acousticness </span>
-          <Tooltip title={acousticnessTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.acousticness} max={1}/>
+            <span className='attribute-title'>Acousticness </span>
+            <Tooltip title={acousticnessTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.acousticness} max={1} />
 
-          <span className='attribute-title'>Danceability </span>
-          <Tooltip title={danceabilityTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.danceability} max={1}/>
-          
-          <span className='attribute-title'>Energy </span>
-          <Tooltip title={energyTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.energy} max={1}/>
-          
-          <span className='attribute-title'>Instrumentalness </span>
-          <Tooltip title={instrumentalnessTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.instrumentalness} max={1}/>
+            <span className='attribute-title'>Danceability </span>
+            <Tooltip title={danceabilityTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.danceability} max={1} />
+
+            <span className='attribute-title'>Energy </span>
+            <Tooltip title={energyTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.energy} max={1} />
+
+            <span className='attribute-title'>Instrumentalness </span>
+            <Tooltip title={instrumentalnessTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.instrumentalness} max={1} />
           </div>
 
           <div className='reduced-column'>
-          <span className='attribute-title'>Liveness </span>
-          <Tooltip title={livenessTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.liveness} max={1}/>
-          
-          <span className='attribute-title'>Loudness </span>
-          <Tooltip title={loudnessTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.loudness * -1} max={60}/>
-          
-          <span className='attribute-title'>Speechiness </span>
-          <Tooltip title={speechinessTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.speechiness} max={1}/>
-          
-          <span className='attribute-title'>Valence </span>
-          <Tooltip title={valenceTitle}>
-            <InfoIconOutlined fontSize='small'/>
-          </Tooltip>
-          <Slider disabled track={false} value={metadata.valence} max={1}/>
+            <span className='attribute-title'>Liveness </span>
+            <Tooltip title={livenessTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.liveness} max={1} />
+
+            <span className='attribute-title'>Loudness </span>
+            <Tooltip title={loudnessTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.loudness * -1} max={60} />
+
+            <span className='attribute-title'>Speechiness </span>
+            <Tooltip title={speechinessTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.speechiness} max={1} />
+
+            <span className='attribute-title'>Valence </span>
+            <Tooltip title={valenceTitle}>
+              <InfoIconOutlined fontSize='small' />
+            </Tooltip>
+            <Slider disabled track={false} value={metadata.valence} max={1} />
           </div>
         </div>
+      </div>
+    );
+  }
+
+  displayArtistMetadata(): JSX.Element {
+    return (
+      <div>
+        <h5></h5>
       </div>
     );
   }
@@ -170,7 +192,9 @@ export class Search extends React.Component<{}, SearchState> {
             {this.createSearchResultList()}
           </div>
           <div className='column'>
-            {this.displayMetadata()}
+            {this.displayTitle()}
+            {this.displayTrackMetadata()}
+            {this.displayArtistMetadata()}
           </div>
         </div>
       </div>

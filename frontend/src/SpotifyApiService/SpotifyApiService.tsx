@@ -12,6 +12,10 @@ export class SpotifyApiService {
     public fetchTrackMetadata(trackUri: string): Promise<any> {
         return fetch(this.api_url + `/fetchTrackMetadata/${trackUri}`).then(response => response.json());
     }
+
+    public fetchArtistMetadata(artistUri: string): Promise<any> {
+        return fetch(this.api_url + `/fetchArtistMetadata/${artistUri}`).then(response => response.json());
+    }
 }
 
 export default SpotifyApiService;
