@@ -18,7 +18,7 @@ def fetch_track_metadata(track_uri):
 
 @app.route('/fetchArtistMetadata/<string:artist_uri>/')
 @cross_origin()
-def fetch_track_metadata(artist_uri):
+def fetch_artist_metadata(artist_uri):
    return spotify.fetch_artist_metadata(artist_uri)[0]
 
 if __name__ == '__main__':
