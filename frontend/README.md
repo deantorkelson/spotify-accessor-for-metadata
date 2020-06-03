@@ -1,4 +1,30 @@
-TODO: Info about this project
+# Welcome to Spotify Accessor for Metadata (S.A.M.)!
 
-Sample data is used in place of live data where constant repeated testing is necessary and the liveness of the data itself isn't an issue (i.e. CSS). This way, the application doesn't get rate-limited.
-Example: replace the `fetch` in `SpotifyApiService` with `return new Promise((resolve) => resolve(SampleTrackSearch));`.
+This project was created to allow users and listeners to interact with the metadata provided by Spotify in richer ways than are currently available.
+
+## Current Features
+
+### Search
+- Search for a song and view metadata on the song and its artist.
+
+## Planned user features
+
+### Vibe Match
+- The user will be given a set of filter fields where they can select track metadata (key, tempo, musical attributes) and SAM will identify songs in their playlists that match the data.
+
+### Create Playlists
+- The user will be able to create new playlists based off metadata (for example, create a new playlist comprised of only songs from their 'Liked' library that are above 150 BPM)
+
+### View My Listening Habits
+- Display to the user their favorite tracks and artists
+
+## Planned application features
+
+- Automated testing pipeline
+- Auto-formatting
+- Host SAM on a platform like Heroku (so anyone can access the application)
+
+## Notes about this project
+- Sample data:
+   Sample data is used in place of live data where constant repeated testing is necessary and the liveness of the data itself isn't an issue (i.e. CSS). This way, the application doesn't get rate-limited.  
+   Example: replace the `fetch` in `SpotifyApiService` with `return new Promise((resolve) => resolve(SampleTrackSearch));`.
