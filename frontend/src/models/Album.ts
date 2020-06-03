@@ -1,16 +1,11 @@
-import { Artist } from './Artist'
+import { ArtistSimplified } from './ArtistSimplified'
+import { Image } from './Image';
 
 export interface Album {
-    artists: Artist[];
+    artists: ArtistSimplified[];
     href: string;
     images: Image[];
     name: string;
     release_date: string;
     uri: string;
-}
-
-interface Image {
-    height: number;
-    width: number;
-    url: string;
 }
