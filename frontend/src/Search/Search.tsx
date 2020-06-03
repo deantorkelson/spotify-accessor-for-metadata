@@ -9,11 +9,14 @@ import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
 import './Search.css'
+import { Artist } from '../models/Artist';
 
 interface SearchState {
   searchResults: SearchResultItem[];
-  metadataTitle: string;
-  metadata: AudioFeatures;
+  trackName: string;
+  artistName: string;
+  trackMetadata: AudioFeatures;
+  artistMetadata: Artist;
 }
 
 export class Search extends React.Component<{}, SearchState> {
@@ -25,8 +28,10 @@ export class Search extends React.Component<{}, SearchState> {
     super(props);
     this.state = {
       searchResults: [],
-      metadataTitle: '',
-      metadata: {} as AudioFeatures
+      trackName: '',
+      artistName: '',
+      trackMetadata: {} as AudioFeatures,
+      artistMetadata: {} as Artist
     }
   }
 
@@ -37,12 +42,22 @@ export class Search extends React.Component<{}, SearchState> {
       });
   }
 
-  fetchTrackMetadataAndSetTitle(songUri: string, trackName: string, artistName: string): void {
+  fetchTrackMetadata(songUri: string, trackName: string): void {
     this.spotifyApiService.fetchTrackMetadata(songUri).then(data => {
       this.setState(
         {
-          metadata: data,
-          metadataTitle: `${trackName} by ${artistName}`
+          trackMetadata: data,
+          trackName: trackName
+        });
+    })
+  }
+
+  fetchArtistMetadata(artistUri: string, artistName: string): void {
+    this.spotifyApiService.fetchArtistMetadata(artistUri).then(data => {
+      this.setState(
+        {
+          artistMetadata: data,
+          artistName: artistName
         });
     })
   }
@@ -62,7 +77,10 @@ export class Search extends React.Component<{}, SearchState> {
   createSearchResult(result: SearchResultItem): JSX.Element {
     return (
       <div key={result.uri}>
-        <Button variant='outline-secondary' onClick={() => this.fetchTrackMetadataAndSetTitle(result.uri, result.name, result.artists[0].name)}>
+        <Button variant='outline-secondary' onClick={() => {
+          this.fetchTrackMetadata(result.uri, result.name);
+          this.fetchArtistMetadata(result.uri, result.artists[0].name);
+        }}>
           <div className='result'>
             <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
             <span>
@@ -79,16 +97,8 @@ export class Search extends React.Component<{}, SearchState> {
     );
   }
 
-  displayTitle(): JSX.Element {
-    return (
-      <h2>
-        {this.state.metadataTitle}
-      </h2>
-    );
-  }
-
   displayTrackMetadata(): JSX.Element {
-    let metadata = this.state.metadata;
+    let metadata = this.state.trackMetadata;
     if (!metadata.duration_ms)
       return <div>Please search for and select a song to view its metadata.</div>
     let acousticnessTitle = 'A confidence measure from 0.0 to 1.0 of whether the track is acoustic.';
@@ -101,7 +111,7 @@ export class Search extends React.Component<{}, SearchState> {
     let valenceTitle = 'A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track.';
     return (
       <div>
-        <h3>Audio Features:</h3>
+        <h3>Audio Features for {this.state.trackName}:</h3>
         <h5>Key: {getKeyAndMode(metadata.key, metadata.mode)}</h5>
         <h5>Tempo: {metadata.tempo}</h5>
         <h5>Beats/measure: {metadata.time_signature}</h5>
@@ -165,7 +175,6 @@ export class Search extends React.Component<{}, SearchState> {
   displayArtistMetadata(): JSX.Element {
     return (
       <div>
-        <h5></h5>
       </div>
     );
   }
@@ -192,7 +201,6 @@ export class Search extends React.Component<{}, SearchState> {
             {this.createSearchResultList()}
           </div>
           <div className='column'>
-            {this.displayTitle()}
             {this.displayTrackMetadata()}
             {this.displayArtistMetadata()}
           </div>
