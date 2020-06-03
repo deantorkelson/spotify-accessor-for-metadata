@@ -79,7 +79,7 @@ export class Search extends React.Component<{}, SearchState> {
       <div key={result.uri}>
         <Button variant='outline-secondary' onClick={() => {
           this.fetchTrackMetadata(result.uri, result.name);
-          this.fetchArtistMetadata(result.uri, result.artists[0].name);
+          this.fetchArtistMetadata(result.artists[0].uri, result.artists[0].name);
         }}>
           <div className='result'>
             <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
@@ -99,7 +99,7 @@ export class Search extends React.Component<{}, SearchState> {
 
   displayTrackMetadata(): JSX.Element {
     let metadata = this.state.trackMetadata;
-    if (!metadata.duration_ms)
+    if (!metadata?.duration_ms)
       return <div>Please search for and select a song to view its metadata.</div>
     let acousticnessTitle = 'A confidence measure from 0.0 to 1.0 of whether the track is acoustic.';
     let danceabilityTitle = 'Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.';
@@ -111,7 +111,7 @@ export class Search extends React.Component<{}, SearchState> {
     let valenceTitle = 'A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track.';
     return (
       <div>
-        <h3>Audio Features for {this.state.trackName}:</h3>
+        <h3>Audio features for <span className='name'>{this.state.trackName}</span>:</h3>
         <h5>Key: {getKeyAndMode(metadata.key, metadata.mode)}</h5>
         <h5>Tempo: {metadata.tempo}</h5>
         <h5>Beats/measure: {metadata.time_signature}</h5>
@@ -173,10 +173,23 @@ export class Search extends React.Component<{}, SearchState> {
   }
 
   displayArtistMetadata(): JSX.Element {
+    let metadata = this.state.artistMetadata;
+    if (!metadata?.followers)
+      return <div>Please search for and select a song to view its artist's metadata.</div>
     return (
       <div>
+        <h3>Additional information on <span className='name'>{this.state.artistName}</span>:</h3>
+        <h5>Genres: {this.displayGenres(metadata.genres)}</h5>
+        <h5>Followers: {metadata.followers.total.toLocaleString()}</h5>
+        <h5>Popularity: {metadata.popularity}</h5>
       </div>
     );
+  }
+
+  displayGenres(genres: string[]): string {
+    if (!genres.length)
+      return 'No genre information is available for this artist.';
+    return genres.join(', ');
   }
 
   render() {
@@ -202,6 +215,7 @@ export class Search extends React.Component<{}, SearchState> {
           </div>
           <div className='column'>
             {this.displayTrackMetadata()}
+            <hr/>
             {this.displayArtistMetadata()}
           </div>
         </div>

@@ -66,3 +66,12 @@
     display: flex;
     justify-content: space-between;
 }
+
+.name {
+    color: #22ca5d;
+}
+
+hr {
+    border-top: 3px solid #7B1D1D !important;
+    width: 95%;
+}
