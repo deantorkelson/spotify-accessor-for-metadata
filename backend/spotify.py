@@ -21,5 +21,8 @@ class Spotify:
     def fetch_track_metadata(self, track_uri):
         return self.spotify.audio_features([track_uri])
 
+    def fetch_artist_metadata(self, artist_uri):
+        return self.spotify.artist([artist_uri])
+
     def __str__(self):
         return 'id::' + self.id + ' secret::' + self.secret
