@@ -1,0 +1,24 @@
+.main-logo {
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+.homepage {
+    display: flex;
+}
+
+.readme {
+    color: #22ca5d !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+.main-text {
+    margin: auto;
+    width: 85%;
+}
