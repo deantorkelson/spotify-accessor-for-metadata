@@ -1,5 +1,5 @@
 import requests
-import json
+import os
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -10,10 +10,8 @@ class Spotify:
         self.spotify = spotipy.Spotify(client_credentials_manager=credentials)
 
     def get_api_config(self):
-        with open('../config.json') as config:
-            data = json.load(config)
-            self.id = data['id']
-            self.secret = data['secret']
+        self.id = os.environ['ID']
+        self.secret = os.environ['SECRET']
 
     def search(self, name):
         return self.spotify.search(name)
