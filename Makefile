@@ -5,7 +5,7 @@ run-be:
 	cd backend/ && make run
 
 deploy-fe:
-	cd frontend/ && make deploy
+	git subtree push --prefix frontend/ origin gh-pages
 
 deploy-be:
 	git subtree push --prefix backend/ heroku master
