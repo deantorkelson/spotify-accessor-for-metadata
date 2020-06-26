@@ -200,12 +200,17 @@ export class Search extends React.Component<{}, SearchState> {
         </div>
         <Form className='input' inline>
           <Form.Control
-            type="text"
+            type="text" onKeyPress={(event: any) => {
+              if (event.key === 'Enter') { 
+                event.preventDefault();
+                this.searchSubmit();
+              }
+            }}
             onChange={(value: any) =>
               this.searchQuery = value.target.value
             }
           />
-          <Button className='submit' variant="outline-success" onClick={() => this.searchSubmit()}>
+          <Button className='submit' type="button" variant="outline-success" onClick={() => this.searchSubmit()}>
             <img className='submit-img' src={blackLogo} alt='Submit' />
           </Button>
         </Form>
