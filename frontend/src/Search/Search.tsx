@@ -2,6 +2,7 @@ import React from 'react'
 import SpotifyApiService from '../SpotifyApiService/SpotifyApiService'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Spinner from "react-bootstrap/Spinner";
 import { SearchResultItem } from '../models/SearchResultItem';
 import { AudioFeatures, getKeyAndMode } from '../models/AudioFeatures';
 import blackLogo from '../static/black-logo.png'
@@ -17,6 +18,7 @@ interface SearchState {
   artistName: string;
   trackMetadata: AudioFeatures;
   artistMetadata: Artist;
+  loading: boolean;
 }
 
 export class Search extends React.Component<{}, SearchState> {
@@ -31,14 +33,16 @@ export class Search extends React.Component<{}, SearchState> {
       trackName: '',
       artistName: '',
       trackMetadata: {} as AudioFeatures,
-      artistMetadata: {} as Artist
+      artistMetadata: {} as Artist,
+      loading: false
     }
   }
 
   searchSubmit(): void {
+    this.setState({loading: true});
     if (this.searchQuery)
       this.spotifyApiService.searchTracks(this.searchQuery).then(data => {
-        this.setState({ searchResults: data.tracks.items });
+        this.setState({ searchResults: data.tracks.items, loading: false });
       });
   }
 
@@ -63,12 +67,21 @@ export class Search extends React.Component<{}, SearchState> {
   }
 
   createSearchResultList(): JSX.Element {
-    if (this.state.searchResults.length === 0) {
+    if (this.state.searchResults.length === 0 && !this.state.loading) {
       return <div key='-1'>No search results found.</div>
     }
     return (
-      <div className='result-list'>
-        {this.state.searchResults.map((result: SearchResultItem) => this.createSearchResult(result))}
+      <div>
+        {this.state.loading ? 
+        <div>
+          <Spinner animation='border'/>
+          <div>
+            *note that the first search might take extra time while the Heroku dyno spins up.
+          </div>
+        </div> :
+        <div className='result-list'>
+          {this.state.searchResults.map((result: SearchResultItem) => this.createSearchResult(result))}
+        </div>}
       </div>
     )
   }
