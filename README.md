@@ -20,9 +20,7 @@ This project was created to allow users and listeners to interact with the metad
 
 ## Planned application features
 
-- Automated testing pipeline
-- Auto-formatting
-- Host SAM on a platform like Heroku (so anyone can access the application)
+- See [issues](https://github.com/deantorkelson/spotify-accessor-for-metadata/issues) for what's in store!
 
 ## Notes about this project
 - Sample data:
