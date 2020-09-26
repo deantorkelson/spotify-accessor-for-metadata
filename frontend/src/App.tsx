@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Search from './Search/Search'
 import Homepage from './Homepage/Homepage'
 import './App.css';
-import Navbar from './Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (

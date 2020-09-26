@@ -1,16 +1,16 @@
 import React from 'react'
-import SpotifyApiService from '../SpotifyApiService/SpotifyApiService'
-import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Spinner from "react-bootstrap/Spinner";
-import { SearchResultItem } from '../models/SearchResultItem';
-import { AudioFeatures, getKeyAndMode } from '../models/AudioFeatures';
-import blackLogo from '../static/black-logo.png'
 import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
-import './Search.css'
+
+import SpotifyApiService from '../SpotifyApiService/SpotifyApiService'
+import { SearchResultItem } from '../models/SearchResultItem';
+import { AudioFeatures, getKeyAndMode } from '../models/AudioFeatures';
 import { Artist } from '../models/Artist';
+import TextInput from '../components/TextInput/TextInput'
+import './Search.css'
 
 interface SearchState {
   searchResults: SearchResultItem[];
@@ -211,22 +211,7 @@ export class Search extends React.Component<{}, SearchState> {
         <div className='input-prompt'>
           Enter the name of the track to search for:
         </div>
-        <Form className='input' inline>
-          <Form.Control
-            type="text" onKeyPress={(event: any) => {
-              if (event.key === 'Enter') { 
-                event.preventDefault();
-                this.searchSubmit();
-              }
-            }}
-            onChange={(value: any) =>
-              this.searchQuery = value.target.value
-            }
-          />
-          <Button className='submit' type="button" variant="outline-success" onClick={() => this.searchSubmit()}>
-            <img className='submit-img' src={blackLogo} alt='Submit' />
-          </Button>
-        </Form>
+        <TextInput submit={this.searchSubmit}/>
         <div className='main-content'>
           <div className='column'>
             {this.createSearchResultList()}
