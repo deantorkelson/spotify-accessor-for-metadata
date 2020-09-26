@@ -1,13 +1,9 @@
+import { Followers } from "./Followers";
 import { Image } from "./Image";
 
 export interface Artist {
-    followers: FollowerObject;
+    followers: Followers;
     genres: string[];
     images: Image[];
     popularity: number;
-}
-
-interface FollowerObject {
-    href: string;
-    total: number;
 }

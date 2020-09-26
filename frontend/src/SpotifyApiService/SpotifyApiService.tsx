@@ -11,7 +11,11 @@ export class SpotifyApiService {
     }
 
     public searchTracks(searchQuery: string): Promise<any> {
-        return fetch(this.api_url + `/search/${searchQuery}`).then(response => response.json());
+        return fetch(this.api_url + `/search/tracks/${searchQuery}`).then(response => response.json());
+    }
+    
+    public searchPlaylists(searchQuery: string): Promise<any> {
+        return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
     }
 
     public fetchTrackMetadata(trackUri: string): Promise<any> {

@@ -20,6 +20,9 @@ export class Navbar extends React.Component<{}, {}> {
           <li>
             <Link to='/search'>SEARCH</Link>
           </li>
+          <li>
+            <Link to='/playlist-compare'>COMPARE PLAYLISTS</Link>
+          </li>
         </ul>
       </div>
     )

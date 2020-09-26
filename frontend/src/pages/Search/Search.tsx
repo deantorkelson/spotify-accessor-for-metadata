@@ -39,6 +39,7 @@ export class Search extends React.Component<{}, SearchState> {
   }
 
   searchSubmit(): void {
+    // TODO: this is breaking
     this.setState({loading: true});
     if (this.searchQuery)
       this.spotifyApiService.searchTracks(this.searchQuery).then(data => {

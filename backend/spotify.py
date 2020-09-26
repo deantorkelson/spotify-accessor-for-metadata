@@ -13,8 +13,11 @@ class Spotify:
         self.id = os.environ['ID']
         self.secret = os.environ['SECRET']
 
-    def search(self, name):
-        return self.spotify.search(name)
+    def search_tracks(self, query):
+        return self.spotify.search(query, type='track')
+
+    def search_playlists(self, query):
+        return self.spotify.search(query, type='playlist')
 
     def fetch_track_metadata(self, track_uri):
         return self.spotify.audio_features([track_uri])
