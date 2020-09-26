@@ -5,11 +5,11 @@ import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
 
-import SpotifyApiService from '../SpotifyApiService/SpotifyApiService'
-import { SearchResultItem } from '../models/SearchResultItem';
-import { AudioFeatures, getKeyAndMode } from '../models/AudioFeatures';
-import { Artist } from '../models/Artist';
-import TextInput from '../components/TextInput/TextInput'
+import SpotifyApiService from '../../SpotifyApiService/SpotifyApiService'
+import { SearchResultItem } from '../../models/SearchResultItem';
+import { AudioFeatures, getKeyAndMode } from '../../models/AudioFeatures';
+import { Artist } from '../../models/Artist';
+import TextInput from '../../components/TextInput/TextInput'
 import './Search.css'
 
 interface SearchState {
