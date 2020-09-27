@@ -12,6 +12,7 @@ interface PlaylistCompareState {
   searchResults: Playlist[];
   loading: boolean;
   selectedPlaylists: Set<Playlist>;
+  compareLoading: boolean;
 }
 
 export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
@@ -24,7 +25,8 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     this.state = {
       searchResults: [],
       loading: false,
-      selectedPlaylists: new Set()
+      selectedPlaylists: new Set(),
+      compareLoading: false
     }
   }
 
@@ -35,6 +37,13 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
         this.setState({ searchResults: data.playlists.items, loading: false });
       });
     }
+  }
+
+  compareSubmit(playlists: Set<Playlist>): void {
+    this.setState({compareLoading: true});
+    // this.spotifyApiService.searchPlaylists(query).then(data => {
+    //   this.setState({ searchResults: data.playlists.items, loading: false });
+    // });
   }
 
   createSearchResultList(): JSX.Element {
@@ -51,25 +60,23 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
           </div>
         </div> :
         <div className='result-list'>
-          {this.state.searchResults.map((result: Playlist) => this.createSearchResult(result, 
-            () => this.state.selectedPlaylists.add(result)))}
+          {this.state.searchResults.map((playlist: Playlist) => this.createSearchResult(playlist, 
+            () => {
+              let set = new Set(this.state.selectedPlaylists)
+              set.add(playlist);
+              this.setState({selectedPlaylists: set})
+              }
+            ))}
         </div>}
       </div>
     )
-  }
-
-  displayPlaylistMetadata(creator: string, description: string): JSX.Element {
-    if (description) {
-      return <div>{creator}: {description}</div>
-    }
-    return <div>Playlist by {creator}</div>
   }
 
   createSearchResult(result: Playlist, onClickFn: any): JSX.Element {
     return (
       <div key={result.uri}>
         <Button variant='outline-secondary' onClick={() => {
-          onClickFn(result)
+          onClickFn(result);
         }}>
           <div className='result'>
             <img className='cover-img' src={result.images[0].url} alt={`Cover for ${result.name}`} />
@@ -92,9 +99,23 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
   }
 
   displaySelectedPlaylists(): JSX.Element {
-    if (this.state.selectedPlaylists) {
-      return <div>{this.state.searchResults.map((result: Playlist) => this.createSearchResult(result, 
-        () => this.state.selectedPlaylists.delete(result)))}</div>
+    console.log(this.state.selectedPlaylists)
+    if (this.state.selectedPlaylists.size > 0) {
+      let selectedPlaylists: JSX.Element[] = [];
+      this.state.selectedPlaylists.forEach((playlist: Playlist) => {
+        selectedPlaylists.push(this.createSearchResult(playlist, 
+          () => {
+            let set = new Set(this.state.selectedPlaylists)
+            set.delete(playlist);
+            this.setState({selectedPlaylists: set})
+          }));
+      });
+      return <div>
+        {selectedPlaylists}
+        <Button className='submit' type="button" variant="outline-success" onClick={() => this.compareSubmit(this.state.selectedPlaylists)}>
+          Submit
+        </Button>
+      </div>
     }
     return <div>Please select some playlists to compare.</div>
   }
@@ -102,7 +123,7 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
   render() {
     return (
       <div className='page'>
-        <div className='input-prompt'>
+        <div className='header'>
           Enter the name of the playlist to search for:
         </div>
         <TextInput submit={this.searchSubmit}/>
@@ -111,6 +132,9 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
             {this.createSearchResultList()}
           </div>
           <div className='column'>
+            <div className='header'>
+              Comparing these playlists on submit:
+            </div>
             {this.displaySelectedPlaylists()}
           </div>
         </div>

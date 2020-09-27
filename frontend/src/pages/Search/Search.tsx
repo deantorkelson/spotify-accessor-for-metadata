@@ -210,7 +210,7 @@ export class Search extends React.Component<{}, SearchState> {
   render() {
     return (
       <div className='page'>
-        <div className='input-prompt'>
+        <div className='header'>
           Enter the name of the track to search for:
         </div>
         <TextInput submit={this.searchSubmit}/>

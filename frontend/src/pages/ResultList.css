@@ -13,3 +13,7 @@
 .btn-outline-secondary {
     margin-bottom: 5px;
 }
+
+.submit {
+    padding: 3px !important;
+}
