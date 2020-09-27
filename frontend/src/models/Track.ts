@@ -6,4 +6,5 @@ export interface Track {
     artists: ArtistSimplified[];
     name: string;
     popularity: number;
+    uri: string;
 }

@@ -6,7 +6,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
 
 import SpotifyApiService from '../../SpotifyApiService/SpotifyApiService'
-import { SearchResultItem } from '../../models/SearchResultItem';
+import { Track } from '../../models/Track';
 import { AudioFeatures, getKeyAndMode } from '../../models/AudioFeatures';
 import { Artist } from '../../models/Artist';
 import TextInput from '../../components/TextInput/TextInput'
@@ -14,7 +14,7 @@ import '../ResultList.css'
 import './Search.css'
 
 interface SearchState {
-  searchResults: SearchResultItem[];
+  searchResults: Track[];
   trackName: string;
   artistName: string;
   trackMetadata: AudioFeatures;
@@ -40,7 +40,6 @@ export class Search extends React.Component<{}, SearchState> {
   }
 
   searchSubmit(query: string): void {
-    // TODO: this is breaking
     if (query) {
       this.setState({loading: true});
       this.spotifyApiService.searchTracks(query).then(data => {
@@ -83,14 +82,14 @@ export class Search extends React.Component<{}, SearchState> {
           </div>
         </div> :
         <div className='result-list'>
-          {this.state.searchResults.map((result: SearchResultItem) => this.createSearchResult(result))}
+          {this.state.searchResults.map((result: Track) => this.createSearchResult(result))}
         </div>}
       </div>
     )
   }
 
 
-  createSearchResult(result: SearchResultItem): JSX.Element {
+  createSearchResult(result: Track): JSX.Element {
     return (
       <div key={result.uri}>
         <Button variant='outline-secondary' onClick={() => {
@@ -98,7 +97,7 @@ export class Search extends React.Component<{}, SearchState> {
           this.fetchArtistMetadata(result.artists[0].uri, result.artists[0].name);
         }}>
           <div className='result'>
-            <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
+            <img className='cover-img' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
             <section className='result-text'>
               <div>
                 {result.name}
