@@ -99,9 +99,9 @@ export class Search extends React.Component<{}, SearchState> {
           <div className='result'>
             <img className='cover-img' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
             <section className='result-text'>
-              <div>
+              <b>
                 {result.name}
-              </div>
+              </b>
               <div>
                 {result.artists[0].name} • {result.album.name}
               </div>

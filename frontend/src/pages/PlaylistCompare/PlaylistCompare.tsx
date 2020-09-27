@@ -17,12 +17,21 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
 
   private spotifyApiService: SpotifyApiService = new SpotifyApiService();
 
+  constructor(props: any) {
+    super(props);
+    this.searchSubmit = this.searchSubmit.bind(this);
+    this.state = {
+      searchResults: [],
+      loading: false
+    }
+  }
 
   searchSubmit(query: string): void {
     if (query) {
       this.setState({loading: true});
-      this.spotifyApiService.searchTracks(query).then(data => {
-        this.setState({ searchResults: data.tracks.items, loading: false });
+      this.spotifyApiService.searchPlaylists(query).then(data => {
+        console.log(data);
+        this.setState({ searchResults: data.playlists.items, loading: false });
       });
     }
   }
@@ -47,15 +56,31 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     )
   }
 
+  displayPlaylistMetadata(creator: string, description: string): JSX.Element {
+    if (description) {
+      return <div>{creator}: {description}</div>
+    }
+    return <div>Playlist by {creator}</div>
+  }
+
   createSearchResult(result: Playlist): JSX.Element {
     return (
       <div key={result.uri}>
         <Button variant='outline-secondary' onClick={() => {
         }}>
           <div className='result'>
-            <img className='cover-img' src={result.images[0].url} alt={`Cover image for ${result.name}`} />
+            <img className='cover-img' src={result.images[0].url} alt={`Cover for ${result.name}`} />
             <section className='result-text'>
-              Foo
+              <div>
+                <b>{result.name}</b> by {result.owner.display_name}
+              </div>
+              {result.description && 
+                <div>
+                  Description: {decodeURI(result.description.replace("&#x", "%")).replace(";", "")}
+                </div>}
+              <div>
+                {result.tracks.total} songs
+              </div>
             </section>
           </div>
         </Button>
@@ -67,7 +92,7 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     return (
       <div className='page'>
         <div className='input-prompt'>
-          Enter the name of the track to search for:
+          Enter the name of the playlist to search for:
         </div>
         <TextInput submit={this.searchSubmit}/>
         <div className='main-content'>

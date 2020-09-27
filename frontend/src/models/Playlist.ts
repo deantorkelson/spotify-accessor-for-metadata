@@ -8,5 +8,11 @@ export interface Playlist {
     images: Image[];
     name: string;
     owner: User;
+    tracks: PlaylistTracks;
     uri: string;
+}
+
+interface PlaylistTracks {
+    href: string;
+    total: number;
 }
