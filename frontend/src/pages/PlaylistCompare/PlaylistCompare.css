@@ -1,0 +1,13 @@
+.main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 48%;
+}
+
+hr {
+    border-top: 3px solid #ababab !important;
+    width: 95%;
+}

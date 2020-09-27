@@ -11,6 +11,7 @@ import './PlaylistCompare.css'
 interface PlaylistCompareState {
   searchResults: Playlist[];
   loading: boolean;
+  selectedPlaylists: Set<Playlist>;
 }
 
 export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
@@ -22,7 +23,8 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     this.searchSubmit = this.searchSubmit.bind(this);
     this.state = {
       searchResults: [],
-      loading: false
+      loading: false,
+      selectedPlaylists: new Set()
     }
   }
 
@@ -30,7 +32,6 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     if (query) {
       this.setState({loading: true});
       this.spotifyApiService.searchPlaylists(query).then(data => {
-        console.log(data);
         this.setState({ searchResults: data.playlists.items, loading: false });
       });
     }
@@ -50,7 +51,8 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
           </div>
         </div> :
         <div className='result-list'>
-          {this.state.searchResults.map((result: Playlist) => this.createSearchResult(result))}
+          {this.state.searchResults.map((result: Playlist) => this.createSearchResult(result, 
+            () => this.state.selectedPlaylists.add(result)))}
         </div>}
       </div>
     )
@@ -63,10 +65,11 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     return <div>Playlist by {creator}</div>
   }
 
-  createSearchResult(result: Playlist): JSX.Element {
+  createSearchResult(result: Playlist, onClickFn: any): JSX.Element {
     return (
       <div key={result.uri}>
         <Button variant='outline-secondary' onClick={() => {
+          onClickFn(result)
         }}>
           <div className='result'>
             <img className='cover-img' src={result.images[0].url} alt={`Cover for ${result.name}`} />
@@ -88,6 +91,14 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     );
   }
 
+  displaySelectedPlaylists(): JSX.Element {
+    if (this.state.selectedPlaylists) {
+      return <div>{this.state.searchResults.map((result: Playlist) => this.createSearchResult(result, 
+        () => this.state.selectedPlaylists.delete(result)))}</div>
+    }
+    return <div>Please select some playlists to compare.</div>
+  }
+
   render() {
     return (
       <div className='page'>
@@ -98,6 +109,9 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
         <div className='main-content'>
           <div className='column'>
             {this.createSearchResultList()}
+          </div>
+          <div className='column'>
+            {this.displaySelectedPlaylists()}
           </div>
         </div>
         Flow for library compare: <br/>
