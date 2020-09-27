@@ -28,6 +28,19 @@ export class SpotifyApiService {
     public fetchArtistMetadata(artistUri: string): Promise<any> {
         return fetch(this.api_url + `/fetchArtistMetadata/${artistUri}`).then(response => response.json());
     }
+
+    public comparePlaylists(playlistUris: string[]): Promise<any> {
+        let options = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "uris": playlistUris
+            })
+        }
+        return fetch(this.api_url + '/comparePlaylists', options).then(response => response.json());
+    }
 }
 
 export default SpotifyApiService;

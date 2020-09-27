@@ -41,9 +41,14 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
 
   compareSubmit(playlists: Set<Playlist>): void {
     this.setState({compareLoading: true});
-    // this.spotifyApiService.searchPlaylists(query).then(data => {
-    //   this.setState({ searchResults: data.playlists.items, loading: false });
-    // });
+    let playlistUris: string[] = [];
+    playlists.forEach((playlist: Playlist) => {
+      playlistUris.push(playlist.uri)
+    })
+    this.spotifyApiService.comparePlaylists(playlistUris).then(data => {
+      console.log(data)
+      this.setState({ compareLoading: false });
+    });
   }
 
   createSearchResultList(): JSX.Element {
