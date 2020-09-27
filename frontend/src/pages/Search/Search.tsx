@@ -10,6 +10,7 @@ import { SearchResultItem } from '../../models/SearchResultItem';
 import { AudioFeatures, getKeyAndMode } from '../../models/AudioFeatures';
 import { Artist } from '../../models/Artist';
 import TextInput from '../../components/TextInput/TextInput'
+import '../ResultList.css'
 import './Search.css'
 
 interface SearchState {
@@ -23,11 +24,11 @@ interface SearchState {
 
 export class Search extends React.Component<{}, SearchState> {
 
-  public searchQuery: string = '';
   private spotifyApiService: SpotifyApiService = new SpotifyApiService();
 
   constructor(props: any) {
     super(props);
+    this.searchSubmit = this.searchSubmit.bind(this);
     this.state = {
       searchResults: [],
       trackName: '',
@@ -38,13 +39,14 @@ export class Search extends React.Component<{}, SearchState> {
     }
   }
 
-  searchSubmit(): void {
+  searchSubmit(query: string): void {
     // TODO: this is breaking
-    this.setState({loading: true});
-    if (this.searchQuery)
-      this.spotifyApiService.searchTracks(this.searchQuery).then(data => {
+    if (query) {
+      this.setState({loading: true});
+      this.spotifyApiService.searchTracks(query).then(data => {
         this.setState({ searchResults: data.tracks.items, loading: false });
       });
+    }
   }
 
   fetchTrackMetadata(songUri: string, trackName: string): void {
@@ -97,14 +99,14 @@ export class Search extends React.Component<{}, SearchState> {
         }}>
           <div className='result'>
             <img className='album-art' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
-            <span>
+            <section className='result-text'>
               <div>
                 {result.name}
               </div>
               <div>
                 {result.artists[0].name} • {result.album.name}
               </div>
-            </span>
+            </section>
           </div>
         </Button>
       </div>

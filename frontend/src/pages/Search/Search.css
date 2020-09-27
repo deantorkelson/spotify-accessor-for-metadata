@@ -4,12 +4,6 @@
     font-weight: bold;
 }
 
-.album-art {
-    height: 80px;
-    border-radius: 3px;
-    margin-right: 10px
-}
-
 .main-content {
     display: flex;
     justify-content: space-between;
@@ -17,20 +11,6 @@
 
 .column {
     width: 48%;
-}
-
-.submit {
-    padding: 3px !important;
-}
-
-.result {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.btn-outline-secondary {
-    margin-bottom: 5px;
 }
 
 .MuiSlider-rail {

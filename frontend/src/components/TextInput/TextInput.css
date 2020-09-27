@@ -5,3 +5,7 @@
 .submit-img {
     height: 30px;
 }
+
+.submit {
+    padding: 3px !important;
+}
