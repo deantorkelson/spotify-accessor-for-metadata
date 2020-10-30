@@ -1,3 +1,9 @@
+update-fe:
+	cd frontend/ && npm install
+
+update-be:
+	cd backend/ && pip3 install -r requirements.txt --user
+
 run-fe:
 	cd frontend/ && make run-local
 

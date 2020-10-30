@@ -4,6 +4,7 @@ frontend/build
 backend/__pycache__
 
 .vscode
+.idea
 
 config.json
 scratch.*

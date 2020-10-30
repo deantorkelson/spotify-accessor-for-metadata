@@ -5,13 +5,10 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 class Spotify:
     def __init__(self):
-        self.get_api_config()
-        credentials = SpotifyClientCredentials(client_id=self.id, client_secret=self.secret)
-        self.spotify = spotipy.Spotify(client_credentials_manager=credentials)
-
-    def get_api_config(self):
         self.id = os.environ['ID']
         self.secret = os.environ['SECRET']
+        credentials = SpotifyClientCredentials(client_id=self.id, client_secret=self.secret)
+        self.spotify = spotipy.Spotify(client_credentials_manager=credentials)
 
     def search_tracks(self, query):
         return self.spotify.search(query, type='track')
@@ -29,7 +26,7 @@ class Spotify:
         return self.spotify.playlist(playlist_uri)
 
     def compare_playlists(self, uris):
-        common_tracks = []
+        common_artists = []
         for uri in uris:
             tracks = self.get_playlist_details(uri)["tracks"]
             song_data = tracks["items"]
