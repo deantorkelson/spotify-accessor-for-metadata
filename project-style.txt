@@ -6,3 +6,4 @@ crimson: #B52421
 brick: #7B1D1D
 
 Main font: Open Sans
+
