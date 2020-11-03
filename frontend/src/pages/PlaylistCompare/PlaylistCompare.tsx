@@ -46,7 +46,7 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
       playlistUris.push(playlist.uri)
     })
     this.spotifyApiService.comparePlaylists(playlistUris).then(data => {
-      console.log(data)
+      console.log(data);
       this.setState({ compareLoading: false });
     });
   }
@@ -104,7 +104,6 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
   }
 
   displaySelectedPlaylists(): JSX.Element {
-    console.log(this.state.selectedPlaylists)
     if (this.state.selectedPlaylists.size > 0) {
       let selectedPlaylists: JSX.Element[] = [];
       this.state.selectedPlaylists.forEach((playlist: Playlist) => {

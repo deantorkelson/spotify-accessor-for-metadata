@@ -26,12 +26,16 @@ class Spotify:
         return self.spotify.playlist(playlist_uri)
 
     def compare_playlists(self, uris):
-        common_artists = []
+        artist_sets = []
+        # for each uri/playlist
+        #     for each song
+        #         add all artist names to local artist set
+        # return intersection of all sets
         for uri in uris:
-            tracks = self.get_playlist_details(uri)["tracks"]
-            song_data = tracks["items"]
-            # each element of `song_data` has a "track" object
-            # want to return the song_data elements that have a shared title
-            #     and at least 1 item of overlap between artists
-            # next steps: want to also return artists in common, not just songs
-        
+            response = self.get_playlist_details(uri)["tracks"]
+            artists = set()
+            for song in response["items"]:
+                for artist in song["track"]["artists"]:
+                    artists.add(artist["name"])
+            artist_sets.append(artists)
+        return set.intersection(*artist_sets)

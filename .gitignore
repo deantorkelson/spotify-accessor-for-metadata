@@ -3,6 +3,8 @@ frontend/build
 
 backend/__pycache__
 
+venv/
+
 .vscode
 .idea
 
