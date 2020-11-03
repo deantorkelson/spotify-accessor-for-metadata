@@ -17,8 +17,8 @@ export class SpotifyApiService {
     }
     
     public searchPlaylists(searchQuery: string): Promise<any> {
-        // return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
-        return new Promise((resolve) => resolve(SamplePlaylistSearch));
+        return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
+        // return new Promise((resolve) => resolve(SamplePlaylistSearch));
     }
 
     public fetchTrackMetadata(trackUri: string): Promise<any> {

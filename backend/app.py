@@ -36,9 +36,7 @@ def fetch_artist_metadata(artist_uri):
 @cross_origin()
 def compare_playlists():
     uris = request.get_json()["uris"]
-    result = spotify.compare_playlists(uris)
-    print(result)
-    return result
+    return spotify.compare_playlists(uris)
 
 
 if __name__ == '__main__':

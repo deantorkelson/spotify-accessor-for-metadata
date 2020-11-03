@@ -3,11 +3,13 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
+
 class Spotify:
     def __init__(self):
         self.id = os.environ['ID']
         self.secret = os.environ['SECRET']
-        credentials = SpotifyClientCredentials(client_id=self.id, client_secret=self.secret)
+        credentials = SpotifyClientCredentials(
+            client_id=self.id, client_secret=self.secret)
         self.spotify = spotipy.Spotify(client_credentials_manager=credentials)
 
     def search_tracks(self, query):
@@ -22,20 +24,29 @@ class Spotify:
     def fetch_artist_metadata(self, artist_uri):
         return self.spotify.artist(artist_uri)
 
-    def get_playlist_details(self, playlist_uri):
-        return self.spotify.playlist(playlist_uri)
+    def get_playlist_data(self, playlist_uri):
+        response = self.spotify.playlist(playlist_uri)['tracks']
+        items = response['items']
+        while response['next']:
+            response = self.spotify.next(response)
+            items.extend(response['items'])
+        return items
 
     def compare_playlists(self, uris):
         artist_sets = []
-        # for each uri/playlist
-        #     for each song
-        #         add all artist names to local artist set
-        # return intersection of all sets
+        song_sets = []
         for uri in uris:
-            response = self.get_playlist_details(uri)["tracks"]
+            items = self.get_playlist_data(uri)
             artists = set()
-            for song in response["items"]:
-                for artist in song["track"]["artists"]:
+            songs = set()
+            for item in items:
+                song = item["track"]
+                songs.add(f"{song['name']} - {song['artists'][0]['name']}")
+                for artist in song["artists"]:
                     artists.add(artist["name"])
             artist_sets.append(artists)
-        return set.intersection(*artist_sets)
+            song_sets.append(songs)
+        return {
+            "artists": list(set.intersection(*artist_sets)),
+            "songs": list(set.intersection(*song_sets))
+        }
