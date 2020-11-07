@@ -8,6 +8,8 @@ import TextInput from '../../components/TextInput/TextInput'
 import { Playlist } from '../../models/Playlist'
 import '../ResultList.css'
 import './PlaylistCompare.css'
+let he = require('he');
+
 
 interface PlaylistCompareState {
   searchResults: Playlist[];
@@ -137,7 +139,7 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
               </div>
               {result.description &&
                 <div>
-                  Description: {decodeURI(result.description.replace("&#x", "%")).replace(";", "")}
+                  Description: {he.decode(result.description)}
                 </div>}
               <div>
                 {result.tracks.total} songs
