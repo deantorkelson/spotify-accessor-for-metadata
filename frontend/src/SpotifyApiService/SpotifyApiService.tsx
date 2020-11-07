@@ -1,4 +1,4 @@
-import SamplePlaylistSearch from '../static/sample-data/SamplePlaylistSearch.json'
+import SamplePlaylistCompare from '../static/sample-data/SamplePlaylistCompare.json'
 
 export class SpotifyApiService {
     private api_url: string;
@@ -18,7 +18,6 @@ export class SpotifyApiService {
     
     public searchPlaylists(searchQuery: string): Promise<any> {
         return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
-        // return new Promise((resolve) => resolve(SamplePlaylistSearch));
     }
 
     public fetchTrackMetadata(trackUri: string): Promise<any> {
