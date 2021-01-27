@@ -46,6 +46,7 @@ class Spotify:
                     artists.add(artist["name"])
             artist_sets.append(artists)
             song_sets.append(songs)
+        # TODO: also return playlist names
         return {
             "artists": list(set.intersection(*artist_sets)),
             "songs": list(set.intersection(*song_sets))

@@ -20,3 +20,11 @@ hr {
 .modalContent {
     display: flex;
 }
+
+.uri-tooltip {
+    text-decoration: underline;
+}
+
+.uri-tooltip:hover {
+    color: #66d68e !important;    
+}

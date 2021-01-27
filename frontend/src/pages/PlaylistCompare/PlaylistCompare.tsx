@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Spinner from 'react-bootstrap/Spinner';
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Modal from 'react-modal';
 
 import SpotifyApiService from '../../SpotifyApiService/SpotifyApiService'
@@ -186,11 +188,26 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
     return <div>Please select some playlists to compare.</div>
   }
 
+  renderTooltip (props: any) {
+    return <Tooltip {...props}>
+      {"These take the form \"spotify:playlist:<something>\" or \"spotify/playlist/<something>\""}
+    </Tooltip>
+  };
+
   render() {
     return (
       <div className='page'>
         <div className='header'>
-          Enter the name of the playlist to search for:
+          Enter the name of the playlist to search for, <br/>or a comma-separated list of&nbsp;
+          <OverlayTrigger
+            placement="right"
+            delay={{ show: 100, hide: 400 }}
+            overlay={this.renderTooltip}
+          >
+            <span className="uri-tooltip">
+              Spotify URIs:
+            </span>
+          </OverlayTrigger>
         </div>
         <TextInput submit={this.searchSubmit} />
         <div className='main-content'>
