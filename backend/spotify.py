@@ -25,18 +25,25 @@ class Spotify:
         return self.spotify.artist(artist_uri)
 
     def get_playlist_data(self, playlist_uri):
-        response = self.spotify.playlist(playlist_uri)['tracks']
-        items = response['items']
-        while response['next']:
-            response = self.spotify.next(response)
-            items.extend(response['items'])
-        return items
+        response = self.spotify.playlist(playlist_uri)
+        tracks = response['tracks']
+        items = tracks['items']
+        while tracks['next']:
+            tracks = self.spotify.next(tracks)
+            items.extend(tracks['items'])
+        return {
+            "name": f"#{response['name']} curated by #{response['owner']['display_name']",
+            "items": items
+        }
 
     def compare_playlists(self, uris):
         artist_sets = []
         song_sets = []
+        playlist_names = []
         for uri in uris:
-            items = self.get_playlist_data(uri)
+            playlist_data = self.get_playlist_data(uri)
+            playlist_names.append(playlist_data['name'])
+            items = playlist_data['items']
             artists = set()
             songs = set()
             for item in items:
@@ -46,8 +53,8 @@ class Spotify:
                     artists.add(artist["name"])
             artist_sets.append(artists)
             song_sets.append(songs)
-        # TODO: also return playlist names
         return {
+            "names": playlist_names,
             "artists": list(set.intersection(*artist_sets)),
             "songs": list(set.intersection(*song_sets))
         }

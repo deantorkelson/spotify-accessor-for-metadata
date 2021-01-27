@@ -10,6 +10,7 @@ import TextInput from '../../components/TextInput/TextInput'
 import { Playlist } from '../../models/Playlist'
 import '../ResultList.css'
 import './PlaylistCompare.css'
+import { isUriList } from '../../helpers/helpers';
 let he = require('he');
 
 
@@ -42,10 +43,25 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
 
   searchSubmit(query: string): void {
     if (query) {
-      this.setState({ searchLoading: true });
-      this.spotifyApiService.searchPlaylists(query).then(data => {
-        this.setState({ searchResults: data.playlists.items, searchLoading: false });
-      });
+      if (isUriList(query)) {
+        this.setState({ compareLoading: true });
+        const playlistUris = query.split(', ')
+        this.spotifyApiService.comparePlaylists(playlistUris).then(data => {
+          this.setState({ 
+            compareLoading: false, 
+            modalIsOpen: true, 
+            modalData: data 
+          });
+        });
+      } else {
+        this.setState({ searchLoading: true });
+        this.spotifyApiService.searchPlaylists(query).then(data => {
+          this.setState({ 
+            searchResults: data.playlists.items, 
+            searchLoading: false 
+          });
+        });
+      }
     }
   }
 
@@ -72,6 +88,7 @@ export class PlaylistCompare extends React.Component<{}, PlaylistCompareState> {
         Close
       </Button>
       <div className='modalContent'>
+        {"Comparing these playlists: " + this.state.modalData.names.join(', ')}
         <div className='column'>
           <div className='header'>
             Common artists:

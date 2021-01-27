@@ -1,5 +1,3 @@
-import SamplePlaylistCompare from '../static/sample-data/SamplePlaylistCompare.json'
-
 export class SpotifyApiService {
     private api_url: string;
 
@@ -30,7 +28,7 @@ export class SpotifyApiService {
 
     public comparePlaylists(playlistUris: string[]): Promise<any> {
         let options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
