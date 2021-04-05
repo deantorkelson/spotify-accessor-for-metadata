@@ -1,8 +1,8 @@
-import { ArtistMetadataResponse } from '../models/api/ArtistMetadataResponse';
-import { SearchTracksResponse } from '../models/api/SearchTracksResponse';
-import { TrackMetadataResponse } from '../models/api/TrackMetadataResponse';
-import {SearchPlaylistsResponse} from "../models/api/SearchPlaylistsResponse";
-import {ComparePlaylistsResponse} from "../models/api/ComparePlaylistsResponse";
+import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
+import { SearchTracksResponse } from 'src/models/api/SearchTracksResponse';
+import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
+import { SearchPlaylistsResponse } from 'src/models/api/SearchPlaylistsResponse';
+import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
 
 export class SpotifyApiService {
     private api_url: string;
