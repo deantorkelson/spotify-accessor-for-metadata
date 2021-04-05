@@ -1,4 +1,4 @@
-import { Playlist } from "../Playlist";
+import { Playlist } from 'src/models/Playlist';
 
 export interface SearchPlaylistsResponse {
   playlists: {

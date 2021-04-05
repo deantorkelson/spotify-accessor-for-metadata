@@ -5,13 +5,13 @@ import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
 
-import SpotifyApiService from '../../SpotifyApiService/SpotifyApiService'
-import { Track } from '../../models/Track';
-import { TrackMetadataResponse, getKeyAndMode } from '../../models/api/TrackMetadataResponse';
-import { ArtistMetadataResponse } from '../../models/api/ArtistMetadataResponse';
-import TextInput from '../../components/TextInput/TextInput'
-import '../ResultList.css'
+import TextInput from 'src/components/TextInput/TextInput'
+import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
+import { TrackMetadataResponse, getKeyAndMode } from 'src/models/api/TrackMetadataResponse';
+import { Track } from 'src/models/Track';
+import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService'
 import './Search.css'
+import '../ResultList.css'
 
 interface SearchState {
   searchResults: Track[];

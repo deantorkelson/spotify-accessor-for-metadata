@@ -1,5 +1,5 @@
 import React from 'react';
-import { isUriList } from '../helpers/helpers'
+import { isUriList } from 'src/helpers/helpers'
 
 test('valid: list of colon Spotify URIs', () => {
   const uris = "spotify:playlist:0iAeUtwINlqfjwAyQ4ykur, spotify:playlist:0iAeUtwINlqfjwAyQ4ykur"

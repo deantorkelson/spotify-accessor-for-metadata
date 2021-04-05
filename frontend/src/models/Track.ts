@@ -1,5 +1,5 @@
-import { Album } from "./Album";
-import { ArtistSimplified } from "./ArtistSimplified";
+import { Album } from 'src/models/Album';
+import { ArtistSimplified } from 'src/models/ArtistSimplified';
 
 export interface Track {
     album: Album;

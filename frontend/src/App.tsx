@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Search from './pages/Search/Search'
-import Homepage from './pages/Homepage/Homepage'
-import PlaylistCompare from './pages/PlaylistCompare/PlaylistCompare'
-import Navbar from './components/Navbar/Navbar';
+
+import Navbar from 'src/components/Navbar/Navbar';
+import Homepage from 'src/pages/Homepage/Homepage'
+import PlaylistCompare from 'src/pages/PlaylistCompare/PlaylistCompare'
+import Search from 'src/pages/Search/Search'
 import './App.css';
 
 function App() {

@@ -1,5 +1,5 @@
-import { ArtistSimplified } from './ArtistSimplified'
-import { Image } from './Image';
+import { ArtistSimplified } from 'src/models/ArtistSimplified'
+import { Image } from 'src/models/Image';
 
 export interface Album {
     artists: ArtistSimplified[];

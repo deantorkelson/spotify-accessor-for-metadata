@@ -5,14 +5,14 @@ import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Modal from 'react-modal';
 
-import SpotifyApiService from '../../SpotifyApiService/SpotifyApiService'
-import TextInput from '../../components/TextInput/TextInput'
-import { Playlist } from '../../models/Playlist'
-import '../ResultList.css'
+import TextInput from 'src/components/TextInput/TextInput'
+import { isUriList } from 'src/helpers/helpers';
+import { Playlist } from 'src/models/Playlist'
+import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService'
 import './PlaylistCompare.css'
-import { isUriList } from '../../helpers/helpers';
-let he = require('he');
+import '../ResultList.css'
 
+let he = require('he');
 
 interface PlaylistCompareState {
   searchResults: Playlist[];

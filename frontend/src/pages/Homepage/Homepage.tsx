@@ -1,5 +1,6 @@
 import React from 'react'
-import blackLogo from '../../static/black-logo.png'
+
+import blackLogo from 'src/static/black-logo.png'
 import './Homepage.css'
 
 export class Homepage extends React.Component {

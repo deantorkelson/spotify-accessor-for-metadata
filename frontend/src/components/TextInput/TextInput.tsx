@@ -1,7 +1,8 @@
 import React from 'react'
-import blackLogo from '../../static/black-logo.png'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+
+import blackLogo from 'src/static/black-logo.png'
 import './TextInput.css'
 
 interface TextInputProps {

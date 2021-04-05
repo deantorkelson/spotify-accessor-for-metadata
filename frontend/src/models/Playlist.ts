@@ -1,6 +1,6 @@
-import { Followers } from "./Followers";
-import { Image } from "./Image";
-import { User } from "./User";
+import { Followers } from 'src/models/Followers';
+import { Image } from 'src/models/Image';
+import { User } from 'src/models/User';
 
 export interface Playlist {
     description: string;
