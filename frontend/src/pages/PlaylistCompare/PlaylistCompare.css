@@ -11,3 +11,20 @@ hr {
     border-top: 3px solid #ababab !important;
     width: 95%;
 }
+
+.modal-li {
+    padding: .2rem;
+    display: list-item;
+}
+
+.modalContent {
+    display: flex;
+}
+
+.uri-tooltip {
+    text-decoration: underline;
+}
+
+.uri-tooltip:hover {
+    color: #66d68e !important;    
+}

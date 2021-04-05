@@ -4,13 +4,15 @@ import './Homepage.css'
 
 export class Homepage extends React.Component {
 
+  private BASE_URL = 'https://github.com/deantorkelson/spotify-accessor-for-metadata'
+
   getReadmeLink(): JSX.Element {
-    let readmeLink = 'https://github.com/deantorkelson/spotify-accessor-for-metadata/blob/master/frontend/README.md';
+    let readmeLink = `${this.BASE_URL}/blob/master/README.md`;
     return <a className='readme' href={readmeLink}>readme</a>
   }
 
   getGithubIssuesLink(): JSX.Element {
-    let githubIssuesLink = 'https://github.com/deantorkelson/spotify-accessor-for-metadata/issues';
+    let githubIssuesLink = `${this.BASE_URL}/issues`;
     return <a className='readme' href={githubIssuesLink}>Github Issues</a>
   }
 

@@ -32,7 +32,7 @@ export class SpotifyApiService {
 
     public comparePlaylists(playlistUris: string[]): Promise<any> {
         let options = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
