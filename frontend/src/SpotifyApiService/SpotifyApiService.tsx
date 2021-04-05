@@ -1,31 +1,32 @@
-import SamplePlaylistSearch from '../static/sample-data/SamplePlaylistSearch.json'
+import { ArtistMetadataResponse } from '../models/api/ArtistMetadataResponse';
+import { SearchTracksResponse } from '../models/api/SearchTracksResponse';
+import { TrackMetadataResponse } from '../models/api/TrackMetadataResponse';
 
 export class SpotifyApiService {
     private api_url: string;
 
     constructor() {
-        if(process.env.REACT_APP_USE_LOCAL_BACKEND === "1") {
+        if (process.env.REACT_APP_USE_LOCAL_BACKEND === "1") {
             this.api_url = 'http://127.0.0.1:5000'
-          } else {
+        } else {
             this.api_url = 'https://spotify-accessor-for-metadata.herokuapp.com'
-          }
-        
+        }
     }
 
-    public searchTracks(searchQuery: string): Promise<any> {
+
+    public searchTracks(searchQuery: string): Promise<SearchTracksResponse> {
         return fetch(this.api_url + `/search/tracks/${searchQuery}`).then(response => response.json());
     }
     
     public searchPlaylists(searchQuery: string): Promise<any> {
-        // return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
-        return new Promise((resolve) => resolve(SamplePlaylistSearch));
+        return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
     }
 
-    public fetchTrackMetadata(trackUri: string): Promise<any> {
+    public fetchTrackMetadata(trackUri: string): Promise<TrackMetadataResponse> {
         return fetch(this.api_url + `/fetchTrackMetadata/${trackUri}`).then(response => response.json());
     }
 
-    public fetchArtistMetadata(artistUri: string): Promise<any> {
+    public fetchArtistMetadata(artistUri: string): Promise<ArtistMetadataResponse> {
         return fetch(this.api_url + `/fetchArtistMetadata/${artistUri}`).then(response => response.json());
     }
 

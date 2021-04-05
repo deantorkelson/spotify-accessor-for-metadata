@@ -7,8 +7,8 @@ import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
 
 import SpotifyApiService from '../../SpotifyApiService/SpotifyApiService'
 import { Track } from '../../models/Track';
-import { AudioFeatures, getKeyAndMode } from '../../models/AudioFeatures';
-import { Artist } from '../../models/Artist';
+import { TrackMetadataResponse, getKeyAndMode } from '../../models/api/TrackMetadataResponse';
+import { ArtistMetadataResponse } from '../../models/api/ArtistMetadataResponse';
 import TextInput from '../../components/TextInput/TextInput'
 import '../ResultList.css'
 import './Search.css'
@@ -17,8 +17,8 @@ interface SearchState {
   searchResults: Track[];
   trackName: string;
   artistName: string;
-  trackMetadata: AudioFeatures;
-  artistMetadata: Artist;
+  trackMetadata: TrackMetadataResponse;
+  artistMetadata: ArtistMetadataResponse;
   loading: boolean;
 }
 
@@ -33,8 +33,8 @@ export class Search extends React.Component<{}, SearchState> {
       searchResults: [],
       trackName: '',
       artistName: '',
-      trackMetadata: {} as AudioFeatures,
-      artistMetadata: {} as Artist,
+      trackMetadata: {} as TrackMetadataResponse,
+      artistMetadata: {} as ArtistMetadataResponse,
       loading: false
     }
   }
