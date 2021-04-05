@@ -32,7 +32,7 @@ class Spotify:
             tracks = self.spotify.next(tracks)
             items.extend(tracks['items'])
         return {
-            "name": f"#{response['name']} curated by #{response['owner']['display_name']",
+            "name": f"#{response['name']} curated by #{response['owner']['display_name']}",
             "items": items
         }
 
@@ -47,7 +47,7 @@ class Spotify:
             artists = set()
             songs = set()
             for item in items:
-                song = item["track"]
+                song = item.track
                 songs.add(f"{song['name']} - {song['artists'][0]['name']}")
                 for artist in song["artists"]:
                     artists.add(artist["name"])

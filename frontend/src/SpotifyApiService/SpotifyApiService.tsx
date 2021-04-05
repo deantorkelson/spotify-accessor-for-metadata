@@ -1,6 +1,8 @@
 import { ArtistMetadataResponse } from '../models/api/ArtistMetadataResponse';
 import { SearchTracksResponse } from '../models/api/SearchTracksResponse';
 import { TrackMetadataResponse } from '../models/api/TrackMetadataResponse';
+import {SearchPlaylistsResponse} from "../models/api/SearchPlaylistsResponse";
+import {ComparePlaylistsResponse} from "../models/api/ComparePlaylistsResponse";
 
 export class SpotifyApiService {
     private api_url: string;
@@ -18,7 +20,7 @@ export class SpotifyApiService {
         return fetch(this.api_url + `/search/tracks/${searchQuery}`).then(response => response.json());
     }
     
-    public searchPlaylists(searchQuery: string): Promise<any> {
+    public searchPlaylists(searchQuery: string): Promise<SearchPlaylistsResponse> {
         return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
     }
 
@@ -30,7 +32,7 @@ export class SpotifyApiService {
         return fetch(this.api_url + `/fetchArtistMetadata/${artistUri}`).then(response => response.json());
     }
 
-    public comparePlaylists(playlistUris: string[]): Promise<any> {
+    public comparePlaylists(playlistUris: string[]): Promise<ComparePlaylistsResponse> {
         let options = {
             method: 'POST',
             headers: {
