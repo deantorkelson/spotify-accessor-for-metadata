@@ -21,41 +21,41 @@ export class SpotifyApiService {
   }
 
   public searchTracks(searchQuery: string): Promise<SearchTracksResponse> {
-    return this.fetcher(this.api_url + `/search/tracks/${searchQuery}`, HttpMethod.GET);
+    return this.get(this.api_url + `/search/tracks/${searchQuery}`);
   }
 
   public searchPlaylists(searchQuery: string): Promise<SearchPlaylistsResponse> {
-    return this.fetcher(this.api_url + `/search/playlists/${searchQuery}`, HttpMethod.GET);
+    return this.get(this.api_url + `/search/playlists/${searchQuery}`);
   }
 
   public fetchTrackMetadata(trackUri: string): Promise<TrackMetadataResponse> {
-    return this.fetcher(this.api_url + `/fetchTrackMetadata/${trackUri}`, HttpMethod.GET);
+    return this.get(this.api_url + `/fetchTrackMetadata/${trackUri}`);
   }
 
   public fetchArtistMetadata(artistUri: string): Promise<ArtistMetadataResponse> {
-    return this.fetcher(this.api_url + `/fetchArtistMetadata/${artistUri}`, HttpMethod.GET);
+    return this.get(this.api_url + `/fetchArtistMetadata/${artistUri}`);
   }
 
   public comparePlaylists(playlistUris: string[]): Promise<ComparePlaylistsResponse> {
     const body = JSON.stringify({
       "uris": playlistUris
     })
-    return this.fetcher(this.api_url + '/comparePlaylists', HttpMethod.POST, body);
+    return this.post(this.api_url + '/comparePlaylists', body);
   }
 
-  public fetcher(endpoint: string, method: string, body?: string): Promise<any> {
+  public get(endpoint: string): Promise<any> {
+    return fetch(endpoint).then((response: any) => response.json());
+  }
+
+  public post(endpoint: string, body: string): Promise<any> {
     let options = {
-      method,
-      mode: 'no-cors',
+      method: HttpMethod.POST,
       headers: {
         'Content-Type': 'application/json'
       },
+      body,
     }
-    if (body) {
-      // @ts-ignore
-      options.body = body;
-    }
-    // @ts-ignore
+    console.log({body})
     return fetch(endpoint, options).then((response: any) => response.json());
   }
 }
