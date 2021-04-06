@@ -4,8 +4,13 @@ import {TrackMetadataResponse} from 'src/models/api/TrackMetadataResponse';
 import {SearchPlaylistsResponse} from 'src/models/api/SearchPlaylistsResponse';
 import {ComparePlaylistsResponse} from 'src/models/api/ComparePlaylistsResponse';
 
+enum HttpMethod {
+  GET = 'GET',
+  POST = 'POST'
+}
+
 export class SpotifyApiService {
-  private api_url: string;
+  readonly api_url: string;
 
   constructor() {
     if (process.env.REACT_APP_USE_LOCAL_BACKEND === "1") {
@@ -16,32 +21,42 @@ export class SpotifyApiService {
   }
 
   public searchTracks(searchQuery: string): Promise<SearchTracksResponse> {
-    return fetch(this.api_url + `/search/tracks/${searchQuery}`).then(response => response.json());
+    return this.fetcher(this.api_url + `/search/tracks/${searchQuery}`, HttpMethod.GET);
   }
 
   public searchPlaylists(searchQuery: string): Promise<SearchPlaylistsResponse> {
-    return fetch(this.api_url + `/search/playlists/${searchQuery}`).then(response => response.json());
+    return this.fetcher(this.api_url + `/search/playlists/${searchQuery}`, HttpMethod.GET);
   }
 
   public fetchTrackMetadata(trackUri: string): Promise<TrackMetadataResponse> {
-    return fetch(this.api_url + `/fetchTrackMetadata/${trackUri}`).then(response => response.json());
+    return this.fetcher(this.api_url + `/fetchTrackMetadata/${trackUri}`, HttpMethod.GET);
   }
 
   public fetchArtistMetadata(artistUri: string): Promise<ArtistMetadataResponse> {
-    return fetch(this.api_url + `/fetchArtistMetadata/${artistUri}`).then(response => response.json());
+    return this.fetcher(this.api_url + `/fetchArtistMetadata/${artistUri}`, HttpMethod.GET);
   }
 
   public comparePlaylists(playlistUris: string[]): Promise<ComparePlaylistsResponse> {
+    const body = JSON.stringify({
+      "uris": playlistUris
+    })
+    return this.fetcher(this.api_url + '/comparePlaylists', HttpMethod.POST, body);
+  }
+
+  public fetcher(endpoint: string, method: string, body?: string): Promise<any> {
     let options = {
-      method: 'POST',
+      method,
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        "uris": playlistUris
-      })
     }
-    return fetch(this.api_url + '/comparePlaylists', options).then(response => response.json());
+    if (body) {
+      // @ts-ignore
+      options.body = body;
+    }
+    // @ts-ignore
+    return fetch(endpoint, options).then((response: any) => response.json());
   }
 }
 

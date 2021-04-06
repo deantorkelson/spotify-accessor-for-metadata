@@ -155,18 +155,18 @@ export const Search = () => {
         <h5>Beats/measure: {trackMetadata.time_signature}</h5>
         <div className='value-sliders'>
           <div className='reduced-column'>
-            {...data.slice(0, columnLength).map(sliderData => audioFeatureSlider(
+            {data.slice(0, columnLength).map(sliderData => audioFeatureSlider(
               sliderData.title,
               sliderData.tooltip,
               sliderData.value
-            ))};
+            ))}
           </div>
           <div className='reduced-column'>
-            {...data.slice(columnLength, data.length-1).map(sliderData => audioFeatureSlider(
+            {data.slice(columnLength, data.length).map(sliderData => audioFeatureSlider(
               sliderData.title,
               sliderData.tooltip,
               sliderData.value
-            ))};
+            ))}
           </div>
         </div>
       </div>
