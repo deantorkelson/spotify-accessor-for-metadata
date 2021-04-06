@@ -10,6 +10,7 @@ import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
 import { TrackMetadataResponse, getKeyAndMode } from 'src/models/api/TrackMetadataResponse';
 import { Track } from 'src/models/Track';
 import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService'
+import en from 'src/static/additionalStrings'
 import './Search.css'
 import '../ResultList.css'
 
@@ -86,75 +87,86 @@ export const Search = () => {
     </div>
   );
 
+  const audioFeatureSlider = (title: string, tooltip: string, value: number) => (
+    <>
+      <span className='attribute-title'>{title}</span>
+      <Tooltip title={tooltip}>
+        <InfoIconOutlined fontSize='small' />
+      </Tooltip>
+      <Slider disabled track={false} value={value} max={1} />
+    </>
+  )
+
+  const createAudioFeatureSliderData = (trackMetadata: TrackMetadataResponse) => (
+    [
+      {
+        title: 'Acousticness',
+        tooltip: en.search.tooltips.acousticness,
+        value: trackMetadata.acousticness,
+      },
+      {
+        title: 'Danceability',
+        tooltip: en.search.tooltips.danceability,
+        value: trackMetadata.danceability,
+      },
+      {
+        title: 'Energy',
+        tooltip: en.search.tooltips.energy,
+        value: trackMetadata.energy,
+      },
+      {
+        title: 'Instrumentalness',
+        tooltip: en.search.tooltips.instrumentalness,
+        value: trackMetadata.instrumentalness,
+      },
+      {
+        title: 'Liveness',
+        tooltip: en.search.tooltips.liveness,
+        value: trackMetadata.liveness,
+      },
+      {
+        title: 'Loudness',
+        tooltip: en.search.tooltips.loudness,
+        value: trackMetadata.loudness/(-60),
+      },
+      {
+        title: 'Speechiness',
+        tooltip: en.search.tooltips.speechiness,
+        value: trackMetadata.acousticness,
+      },
+      {
+        title: 'Valence',
+        tooltip: en.search.tooltips.valence,
+        value: trackMetadata.valence,
+      },
+    ]
+  )
+
   const displayTrackMetadata = () => {
-    let metadata = trackMetadata;
-    if (!metadata?.duration_ms)
+    if (!trackMetadata?.duration_ms)
       return <div>Please search for and select a song to view its metadata.</div>
-    let acousticnessTitle = 'A confidence measure from 0.0 to 1.0 of whether the track is acoustic.';
-    let danceabilityTitle = 'Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity.';
-    let energyTitle = 'Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.';
-    let instrumentalnessTitle = 'Predicts whether a track contains no vocals. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content.';
-    let livenessTitle = 'Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live.';
-    let loudnessTitle = 'The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks.';
-    let speechinessTitle = 'Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.';
-    let valenceTitle = 'A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track.';
+    const data = createAudioFeatureSliderData(trackMetadata);
+    const columnLength = 4;
     return (
       <div>
         <h3>Audio features for <span className='name'>{trackName}</span>:</h3>
-        <h5>Key: {getKeyAndMode(metadata.key, metadata.mode)}</h5>
-        <h5>Tempo: {metadata.tempo}</h5>
-        <h5>Beats/measure: {metadata.time_signature}</h5>
+        <h5>Key: {getKeyAndMode(trackMetadata.key, trackMetadata.mode)}</h5>
+        <h5>Tempo: {trackMetadata.tempo}</h5>
+        <h5>Beats/measure: {trackMetadata.time_signature}</h5>
         <div className='value-sliders'>
           <div className='reduced-column'>
-            <span className='attribute-title'>Acousticness </span>
-            <Tooltip title={acousticnessTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.acousticness} max={1} />
-
-            <span className='attribute-title'>Danceability </span>
-            <Tooltip title={danceabilityTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.danceability} max={1} />
-
-            <span className='attribute-title'>Energy </span>
-            <Tooltip title={energyTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.energy} max={1} />
-
-            <span className='attribute-title'>Instrumentalness </span>
-            <Tooltip title={instrumentalnessTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.instrumentalness} max={1} />
+            {...data.slice(0, columnLength).map(sliderData => audioFeatureSlider(
+              sliderData.title,
+              sliderData.tooltip,
+              sliderData.value
+            ))};
           </div>
-
           <div className='reduced-column'>
-            <span className='attribute-title'>Liveness </span>
-            <Tooltip title={livenessTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.liveness} max={1} />
-
-            <span className='attribute-title'>Loudness </span>
-            <Tooltip title={loudnessTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.loudness * -1} max={60} />
-
-            <span className='attribute-title'>Speechiness </span>
-            <Tooltip title={speechinessTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.speechiness} max={1} />
-
-            <span className='attribute-title'>Valence </span>
-            <Tooltip title={valenceTitle}>
-              <InfoIconOutlined fontSize='small' />
-            </Tooltip>
-            <Slider disabled track={false} value={metadata.valence} max={1} />
+            {...data.slice(columnLength, data.length-1).map(sliderData => audioFeatureSlider(
+              sliderData.title,
+              sliderData.tooltip,
+              sliderData.value
+            ))};
           </div>
         </div>
       </div>
