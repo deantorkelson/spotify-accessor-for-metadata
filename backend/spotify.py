@@ -47,7 +47,7 @@ class Spotify:
             artists = set()
             songs = set()
             for item in items:
-                song = item.track
+                song = item["track"]
                 songs.add(f"{song['name']} - {song['artists'][0]['name']}")
                 for artist in song["artists"]:
                     artists.add(artist["name"])
