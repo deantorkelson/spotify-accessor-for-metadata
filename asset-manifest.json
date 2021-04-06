@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/spotify-accessor-for-metadata/static/css/main.c986dc65.chunk.css",
-    "main.js": "/spotify-accessor-for-metadata/static/js/main.444a8231.chunk.js",
-    "main.js.map": "/spotify-accessor-for-metadata/static/js/main.444a8231.chunk.js.map",
+    "main.css": "/spotify-accessor-for-metadata/static/css/main.ebf030db.chunk.css",
+    "main.js": "/spotify-accessor-for-metadata/static/js/main.adc97bfc.chunk.js",
+    "main.js.map": "/spotify-accessor-for-metadata/static/js/main.adc97bfc.chunk.js.map",
     "runtime-main.js": "/spotify-accessor-for-metadata/static/js/runtime-main.09ff1f83.js",
     "runtime-main.js.map": "/spotify-accessor-for-metadata/static/js/runtime-main.09ff1f83.js.map",
     "static/css/2.12795900.chunk.css": "/spotify-accessor-for-metadata/static/css/2.12795900.chunk.css",
-    "static/js/2.7547a419.chunk.js": "/spotify-accessor-for-metadata/static/js/2.7547a419.chunk.js",
-    "static/js/2.7547a419.chunk.js.map": "/spotify-accessor-for-metadata/static/js/2.7547a419.chunk.js.map",
+    "static/js/2.cfa759b8.chunk.js": "/spotify-accessor-for-metadata/static/js/2.cfa759b8.chunk.js",
+    "static/js/2.cfa759b8.chunk.js.map": "/spotify-accessor-for-metadata/static/js/2.cfa759b8.chunk.js.map",
     "index.html": "/spotify-accessor-for-metadata/index.html",
-    "precache-manifest.eeebe4b5f078965e88f0189de99936be.js": "/spotify-accessor-for-metadata/precache-manifest.eeebe4b5f078965e88f0189de99936be.js",
+    "precache-manifest.eb0c8e3fb5172f42e9e7a4c646296253.js": "/spotify-accessor-for-metadata/precache-manifest.eb0c8e3fb5172f42e9e7a4c646296253.js",
     "service-worker.js": "/spotify-accessor-for-metadata/service-worker.js",
     "static/css/2.12795900.chunk.css.map": "/spotify-accessor-for-metadata/static/css/2.12795900.chunk.css.map",
-    "static/css/main.c986dc65.chunk.css.map": "/spotify-accessor-for-metadata/static/css/main.c986dc65.chunk.css.map",
-    "static/js/2.7547a419.chunk.js.LICENSE.txt": "/spotify-accessor-for-metadata/static/js/2.7547a419.chunk.js.LICENSE.txt",
+    "static/css/main.ebf030db.chunk.css.map": "/spotify-accessor-for-metadata/static/css/main.ebf030db.chunk.css.map",
+    "static/js/2.cfa759b8.chunk.js.LICENSE.txt": "/spotify-accessor-for-metadata/static/js/2.cfa759b8.chunk.js.LICENSE.txt",
     "static/media/black-logo.png": "/spotify-accessor-for-metadata/static/media/black-logo.5e670a4b.png",
     "static/media/green-logo.png": "/spotify-accessor-for-metadata/static/media/green-logo.feb227e2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.09ff1f83.js",
     "static/css/2.12795900.chunk.css",
-    "static/js/2.7547a419.chunk.js",
-    "static/css/main.c986dc65.chunk.css",
-    "static/js/main.444a8231.chunk.js"
+    "static/js/2.cfa759b8.chunk.js",
+    "static/css/main.ebf030db.chunk.css",
+    "static/js/main.adc97bfc.chunk.js"
   ]
 }
