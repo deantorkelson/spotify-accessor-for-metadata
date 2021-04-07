@@ -32,7 +32,7 @@ class Spotify:
             tracks = self.spotify.next(tracks)
             items.extend(tracks['items'])
         return {
-            "name": f"#{response['name']} curated by #{response['owner']['display_name']}",
+            "name": f"{response['name']}, curated by {response['owner']['display_name']}",
             "items": items
         }
 

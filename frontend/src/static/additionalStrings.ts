@@ -9,8 +9,13 @@ export const en = {
       loudness: 'The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks.',
       speechiness: 'Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value.',
       valence: 'A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track.'
-    }
+    },
+    placeholder: 'Enter the name of a song or artist...'
+  },
+  playlistCompare: {
+    placeholder: 'Ex. "Top Indie", or "spotify:playlist:0ndBAQglI, spotify:playlist:7CAGY0iAf"'
   }
+
 }
 
 export default en;

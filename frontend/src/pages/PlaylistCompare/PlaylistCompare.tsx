@@ -9,6 +9,7 @@ import TextInput from 'src/components/TextInput/TextInput'
 import { isUriList } from 'src/helpers/helpers';
 import { Playlist } from 'src/models/Playlist'
 import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService'
+import en from 'src/static/additionalStrings';
 import './PlaylistCompare.css'
 import '../ResultList.css'
 
@@ -68,8 +69,17 @@ export const PlaylistCompare = () => {
         <Button variant={'outline-secondary'} onClick={closeModal}>
           Close
         </Button>
-        <div className='modalContent'>
-          {"Comparing these playlists: " + modalData.names.join(', ')}
+        <div className='modal-body'>
+          <div className='column-30'>
+            <div className='header'>
+              Comparing these playlists:
+            </div>
+            {modalData.names.map((playlist: string) => (
+              <div>
+                {playlist}
+              </div>
+            ))}
+          </div>
           <div className='column'>
             <div className='header'>
               Common artists:
@@ -185,6 +195,7 @@ export const PlaylistCompare = () => {
       {"These take the form \"spotify:playlist:<something>\" or \"spotify/playlist/<something>\""}
     </Tooltip>
   )
+
   return <div className='page'>
     <div className='header'>
       Enter the name of the playlist to search for, <br/>or a comma-separated list of&nbsp;
@@ -198,7 +209,10 @@ export const PlaylistCompare = () => {
         </span>
       </OverlayTrigger>
     </div>
-    <TextInput submit={searchSubmit} />
+    <TextInput 
+      placeholder={en.playlistCompare.placeholder}
+      submit={searchSubmit} 
+    />
     <div className='main-content'>
       <div className='column'>
         {createSearchResultList()}
@@ -213,6 +227,12 @@ export const PlaylistCompare = () => {
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
+          style={{
+            content: {
+              margin: 'auto',
+              width: '75%'
+            },
+          }}
         >
           {commonPlaylistData()}
         </Modal>

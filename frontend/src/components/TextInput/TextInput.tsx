@@ -6,9 +6,9 @@ import blackLogo from 'src/static/black-logo.png'
 import './TextInput.css'
 
 interface TextInputProps {
+  placeholder: string;
   submit: any;
 }
-
 
 export class TextInput extends React.Component<TextInputProps, {}> {
   private text = '';
@@ -17,7 +17,10 @@ export class TextInput extends React.Component<TextInputProps, {}> {
     return (
       <Form className='input' inline>
         <Form.Control
-          type="text" onKeyPress={(event: any) => {
+          className='text-input'
+          placeholder={this.props.placeholder}
+          type="text" 
+          onKeyPress={(event: any) => {
             if (event.key === 'Enter') {
               event.preventDefault();
               this.props.submit();

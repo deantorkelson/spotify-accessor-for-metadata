@@ -2,6 +2,10 @@
     margin-bottom: 10px;
 }
 
+.text-input {
+    width: 35% !important;
+}
+
 .submit-img {
     height: 30px;
 }

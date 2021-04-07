@@ -195,7 +195,10 @@ export const Search = () => {
       <div className='header'>
         Enter the name of the track to search for:
       </div>
-      <TextInput submit={searchSubmit}/>
+      <TextInput 
+        placeholder={en.search.placeholder}
+        submit={searchSubmit}
+      />
       <div className='main-content'>
         <div className='column'>
           {searchResultList()}

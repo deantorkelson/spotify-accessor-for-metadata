@@ -7,17 +7,25 @@
     width: 48%;
 }
 
+.column-30 {
+    width: 30%;
+}
+
 hr {
     border-top: 3px solid #ababab !important;
     width: 95%;
 }
+
+/* .modal {
+    width: 75%;
+} */
 
 .modal-li {
     padding: .2rem;
     display: list-item;
 }
 
-.modalContent {
+.modal-body {
     display: flex;
 }
 
