@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Spinner from "react-bootstrap/Spinner";
 import Slider from '@material-ui/core/Slider'
@@ -9,45 +9,36 @@ import TextInput from 'src/components/TextInput/TextInput'
 import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
 import { TrackMetadataResponse, getKeyAndMode } from 'src/models/api/TrackMetadataResponse';
 import { Track } from 'src/models/Track';
-import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService'
+import { AudioFeatureSliderData } from 'src/types/types';
 import en from 'src/static/additionalStrings'
 import './Search.css'
 import '../ResultList.css'
 
-export const Search = () => {
-  const [searchResults, setSearchResults] = useState([] as Track[]);
-  const [loading, setLoading] = useState(false);
-  const [trackName, setTrackName] = useState('');
-  const [artistName, setArtistName] = useState('');
-  const [trackMetadata, setTrackMetadata] = useState({} as TrackMetadataResponse);
-  const [artistMetadata, setArtistMetadata] = useState({} as ArtistMetadataResponse);
 
-  const spotifyApiService = new SpotifyApiService();
+interface Props {
+  artistName: string;
+  artistMetadata: ArtistMetadataResponse;
+  audioFeatureSliderData: AudioFeatureSliderData[];
+  fetchMetadata: (trackUri: string, trackName: string, artistUri: string, artistName: string) => void;
+  loading: boolean;
+  searchResults: Track[];
+  searchSubmit: (query: string) => void;
+  trackName: string;
+  trackMetadata: TrackMetadataResponse;
+}
 
-  const searchSubmit = (query: string) => {
-    if (!query) {
-      return;
-    }
-    setLoading(true);
-    spotifyApiService.searchTracks(query).then(data => {
-      setSearchResults(data.tracks.items);
-      setLoading(false);
-    });
-  };
-
-  const fetchTrackMetadata = (songUri: string, trackName: string) => {
-    spotifyApiService.fetchTrackMetadata(songUri).then(data => {
-      setTrackMetadata(data);
-      setTrackName(trackName);
-    });
-  };
-
-  const fetchArtistMetadata = (artistUri: string, artistName: string) => {
-    spotifyApiService.fetchArtistMetadata(artistUri).then(data => {
-      setArtistMetadata(data);
-      setArtistName(artistName);
-    });
-  };
+export const SearchPresenter = (props: Props) => {
+  const {
+    artistName,
+    artistMetadata,
+    audioFeatureSliderData,
+    fetchMetadata,
+    loading,
+    searchResults,
+    searchSubmit,
+    trackName,
+    trackMetadata
+  } = props;
 
   const searchResultList = () => (
     searchResults.length === 0 && !loading
@@ -69,8 +60,7 @@ export const Search = () => {
   const searchResult = (result: Track) => (
     <div key={result.uri}>
       <Button variant='outline-secondary' onClick={() => {
-        fetchTrackMetadata(result.uri, result.name);
-        fetchArtistMetadata(result.artists[0].uri, result.artists[0].name);
+        fetchMetadata(result.uri, result.name, result.artists[0].uri, result.artists[0].name);
       }}>
         <div className='result'>
           <img className='cover-img' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
@@ -97,55 +87,9 @@ export const Search = () => {
     </>
   )
 
-  const createAudioFeatureSliderData = (trackMetadata: TrackMetadataResponse) => (
-    [
-      {
-        title: 'Acousticness',
-        tooltip: en.search.tooltips.acousticness,
-        value: trackMetadata.acousticness,
-      },
-      {
-        title: 'Danceability',
-        tooltip: en.search.tooltips.danceability,
-        value: trackMetadata.danceability,
-      },
-      {
-        title: 'Energy',
-        tooltip: en.search.tooltips.energy,
-        value: trackMetadata.energy,
-      },
-      {
-        title: 'Instrumentalness',
-        tooltip: en.search.tooltips.instrumentalness,
-        value: trackMetadata.instrumentalness,
-      },
-      {
-        title: 'Liveness',
-        tooltip: en.search.tooltips.liveness,
-        value: trackMetadata.liveness,
-      },
-      {
-        title: 'Loudness',
-        tooltip: en.search.tooltips.loudness,
-        value: trackMetadata.loudness/(-60),
-      },
-      {
-        title: 'Speechiness',
-        tooltip: en.search.tooltips.speechiness,
-        value: trackMetadata.acousticness,
-      },
-      {
-        title: 'Valence',
-        tooltip: en.search.tooltips.valence,
-        value: trackMetadata.valence,
-      },
-    ]
-  )
-
   const displayTrackMetadata = () => {
     if (!trackMetadata?.duration_ms)
       return <div>Please search for and select a song to view its metadata.</div>
-    const data = createAudioFeatureSliderData(trackMetadata);
     const columnLength = 4;
     return (
       <div>
@@ -155,17 +99,18 @@ export const Search = () => {
         <h5>Beats/measure: {trackMetadata.time_signature}</h5>
         <div className='value-sliders'>
           <div className='reduced-column'>
-            {data.slice(0, columnLength).map(sliderData => audioFeatureSlider(
+            {audioFeatureSliderData.slice(0, columnLength).map(sliderData => audioFeatureSlider(
               sliderData.title,
               sliderData.tooltip,
               sliderData.value
             ))}
           </div>
           <div className='reduced-column'>
-            {data.slice(columnLength, data.length).map(sliderData => audioFeatureSlider(
-              sliderData.title,
-              sliderData.tooltip,
-              sliderData.value
+            {audioFeatureSliderData.slice(columnLength, audioFeatureSliderData.length).map(
+              sliderData => audioFeatureSlider(
+                sliderData.title,
+                sliderData.tooltip,
+                sliderData.value
             ))}
           </div>
         </div>
@@ -213,4 +158,4 @@ export const Search = () => {
   );
 }
 
-export default Search;
+export default SearchPresenter;
