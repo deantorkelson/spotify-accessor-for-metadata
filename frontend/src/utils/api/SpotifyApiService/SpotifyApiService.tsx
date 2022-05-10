@@ -1,8 +1,9 @@
-import {ArtistMetadataResponse} from 'src/models/api/ArtistMetadataResponse';
-import {SearchTracksResponse} from 'src/models/api/SearchTracksResponse';
-import {TrackMetadataResponse} from 'src/models/api/TrackMetadataResponse';
-import {SearchPlaylistsResponse} from 'src/models/api/SearchPlaylistsResponse';
-import {ComparePlaylistsResponse} from 'src/models/api/ComparePlaylistsResponse';
+import { ENVIRONMENTS } from 'src/constants';
+import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
+import { SearchTracksResponse } from 'src/models/api/SearchTracksResponse';
+import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
+import { SearchPlaylistsResponse } from 'src/models/api/SearchPlaylistsResponse';
+import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
 
 enum HttpMethod {
   GET = 'GET',
@@ -13,7 +14,7 @@ export class SpotifyApiService {
   readonly api_url: string;
 
   constructor() {
-    if (process.env.REACT_APP_USE_LOCAL_BACKEND === "1") {
+    if (process.env.REACT_APP_DEV === ENVIRONMENTS.DEV) {
       this.api_url = 'http://127.0.0.1:5000'
     } else {
       this.api_url = 'https://spotify-accessor-for-metadata.herokuapp.com'

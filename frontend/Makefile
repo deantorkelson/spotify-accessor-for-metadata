@@ -1,5 +1,5 @@
 run-local:
-	REACT_APP_USE_LOCAL_BACKEND=1 npm start
+	REACT_APP_ENV=DEV npm start
 
 run-prod:
-	REACT_APP_USE_LOCAL_BACKEND=0 npm start
+	REACT_APP_ENV=PROD npm start

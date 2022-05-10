@@ -8,7 +8,7 @@ import Modal from 'react-modal';
 import TextInput from 'src/components/TextInput/TextInput'
 import { isUriList } from 'src/helpers/helpers';
 import { Playlist } from 'src/models/Playlist'
-import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService'
+import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService'
 import en from 'src/static/additionalStrings';
 import './PlaylistCompare.css'
 import '../ResultList.css'

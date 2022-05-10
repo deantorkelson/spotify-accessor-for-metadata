@@ -4,19 +4,10 @@ import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
 import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
 import { Track } from 'src/models/Track';
 import SearchPresenter from 'src/pages/Search/SearchPresenter';
-import SpotifyApiService from 'src/SpotifyApiService/SpotifyApiService';
+import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService';
 import en from "src/static/additionalStrings";
 import './Search.css';
 import '../ResultList.css';
-
-interface Props {
-  artistName: string;
-  artistMetadata: ArtistMetadataResponse;
-  loading: boolean;
-  searchResults: Track[];
-  trackName: string;
-  trackMetadata: TrackMetadataResponse;
-}
 
 export const SearchContainer = () => {
   const [artistName, setArtistName] = useState('');
