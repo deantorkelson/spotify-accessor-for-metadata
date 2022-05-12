@@ -13,7 +13,8 @@ export const en = {
     placeholder: 'Enter the name of a song or artist...'
   },
   playlistCompare: {
-    placeholder: 'Ex. "Top Indie", or "spotify:playlist:0ndBAQglI, spotify:playlist:7CAGY0iAf"'
+    placeholder: 'Search for a playlist name',
+    tooltip: 'This would look like "https://open.spotify.com/playlist/5YfQFj40rrMiUp5hutvfH6, https://open.spotify.com/playlist/5YfQFj40rrMiUp5hutvfH6"',
   }
 
 }

@@ -6,7 +6,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Modal from 'react-modal';
 
 import TextInput from 'src/components/TextInput/TextInput'
-import { isUriList } from 'src/helpers/helpers';
+import { isLinkList, parseUriListFromLinks } from 'src/helpers/helpers';
 import { Playlist } from 'src/models/Playlist'
 import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService'
 import en from 'src/static/additionalStrings';
@@ -27,9 +27,11 @@ export const PlaylistCompare = () => {
 
   const searchSubmit = (query: string) => {
     if (query) {
-      if (isUriList(query)) {
+      // if words, search for words
+      // if list of links, parse out the URIs and send to the backend
+      if (isLinkList(query)) {
         setCompareLoading(true);
-        const playlistUris = query.split(', ')
+        const playlistUris = parseUriListFromLinks(query);
         spotifyApiService.comparePlaylists(playlistUris).then(data => {
           setCompareLoading(false);
           setModalIsOpen(true);
@@ -192,7 +194,7 @@ export const PlaylistCompare = () => {
 
   const renderTooltip = (props: any) => (
     <Tooltip {...props}>
-      {"These take the form \"spotify:playlist:<something>\" or \"spotify/playlist/<something>\""}
+      {en.playlistCompare.tooltip}
     </Tooltip>
   )
 
@@ -205,7 +207,7 @@ export const PlaylistCompare = () => {
         overlay={renderTooltip}
       >
         <span className="uri-tooltip">
-          Spotify URIs:
+          links to playlists:
         </span>
       </OverlayTrigger>
     </div>
