@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "00c74dfb9f9c8654fa489cd1fff397e7",
+    "revision": "3411437565191389e69961c14234b8e2",
     "url": "/spotify-accessor-for-metadata/index.html"
   },
   {
-    "revision": "ffaad21e69fd0d1f9e82",
+    "revision": "c2ff09a5b62113329960",
     "url": "/spotify-accessor-for-metadata/static/css/2.12795900.chunk.css"
   },
   {
-    "revision": "204feb887eb1f76c8483",
-    "url": "/spotify-accessor-for-metadata/static/css/main.ef1fc197.chunk.css"
+    "revision": "175d2a2786c099171993",
+    "url": "/spotify-accessor-for-metadata/static/css/main.b0187727.chunk.css"
   },
   {
-    "revision": "ffaad21e69fd0d1f9e82",
-    "url": "/spotify-accessor-for-metadata/static/js/2.cfa759b8.chunk.js"
+    "revision": "c2ff09a5b62113329960",
+    "url": "/spotify-accessor-for-metadata/static/js/2.50ad8197.chunk.js"
   },
   {
     "revision": "b0b0a8ce52db55da8dbed6b466813f0d",
-    "url": "/spotify-accessor-for-metadata/static/js/2.cfa759b8.chunk.js.LICENSE.txt"
+    "url": "/spotify-accessor-for-metadata/static/js/2.50ad8197.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "204feb887eb1f76c8483",
-    "url": "/spotify-accessor-for-metadata/static/js/main.1cbb929f.chunk.js"
+    "revision": "175d2a2786c099171993",
+    "url": "/spotify-accessor-for-metadata/static/js/main.60390075.chunk.js"
   },
   {
     "revision": "a9e0d62cccde95010706",
