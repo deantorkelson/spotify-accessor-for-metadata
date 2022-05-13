@@ -46,7 +46,7 @@ describe('isUriList', () => {
 describe('parseUriFromLink', () => {
   test('should get URI from playlist link', () => {
     const link = 'https://open.spotify.com/playlist/5YfQFj40rrMiUp5hutvfH6?si=9f2a8e502276493b';
-    const expected = 'spotify/playlist/5YfQFj40rrMiUp5hutvfH6';
+    const expected = 'spotify:playlist:5YfQFj40rrMiUp5hutvfH6';
     expect(parseUriFromLink(link)).toEqual(expected);
   })
 });

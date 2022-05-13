@@ -24,7 +24,10 @@ class Spotify:
     def fetch_artist_metadata(self, artist_uri):
         return self.spotify.artist(artist_uri)
 
-    def get_playlist_data(self, playlist_uri):
+    def get_playlist_details(self, playlist_uri):
+        return self.spotify.playlist(playlist_uri)
+
+    def get_playlist_tracks(self, playlist_uri):
         response = self.spotify.playlist(playlist_uri)
         tracks = response['tracks']
         items = tracks['items']
@@ -41,7 +44,7 @@ class Spotify:
         song_sets = []
         playlist_names = []
         for uri in uris:
-            playlist_data = self.get_playlist_data(uri)
+            playlist_data = self.get_playlist_tracks(uri)
             playlist_names.append(playlist_data['name'])
             items = playlist_data['items']
             artists = set()

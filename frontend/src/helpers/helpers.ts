@@ -7,7 +7,7 @@ export const isUriList = (str: string): boolean => (
 export const parseUriFromLink = (link: string): string => {
   const withoutQueryParams = link.split('?')[0];
   const playlistId = withoutQueryParams.split('/').pop();
-  return `spotify/playlist/${playlistId}`;
+  return `spotify:playlist:${playlistId}`;
 }
 
 export const parseUriListFromLinks = (query: string): string[] => {
@@ -15,7 +15,6 @@ export const parseUriListFromLinks = (query: string): string[] => {
   return links.map((link) => parseUriFromLink(link));
 }
 
-export const isLinkList = (query: string) => {
-  const links = query.split(',');
-  return links.every((link) => link.includes('open.spotify.com/playlist'));
+export const isPlaylistLink = (query: string) => {
+  return query.includes('open.spotify.com/playlist');
 }

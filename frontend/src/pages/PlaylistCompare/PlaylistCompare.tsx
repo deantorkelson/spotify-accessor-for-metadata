@@ -6,12 +6,13 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Modal from 'react-modal';
 
 import TextInput from 'src/components/TextInput/TextInput'
-import { isLinkList, parseUriListFromLinks } from 'src/helpers/helpers';
+import { isPlaylistLink, parseUriFromLink } from 'src/helpers/helpers';
 import { Playlist } from 'src/models/Playlist'
 import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService'
 import en from 'src/static/additionalStrings';
 import './PlaylistCompare.css'
 import '../ResultList.css'
+import { DEAN_URI } from 'src/constants';
 
 let he = require('he');
 
@@ -25,19 +26,28 @@ export const PlaylistCompare = () => {
 
   const spotifyApiService = new SpotifyApiService();
 
+  const addPlaylist = (playlist: Playlist) => {
+    let playlists = new Set(selectedPlaylists)
+    playlists.add(playlist);
+    setSelectedPlaylists(playlists);
+  }
+
   const searchSubmit = (query: string) => {
     if (query) {
       // if words, search for words
       // if list of links, parse out the URIs and send to the backend
-      if (isLinkList(query)) {
-        setCompareLoading(true);
-        const playlistUris = parseUriListFromLinks(query);
-        spotifyApiService.comparePlaylists(playlistUris).then(data => {
-          setCompareLoading(false);
-          setModalIsOpen(true);
-          setModalData(data);
+      console.log(query)
+      if (isPlaylistLink(query)) {
+        console.log('is playlist')
+        setSearchLoading(true);
+        const playlistUri = parseUriFromLink(query);
+        spotifyApiService.playlistDetails(playlistUri).then(data => {
+          console.log({data});
+          addPlaylist(data);
         });
+        setSearchLoading(false);
       } else {
+        console.log('is NAUR playlist')
         setSearchLoading(true)
         spotifyApiService.searchPlaylists(query).then(data => {
           setSearchResults(data.playlists.items);
@@ -47,12 +57,13 @@ export const PlaylistCompare = () => {
     }
   }
 
-  const compareSubmit = (playlists: Set<Playlist>) => {
+  const compareSubmit = (playlists: Set<Playlist>, additional: string[] = []) => {
     setCompareLoading(true);
-    let playlistUris: string[] = [];
+    let playlistUris = additional;
     playlists.forEach((playlist: Playlist) => {
       playlistUris.push(playlist.uri)
     })
+    playlistUris.concat(additional);
     spotifyApiService.comparePlaylists(playlistUris).then(data => {
       setCompareLoading(false);
       setModalIsOpen(true);
@@ -124,11 +135,7 @@ export const PlaylistCompare = () => {
           :
           <div className='result-list'>
             {searchResults.map((playlist: Playlist) => searchResult(playlist,
-              () => {
-                let playlists = new Set(selectedPlaylists)
-                playlists.add(playlist);
-                setSelectedPlaylists(playlists);
-              }
+              () => addPlaylist(playlist)
             ))}
           </div>}
       </>
@@ -162,11 +169,7 @@ export const PlaylistCompare = () => {
     let playlistItems: JSX.Element[] = [];
     selectedPlaylists.forEach((playlist: Playlist) => {
       playlistItems.push(searchResult(playlist,
-        () => {
-          let playlists = new Set(selectedPlaylists)
-          playlists.delete(playlist);
-          setSelectedPlaylists(playlists)
-        }));
+        () => addPlaylist(playlist)));
     });
     return playlistItems;
   }
@@ -176,18 +179,38 @@ export const PlaylistCompare = () => {
     ? <div>Please select some playlists to compare.</div>
     : <div>
         {getPlaylistList()}
-        {compareLoading
+        {compareLoading || selectedPlaylists.size === 0
           ?
           <div>
             <Spinner animation='border' />
           </div>
           :
-          <Button className='submit' type="button" variant="outline-success"
-            onClick={() =>
-              compareSubmit(selectedPlaylists)
-            }>
-            Submit
-          </Button>
+          <div className="buttons">
+            <Button
+              className="submit"
+              type="button"
+              variant="success"
+              onClick={() => compareSubmit(selectedPlaylists)}
+            >
+              Submit
+            </Button>
+            <Button
+              className="submit"
+              type="button"
+              variant="secondary"
+              onClick={() => setSelectedPlaylists(new Set())}
+            >
+              Clear
+            </Button>
+            <Button
+              className="submit"
+              type="button"
+              variant="danger"
+              onClick={() => compareSubmit(selectedPlaylists, [DEAN_URI])}
+            >
+              Compare to Dean's music
+            </Button>
+          </div>
         }
       </div>
   )
@@ -200,14 +223,14 @@ export const PlaylistCompare = () => {
 
   return <div className='page'>
     <div className='header'>
-      Enter the name of the playlist to search for, <br/>or a comma-separated list of&nbsp;
+      Enter the name of the playlist to search for, <br/>or a&nbsp;
       <OverlayTrigger
         placement="right"
         delay={{ show: 100, hide: 400 }}
         overlay={renderTooltip}
       >
         <span className="uri-tooltip">
-          links to playlists:
+          link to a playlist:
         </span>
       </OverlayTrigger>
     </div>

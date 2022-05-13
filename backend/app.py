@@ -8,17 +8,25 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 spotify = Spotify()
 
 
-@app.route('/search/tracks/<string:search_query>/')
+@app.route('/search/tracks')
 @cross_origin()
-def search_tracks(search_query):
+def search_tracks():
+    args = request.args
+    search_query = args.get("q")
     return spotify.search_tracks(search_query)
 
 
-@app.route('/search/playlists/<string:search_query>/')
+@app.route('/search/playlists')
 @cross_origin()
-def search_playlists(search_query):
+def search_playlists():
+    args = request.args
+    search_query = args.get("q")
     return spotify.search_playlists(search_query)
 
+@app.route('/playlistDetails/<string:playlist_uri>/')
+@cross_origin()
+def playlist_details(playlist_uri):
+    return spotify.get_playlist_details(playlist_uri)
 
 @app.route('/fetchTrackMetadata/<string:track_uri>/')
 @cross_origin()

@@ -11,9 +11,13 @@
 }
 
 .btn-outline-secondary {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .submit {
     padding: 3px !important;
+}
+
+.buttons > * {
+    margin-right: 4px;
 }

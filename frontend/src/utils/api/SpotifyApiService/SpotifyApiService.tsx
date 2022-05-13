@@ -4,6 +4,7 @@ import { SearchTracksResponse } from 'src/models/api/SearchTracksResponse';
 import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
 import { SearchPlaylistsResponse } from 'src/models/api/SearchPlaylistsResponse';
 import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
+import { Playlist } from 'src/models/Playlist';
 
 enum HttpMethod {
   GET = 'GET',
@@ -14,7 +15,8 @@ export class SpotifyApiService {
   readonly api_url: string;
 
   constructor() {
-    if (process.env.REACT_APP_DEV === ENVIRONMENTS.DEV) {
+    console.log(process.env.REACT_APP_ENV)
+    if (process.env.REACT_APP_ENV === ENVIRONMENTS.DEV) {
       this.api_url = 'http://127.0.0.1:5000'
     } else {
       this.api_url = 'https://spotify-accessor-for-metadata.herokuapp.com'
@@ -22,11 +24,15 @@ export class SpotifyApiService {
   }
 
   public searchTracks(searchQuery: string): Promise<SearchTracksResponse> {
-    return this.get(this.api_url + `/search/tracks/${searchQuery}`);
+    return this.get(this.api_url + `/search/tracks?q=${searchQuery}`);
   }
 
   public searchPlaylists(searchQuery: string): Promise<SearchPlaylistsResponse> {
-    return this.get(this.api_url + `/search/playlists/${searchQuery}`);
+    return this.get(this.api_url + `/search/playlists?q=${searchQuery}`);
+  }
+
+  public playlistDetails(playlistUri: string): Promise<Playlist> {
+    return this.get(this.api_url + `/playlistDetails/${playlistUri}`);
   }
 
   public fetchTrackMetadata(trackUri: string): Promise<TrackMetadataResponse> {
@@ -56,7 +62,6 @@ export class SpotifyApiService {
       },
       body,
     }
-    console.log({body})
     return fetch(endpoint, options).then((response: any) => response.json());
   }
 }
