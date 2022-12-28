@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Switch, Route } from 'react-router-dom';
 
 import Navbar from 'src/components/Navbar/Navbar';
 import { ROUTES } from 'src/constants';
@@ -10,16 +10,14 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className='App'>
-        <Navbar/>
-        <Switch>
-          <Route path={ROUTES.SEARCH} component={SearchContainer}/>
-          <Route path={ROUTES.COMPARE} component={PlaylistCompare}/>
-          <Route path={ROUTES.HOME} component={Homepage}/>
-        </Switch>
-      </div>
-    </Router>
+    <div className='App'>
+      <Navbar/>
+      <Switch>
+        <Route path={ROUTES.SEARCH} component={SearchContainer}/>
+        <Route path={ROUTES.COMPARE} component={PlaylistCompare}/>
+        <Route exact path={ROUTES.HOME} component={Homepage}/>
+      </Switch>
+    </div>
   );
 }
 

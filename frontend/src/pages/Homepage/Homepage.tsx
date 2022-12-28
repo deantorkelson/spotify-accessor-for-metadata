@@ -1,6 +1,7 @@
 import React from 'react'
 
 import blackLogo from 'src/static/black-logo.png'
+import packageJson from '../../../package.json'
 import './Homepage.css'
 
 const Homepage = () => {
@@ -19,7 +20,7 @@ const Homepage = () => {
   return (
     <div className='page'>
       <div>
-        <h1><br /><br />Welcome to the Spotify Accessor for Metadata!</h1>
+        <h1><br /><br />Welcome to the Spotify Accessor for Metadata v{packageJson.version}!</h1>
         <div className='main-text'>
           <h3>
             This website was designed to allow you to do more with the metadata stored by Spotify. It's still in development, so please refer to the {getReadmeLink()} or {getGithubIssuesLink()} to see what's in store!

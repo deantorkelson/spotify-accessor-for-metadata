@@ -19,7 +19,7 @@ export class SpotifyApiService {
     if (process.env.REACT_APP_ENV === ENVIRONMENTS.DEV) {
       this.api_url = 'http://127.0.0.1:5000'
     } else {
-      this.api_url = 'https://spotify-accessor-for-metadata.herokuapp.com'
+      this.api_url = 'http://spotify-accessor-for-metadata.eba-7tn7wevk.us-east-2.elasticbeanstalk.com/'
     }
   }
 

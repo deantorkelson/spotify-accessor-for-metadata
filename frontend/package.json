@@ -1,6 +1,6 @@
 {
   "name": "spotify-accessor-for-metadata",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "private": true,
   "homepage": "http://deantorkelson.github.io/spotify-accessor-for-metadata",
   "dependencies": {

@@ -1,34 +1,30 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { ROUTES } from 'src/constants';
 import greenLogo from 'src/static/green-logo.png'
 import './Navbar.css'
 
-
-export class Navbar extends React.Component<{}, {}> {
-
-  render() {
-    return (
-      <div className='navbar'>
-        <Link className='logo' to={ROUTES.HOME}>
-          <img className='logo-img' src={greenLogo} alt={'Logo for S.A.M.'}/>
-          <h1 className='title'>Spotify Accessor for Metadata</h1>
-        </Link>
-        <ul className='links'>
-          <li>
-            <Link to={ROUTES.HOME}>HOME</Link>
-          </li>
-          <li>
-            <Link to={ROUTES.SEARCH}>SEARCH</Link>
-          </li>
-          <li>
-            <Link to={ROUTES.COMPARE}>COMPARE PLAYLISTS</Link>
-          </li>
-        </ul>
-      </div>
-    )
-  }
+export const Navbar = () => {
+  return (
+    <div className='navbar'>
+      <NavLink exact className='logo' to={ROUTES.HOME}>
+        <img className='logo-img' src={greenLogo} alt={'Logo for S.A.M.'}/>
+        <h1 className='title'>Spotify Accessor for Metadata</h1>
+      </NavLink>
+      <ul className='links'>
+        <li>
+          <NavLink exact to={ROUTES.HOME}>HOME</NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.SEARCH}>SEARCH</NavLink>
+        </li>
+        <li>
+          <NavLink to={ROUTES.COMPARE}>COMPARE PLAYLISTS</NavLink>
+        </li>
+      </ul>
+    </div>
+  )
 }
 
 export default Navbar;

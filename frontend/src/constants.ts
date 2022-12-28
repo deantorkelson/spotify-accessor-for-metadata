@@ -5,10 +5,10 @@ export enum ENVIRONMENTS {
 
 export const DEAN_URI = 'spotify/playlist/0ndBAQglIRXPRdh2SDXfcD';
 
-const HOME = '/spotify-accessor-for-metadata';
+export const BASE_NAME = '/spotify-accessor-for-metadata';
 
 export const ROUTES = {
-  HOME: `${HOME}`,
-  SEARCH: `${HOME}/search`,
-  COMPARE: `${HOME}/compare`,
+  HOME: '/',
+  SEARCH: '/search',
+  COMPARE: '/compare',
 }
