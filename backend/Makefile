@@ -1,2 +1,2 @@
 run:
-	python3 app.py
+	python3 application.py

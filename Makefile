@@ -2,7 +2,7 @@ update-fe:
 	cd frontend/ && npm install
 
 update-be:
-	cd backend/ && pip3 install -r requirements.txt
+	cd backend/ && pip install -r requirements.txt
 
 test-fe:
 	cd frontend/ && npm run test
@@ -17,4 +17,4 @@ deploy-fe:
 	cd frontend/ && npm run deploy
 
 deploy-be:
-	git subtree push --prefix backend/ heroku master
+	echo 'not set up'

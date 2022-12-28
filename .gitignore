@@ -10,3 +10,8 @@ venv/
 
 config.json
 scratch.*
+
+# Elastic Beanstalk Files
+backend/.elasticbeanstalk/*
+!backend/.elasticbeanstalk/*.cfg.yml
+!backend/.elasticbeanstalk/*.global.yml
