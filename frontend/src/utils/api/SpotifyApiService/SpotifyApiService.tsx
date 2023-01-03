@@ -5,6 +5,8 @@ import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
 import { SearchPlaylistsResponse } from 'src/models/api/SearchPlaylistsResponse';
 import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
 import { Playlist } from 'src/models/Playlist';
+import { BookQuoteResponse } from 'src/models/api/BookQuoteResponse';
+import { RubinResponse } from 'src/models/api/RubinResponse';
 
 enum HttpMethod {
   GET = 'GET',
@@ -48,6 +50,14 @@ export class SpotifyApiService {
       "uris": playlistUris
     })
     return this.post(this.api_url + '/playlists/compare', body);
+  }
+
+  public rubinQuote(): Promise<RubinResponse> {
+    return this.get(this.api_url + `/random/rubin`);
+  }
+
+  public bookQuote(): Promise<BookQuoteResponse> {
+    return this.get(this.api_url + `/random/book_quote`);
   }
 
   public get(endpoint: string): Promise<any> {

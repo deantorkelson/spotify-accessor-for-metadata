@@ -22,6 +22,9 @@ export const Navbar = () => {
         <li>
           <NavLink to={ROUTES.COMPARE}>COMPARE PLAYLISTS</NavLink>
         </li>
+        <li>
+          <NavLink to={ROUTES.RUBIN}>RUBIN</NavLink>
+        </li>
       </ul>
     </div>
   )

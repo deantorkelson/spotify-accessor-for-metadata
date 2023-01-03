@@ -6,6 +6,7 @@ import { ROUTES } from 'src/constants';
 import Homepage from 'src/pages/Homepage/Homepage'
 import PlaylistCompare from 'src/pages/PlaylistCompare/PlaylistCompare'
 import SearchContainer from 'src/pages/Search/SearchContainer'
+import RubinContainer from 'src/pages/Rubin/RubinContainer'
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route path={ROUTES.SEARCH} component={SearchContainer}/>
         <Route path={ROUTES.COMPARE} component={PlaylistCompare}/>
+        <Route path={ROUTES.RUBIN} component={RubinContainer}/>
         <Route exact path={ROUTES.HOME} component={Homepage}/>
       </Switch>
     </div>

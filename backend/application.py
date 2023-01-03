@@ -15,7 +15,7 @@ def hello_world():
     return '<p>Hello world!</p>\n'
 
 
-@application.route('/random/quote')
+@application.route('/random/book_quote')
 def random_quote():
     quote = requests.get(url='https://api.quotable.io/random').json()
     return {
