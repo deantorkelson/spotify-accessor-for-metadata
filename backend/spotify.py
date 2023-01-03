@@ -48,6 +48,7 @@ class Spotify:
         }
 
     def compare_playlists(self, uris):
+        # TODO: this is really slow
         artist_sets = []
         song_sets = []
         playlist_names = []

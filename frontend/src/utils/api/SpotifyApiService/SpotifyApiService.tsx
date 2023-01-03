@@ -32,22 +32,22 @@ export class SpotifyApiService {
   }
 
   public playlistDetails(playlistUri: string): Promise<Playlist> {
-    return this.get(this.api_url + `/playlistDetails/${playlistUri}`);
+    return this.get(this.api_url + `/playlist/${playlistUri}`);
   }
 
   public fetchTrackMetadata(trackUri: string): Promise<TrackMetadataResponse> {
-    return this.get(this.api_url + `/fetchTrackMetadata/${trackUri}`);
+    return this.get(this.api_url + `/track/${trackUri}`);
   }
 
   public fetchArtistMetadata(artistUri: string): Promise<ArtistMetadataResponse> {
-    return this.get(this.api_url + `/fetchArtistMetadata/${artistUri}`);
+    return this.get(this.api_url + `/artist/${artistUri}`);
   }
 
   public comparePlaylists(playlistUris: string[]): Promise<ComparePlaylistsResponse> {
     const body = JSON.stringify({
       "uris": playlistUris
     })
-    return this.post(this.api_url + '/comparePlaylists', body);
+    return this.post(this.api_url + '/playlists/compare', body);
   }
 
   public get(endpoint: string): Promise<any> {
