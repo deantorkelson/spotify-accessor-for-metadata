@@ -1,4 +1,6 @@
+import requests
 import json
+from random import choice
 from spotify import Spotify
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
@@ -7,9 +9,26 @@ cors = CORS(application)
 application.config['CORS_HEADERS'] = 'Content-Type'
 spotify = Spotify()
 
+
 @application.route('/index')
 def hello_world():
     return '<p>Hello world!</p>\n'
+
+
+@application.route('/random/quote')
+def random_quote():
+    quote = requests.get(url='https://api.quotable.io/random').json()
+    return {
+        "quote": quote["content"],
+        "author": quote["author"]
+    }
+
+
+@application.route('/random/rubin')
+def random_rubin():
+    quotes_file = open('./rubin.json')
+    quotes = json.load(quotes_file)
+    return {"quote": choice(quotes["quotes"])}
 
 
 @application.route('/search/tracks')
@@ -27,10 +46,12 @@ def search_playlists():
     search_query = args.get("q")
     return spotify.search_playlists(search_query)
 
+
 @application.route('/playlistDetails/<string:playlist_uri>/')
 @cross_origin()
 def playlist_details(playlist_uri):
     return spotify.get_playlist_details(playlist_uri)
+
 
 @application.route('/fetchTrackMetadata/<string:track_uri>/')
 @cross_origin()
