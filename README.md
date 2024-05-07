@@ -8,11 +8,15 @@ The website is live here: https://deantorkelson.github.io/spotify-accessor-for-m
 ### Search
 - Search for a song and view metadata on the song and its artist.
 
-## Planned user features
-- See [issues](https://github.com/deantorkelson/spotify-accessor-for-metadata/issues) for what's in store!
-
 ### Playlist/Library Compare
 - Users will be able to find common artists/songs between two playlists, allowing them to find music tastes they have in common with other people.
+
+### Random Rubin
+- Get a random Rick Rubin quote to get you out of a bind.
+
+
+## Planned user features
+- See [issues](https://github.com/deantorkelson/spotify-accessor-for-metadata/issues) for what's in store!
 
 ### Vibe Match
 - The user will be given a set of filter fields where they can select track metadata (key, tempo, musical attributes) and SAM will identify songs in their playlists that match the data.
