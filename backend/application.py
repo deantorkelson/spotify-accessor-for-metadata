@@ -10,9 +10,13 @@ application.config['CORS_HEADERS'] = 'Content-Type'
 spotify = Spotify()
 
 
-@application.route('/index')
+@application.route('/')
 def hello_world():
-    return '<p>Hello world!</p>\n'
+    return "Hello world"
+
+@application.route('/status')
+def hello_world():
+    return "ok"
 
 
 @application.route('/random/book_quote')
