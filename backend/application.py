@@ -15,9 +15,8 @@ def hello_world():
     return "Hello world"
 
 @application.route('/status')
-def hello_world():
+def status():
     return "ok"
-
 
 @application.route('/random/book_quote')
 def random_quote():
