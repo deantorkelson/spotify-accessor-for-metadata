@@ -1,6 +1,6 @@
 run:
 	. venv/bin/activate
-	python3 application.py
+	heroku local --port 5001
 	deactivate
 
 install:

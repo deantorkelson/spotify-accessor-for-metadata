@@ -1,5 +1,5 @@
-import requests
 import json
+import requests
 from random import choice
 from spotify import Spotify
 from flask import Flask, request
