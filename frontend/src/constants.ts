@@ -1,6 +1,6 @@
 export enum ENVIRONMENTS {
-  DEV="DEV",
-  PROD="PROD",
+  DEV="development",
+  PROD="production",
 }
 
 export const DEAN_URI = 'spotify/playlist/0ndBAQglIRXPRdh2SDXfcD';

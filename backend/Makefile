@@ -1,9 +1,9 @@
 run:
-	. virt/bin/activate
-	python application.py
+	. venv/bin/activate
+	python3 application.py
 	deactivate
 
 install:
-	. virt/bin/activate
+	. venv/bin/activate
 	pip install -r requirements.txt
 	deactivate

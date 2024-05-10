@@ -3,15 +3,9 @@ frontend/build
 
 backend/__pycache__
 
-venv/
+backend/venv/
 
 .vscode
 .idea
 
-config.json
 scratch.*
-
-# Elastic Beanstalk Files
-backend/.elasticbeanstalk/*
-!backend/.elasticbeanstalk/*.cfg.yml
-!backend/.elasticbeanstalk/*.global.yml

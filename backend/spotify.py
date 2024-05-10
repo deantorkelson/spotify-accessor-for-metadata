@@ -7,12 +7,12 @@ from spotipy.oauth2 import SpotifyClientCredentials
 class Spotify:
     def __init__(self):
         try:
-            self.id = os.environ['ID']
+            self.id = os.environ['SPOTIFY_APP_ID']
         except KeyError:
-            print('Failed to get Spotify API ID')
+            print('Failed to get Spotify app ID')
             self.id = ''
         try:
-            self.secret = os.environ['SECRET']
+            self.secret = os.environ['SPOTIFY_APP_SECRET']
         except KeyError:
             print('Failed to get Spotify API Secret')
             self.secret = ''

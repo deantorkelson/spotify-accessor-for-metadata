@@ -17,8 +17,9 @@ export class SpotifyApiService {
   readonly api_url: string;
 
   constructor() {
-    console.log(process.env.REACT_APP_ENV)
-    if (process.env.REACT_APP_ENV === ENVIRONMENTS.DEV) {
+    console.log(process.env.NODE_ENV)
+
+    if (process.env.NODE_ENV === ENVIRONMENTS.DEV) {
       this.api_url = 'http://127.0.0.1:5000'
     } else {
       this.api_url = 'http://spotify-accessor-for-metadata.eba-7tn7wevk.us-east-2.elasticbeanstalk.com/'

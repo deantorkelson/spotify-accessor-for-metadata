@@ -18,7 +18,7 @@ export const RubinContainer = () => {
     spotifyApiService.bookQuote().then(data => {
       setBookQuote(data);
     })
-  }, []);
+  }, [spotifyApiService]);
 
 
   return (
