@@ -14,9 +14,11 @@ spotify = Spotify()
 def hello_world():
     return "Hello world"
 
+
 @application.route('/status')
 def status():
     return "ok"
+
 
 @application.route('/random/book_quote')
 def random_quote():
