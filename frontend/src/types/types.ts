@@ -3,3 +3,5 @@ export type AudioFeatureSliderData = {
   tooltip: string;
   value: number;
 }
+
+export type Nullable<T> = T | null;

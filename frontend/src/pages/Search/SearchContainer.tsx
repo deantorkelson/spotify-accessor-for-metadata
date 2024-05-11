@@ -8,14 +8,15 @@ import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService
 import en from "src/static/additionalStrings";
 import './Search.css';
 import '../ResultList.css';
+import { Nullable } from 'src/types/types';
 
 export const SearchContainer = () => {
   const [artistName, setArtistName] = useState('');
-  const [artistMetadata, setArtistMetadata] = useState({} as ArtistMetadataResponse);
-  const [searchResults, setSearchResults] = useState([] as Track[]);
+  const [artistMetadata, setArtistMetadata] = useState<Nullable<ArtistMetadataResponse>>(null);
+  const [searchResults, setSearchResults] = useState<Nullable<Track[]>>(null);
   const [loading, setLoading] = useState(false);
   const [trackName, setTrackName] = useState('');
-  const [trackMetadata, setTrackMetadata] = useState({} as TrackMetadataResponse);
+  const [trackMetadata, setTrackMetadata] = useState<Nullable<TrackMetadataResponse>>(null);
 
   const spotifyApiService = new SpotifyApiService();
 
@@ -49,56 +50,10 @@ export const SearchContainer = () => {
     });
   };
 
-  const createAudioFeatureSliderData = (trackMetadata: TrackMetadataResponse) => (
-    [
-      {
-        title: 'Acousticness',
-        tooltip: en.search.tooltips.acousticness,
-        value: trackMetadata.acousticness,
-      },
-      {
-        title: 'Danceability',
-        tooltip: en.search.tooltips.danceability,
-        value: trackMetadata.danceability,
-      },
-      {
-        title: 'Energy',
-        tooltip: en.search.tooltips.energy,
-        value: trackMetadata.energy,
-      },
-      {
-        title: 'Instrumentalness',
-        tooltip: en.search.tooltips.instrumentalness,
-        value: trackMetadata.instrumentalness,
-      },
-      {
-        title: 'Liveness',
-        tooltip: en.search.tooltips.liveness,
-        value: trackMetadata.liveness,
-      },
-      {
-        title: 'Loudness',
-        tooltip: en.search.tooltips.loudness,
-        value: trackMetadata.loudness/(-60),
-      },
-      {
-        title: 'Speechiness',
-        tooltip: en.search.tooltips.speechiness,
-        value: trackMetadata.acousticness,
-      },
-      {
-        title: 'Valence',
-        tooltip: en.search.tooltips.valence,
-        value: trackMetadata.valence,
-      },
-    ]
-  )
-
   return (
     <SearchPresenter
       artistName={artistName}
       artistMetadata={artistMetadata}
-      audioFeatureSliderData={createAudioFeatureSliderData(trackMetadata)}
       fetchMetadata={fetchMetadata}
       loading={loading}
       searchResults={searchResults}

@@ -20,7 +20,7 @@ export class SpotifyApiService {
     console.log(process.env.NODE_ENV)
 
     if (process.env.NODE_ENV === ENVIRONMENTS.DEV) {
-      this.api_url = 'http://127.0.0.1:5000'
+      this.api_url = 'http://0.0.0.0:5001/'
     } else {
       this.api_url = 'https://sam-backend-d60bd9ccf7b8.herokuapp.com/'
     }
