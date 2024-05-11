@@ -19,7 +19,7 @@ export const RubinPresenter = (props: Props) => {
         Rick Rubin keeps a library of books in his recording studio. If you're stuck, grab a book and find a random quote
         and let it inspire you. Rubin also said,
         <br/>
-        {rubinQuote}
+        <i>{rubinQuote}</i>
         <br/>
         <br/>
         May this quote help you resolve your creative conundrum:

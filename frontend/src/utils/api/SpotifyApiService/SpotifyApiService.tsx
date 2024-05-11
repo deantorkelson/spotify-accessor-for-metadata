@@ -17,8 +17,6 @@ export class SpotifyApiService {
   readonly api_url: string;
 
   constructor() {
-    console.log(process.env.NODE_ENV)
-
     if (process.env.NODE_ENV === ENVIRONMENTS.DEV) {
       this.api_url = 'http://0.0.0.0:5001/'
     } else {
