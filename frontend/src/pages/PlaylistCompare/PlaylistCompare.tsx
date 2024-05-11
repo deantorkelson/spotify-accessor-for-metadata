@@ -6,23 +6,26 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Modal from 'react-modal';
 
 import TextInput from 'src/components/TextInput/TextInput'
+import { DEAN_URI } from 'src/constants';
+import { createSearchResultList } from 'src/components/ResultList/ResultList';
 import { isPlaylistLink, parseUriFromLink } from 'src/helpers/helpers';
 import { Playlist } from 'src/models/Playlist'
 import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService'
 import en from 'src/static/additionalStrings';
+import { Nullable } from 'src/types/types';
 import './PlaylistCompare.css'
 import '../ResultList.css'
-import { DEAN_URI } from 'src/constants';
+import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
 
 let he = require('he');
 
 export const PlaylistCompare = () => {
-  const [searchResults, setSearchResults] = useState([] as Playlist[]);
+  const [searchResults, setSearchResults] = useState<Nullable<Playlist[]>>(null);
   const [searchLoading, setSearchLoading] = useState(false);
-  const [selectedPlaylists, setSelectedPlaylists] = useState(new Set() as Set<Playlist>);
+  const [selectedPlaylists, setSelectedPlaylists] = useState<Nullable<Set<Playlist>>>(null);
   const [compareLoading, setCompareLoading] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalData, setModalData] = useState();
+  const [modalData, setModalData] = useState<Nullable<ComparePlaylistsResponse>>(null);
 
   const spotifyApiService = new SpotifyApiService();
 
@@ -36,18 +39,14 @@ export const PlaylistCompare = () => {
     if (query) {
       // if words, search for words
       // if list of links, parse out the URIs and send to the backend
-      console.log(query)
       if (isPlaylistLink(query)) {
-        console.log('is playlist')
         setSearchLoading(true);
         const playlistUri = parseUriFromLink(query);
         spotifyApiService.playlistDetails(playlistUri).then(data => {
-          console.log({data});
           addPlaylist(data);
         });
         setSearchLoading(false);
       } else {
-        console.log('is NAUR playlist')
         setSearchLoading(true)
         spotifyApiService.searchPlaylists(query).then(data => {
           setSearchResults(data.playlists.items);
@@ -75,10 +74,11 @@ export const PlaylistCompare = () => {
     setModalIsOpen(false);
   }
 
-  const commonPlaylistData = () => (
-    !modalData
-    ? <></>
-    : <>
+  const commonPlaylistData = () => {
+    if (!modalData) return null;
+
+    return (
+      <>
         <Button variant={'outline-secondary'} onClick={closeModal}>
           Close
         </Button>
@@ -119,32 +119,13 @@ export const PlaylistCompare = () => {
           </div>
         </div>
       </>
-  )
+    )
+  }
 
-  const createSearchResultList = () => (
-    searchResults.length === 0 && !searchLoading
-    ? <div key='-1'>No search results found.</div>
-    : <>
-        {searchLoading ?
-          <div>
-            <Spinner animation='border' />
-            <div>
-              *note that the first search might take extra time while the Heroku dyno spins up.
-            </div>
-          </div>
-          :
-          <div className='result-list'>
-            {searchResults.map((playlist: Playlist) => searchResult(playlist,
-              () => addPlaylist(playlist)
-            ))}
-          </div>}
-      </>
-  )
-
-  const searchResult = (result: Playlist, onClickFn: any) => (
+  const displaySearchResult = (result: Playlist) => (
     <div key={result.uri}>
       <Button variant='outline-secondary' onClick={() => {
-        onClickFn(result);
+        addPlaylist(result)
       }}>
         <div className='result'>
           <img className='cover-img' src={result.images[0].url} alt={`Cover for ${result.name}`} />
@@ -152,10 +133,12 @@ export const PlaylistCompare = () => {
             <div>
               <b>{result.name}</b> by {result.owner.display_name}
             </div>
-            {result.description &&
-            <div>
-                Description: {he.decode(result.description)}
-            </div>}
+            {
+              result.description &&
+                <div>
+                    Description: {he.decode(result.description)}
+                </div>
+            }
             <div>
               {result.tracks.total} songs
             </div>
@@ -165,59 +148,56 @@ export const PlaylistCompare = () => {
     </div>
   )
 
-  const getPlaylistList = () => {
+  const renderSelectedPlaylists = () => {
+    if (!selectedPlaylists) return null;
+
     let playlistItems: JSX.Element[] = [];
     selectedPlaylists.forEach((playlist: Playlist) => {
-      playlistItems.push(searchResult(playlist,
-        () => addPlaylist(playlist)));
+      playlistItems.push(displaySearchResult(playlist));
     });
     return playlistItems;
   }
 
-  const displaySelectedPlaylists = () => (
-    selectedPlaylists.size === 0
-    ? <div>Please select some playlists to compare.</div>
-    : <div>
-        {getPlaylistList()}
-        {compareLoading || selectedPlaylists.size === 0
-          ?
-          <div>
-            <Spinner animation='border' />
-          </div>
-          :
-          <div className="buttons">
-            <Button
-              className="submit"
-              type="button"
-              variant="success"
-              onClick={() => compareSubmit(selectedPlaylists)}
-            >
-              Submit
-            </Button>
-            <Button
-              className="submit"
-              type="button"
-              variant="secondary"
-              onClick={() => setSelectedPlaylists(new Set())}
-            >
-              Clear
-            </Button>
-            <Button
-              className="submit"
-              type="button"
-              variant="danger"
-              onClick={() => compareSubmit(selectedPlaylists, [DEAN_URI])}
-            >
-              Compare to Dean's music
-            </Button>
-          </div>
-        }
+  const displaySelectedPlaylistsColumn = () => {
+    if (!selectedPlaylists) return null;
+
+    return (<>
+      <div className='header'>
+        Comparing these playlists:
       </div>
-  )
+      {renderSelectedPlaylists()}
+      {compareLoading ? <Spinner animation='border'/> : <div className="buttons">
+        <Button
+          className="submit"
+          type="button"
+          variant="success"
+          onClick={() => compareSubmit(selectedPlaylists)}
+        >
+          Submit
+        </Button>
+        <Button
+          className="submit"
+          type="button"
+          variant="secondary"
+          onClick={() => setSelectedPlaylists(new Set())}
+        >
+          Clear
+        </Button>
+        <Button
+          className="submit"
+          type="button"
+          variant="danger"
+          onClick={() => compareSubmit(selectedPlaylists, [DEAN_URI])}
+        >
+          Compare to Dean's music
+        </Button>
+      </div>}
+    </>)
+  }
 
   const renderTooltip = (props: any) => (
     <Tooltip {...props}>
-      {en.playlistCompare.tooltip}
+    {en.playlistCompare.tooltip}
     </Tooltip>
   )
 
@@ -226,7 +206,7 @@ export const PlaylistCompare = () => {
       Enter the name of the playlist to search for, <br/>or a&nbsp;
       <OverlayTrigger
         placement="right"
-        delay={{ show: 100, hide: 400 }}
+        delay={{show: 100, hide: 400}}
         overlay={renderTooltip}
       >
         <span className="uri-tooltip">
@@ -234,19 +214,16 @@ export const PlaylistCompare = () => {
         </span>
       </OverlayTrigger>
     </div>
-    <TextInput 
+    <TextInput
       placeholder={en.playlistCompare.placeholder}
-      submit={searchSubmit} 
+      submit={searchSubmit}
     />
     <div className='main-content'>
       <div className='column'>
-        {createSearchResultList()}
+        {createSearchResultList<Playlist>(searchLoading, searchResults, displaySearchResult)}
       </div>
       <div className='column'>
-        <div className='header'>
-          Comparing these playlists:
-        </div>
-        {displaySelectedPlaylists()}
+        {displaySelectedPlaylistsColumn()}
       </div>
       <div>
         <Modal

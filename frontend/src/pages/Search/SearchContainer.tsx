@@ -5,7 +5,6 @@ import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
 import { Track } from 'src/models/Track';
 import SearchPresenter from 'src/pages/Search/SearchPresenter';
 import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService';
-import en from "src/static/additionalStrings";
 import './Search.css';
 import '../ResultList.css';
 import { Nullable } from 'src/types/types';

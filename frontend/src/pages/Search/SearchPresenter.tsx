@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-import Spinner from "react-bootstrap/Spinner";
 import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
 import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
@@ -13,6 +12,7 @@ import { AudioFeatureSliderData, Nullable } from 'src/types/types';
 import en from 'src/static/additionalStrings'
 import './Search.css'
 import '../ResultList.css'
+import { createSearchResultList } from 'src/components/ResultList/ResultList';
 
 
 interface Props {
@@ -37,28 +37,6 @@ export const SearchPresenter = (props: Props) => {
     trackName,
     trackMetadata
   } = props;
-
-  const searchResultList = () => {
-    if (loading) {
-      return (<div>
-        <Spinner animation='border'/>
-        <div>
-          *note that the first search might take extra time while the Heroku dyno spins up.
-        </div>
-      </div>);
-    }
-    if (searchResults) {
-      if (!searchResults.length) {
-        return (<div key='-1'>No search results found.</div>)
-      }
-      return (
-        <div className='result-list'>
-          {searchResults.map((result: Track) => searchResult(result))}
-        </div>
-      );
-    }
-    return null;
-  }
 
   const searchResult = (result: Track) => (
     <div key={result.uri}>
@@ -192,7 +170,7 @@ export const SearchPresenter = (props: Props) => {
       />
       <div className='main-content'>
         <div className='column'>
-          {searchResultList()}
+          {createSearchResultList<Track>(loading, searchResults, searchResult)}
         </div>
         <div className='column'>
           {displayTrackMetadata()}
