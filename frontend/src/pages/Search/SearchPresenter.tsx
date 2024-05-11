@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
-import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
+import { InfoOutlined, Visibility } from '@material-ui/icons';
 
 import TextInput from 'src/components/TextInput/TextInput'
 import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
@@ -13,7 +13,6 @@ import en from 'src/static/additionalStrings'
 import './Search.css'
 import '../ResultList.css'
 import { createSearchResultList } from 'src/components/ResultList/ResultList';
-
 
 interface Props {
   artistName: string;
@@ -40,22 +39,30 @@ export const SearchPresenter = (props: Props) => {
 
   const searchResult = (result: Track) => (
     <div key={result.uri}>
-      {/*TODO: update styling so buttons aren't all different sizes*/}
-      <Button variant='outline-secondary' onClick={() => {
-        fetchMetadata(result.uri, result.name, result.artists[0].uri, result.artists[0].name);
-      }}>
-        <div className='result'>
-          <img className='cover-img' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`}/>
-          <section className='result-text'>
-            <b>
-              {result.name}
-            </b>
-            <div>
-              {result.artists[0].name} • {result.album.name}
-            </div>
-          </section>
+      <div className='result'>
+        <div className='image-container'>
+          <img
+            className='cover-img'
+            src={result.album.images[0].url}
+            alt={`Cover for ${result.album.name}`}
+          />
+          <Button
+            className='result-button'
+            variant='link'
+            onClick={() => fetchMetadata(result.uri, result.name, result.artists[0].uri, result.artists[0].name)}
+          >
+            <Visibility className='select-logo-img'/>
+          </Button>
         </div>
-      </Button>
+        <section className='result-text'>
+          <b>
+            {result.name}
+          </b>
+          <div>
+            {result.artists[0].name} • {result.album.name}
+          </div>
+        </section>
+      </div>
     </div>
   );
 
@@ -89,7 +96,7 @@ export const SearchPresenter = (props: Props) => {
       {
         title: 'Loudness',
         tooltip: en.search.tooltips.loudness,
-        value: trackMetadata.loudness/(-60),
+        value: trackMetadata.loudness / (-60),
       },
       {
         title: 'Speechiness',
@@ -108,7 +115,7 @@ export const SearchPresenter = (props: Props) => {
     <>
       <span className='attribute-title'>{title}</span>
       <Tooltip title={tooltip}>
-        <InfoIconOutlined fontSize='small'/>
+        <InfoOutlined className={'info-icon'} fontSize='small'/>
       </Tooltip>
       <Slider disabled track={false} value={value} max={1}/>
     </>
@@ -131,7 +138,7 @@ export const SearchPresenter = (props: Props) => {
             ))}
           </div>
           <div className='reduced-column'>
-            {audioFeatureSliderData(trackMetadata).slice(columnLength, audioFeatureSliderData.length).map(
+            {audioFeatureSliderData(trackMetadata).slice(columnLength).map(
               sliderData => audioFeatureSlider(
                 sliderData.title,
                 sliderData.tooltip,

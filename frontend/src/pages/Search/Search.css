@@ -42,3 +42,45 @@ hr {
     border-top: 3px solid #ababab !important;
     width: 95%;
 }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cover-img {
+    width: 80px; /* Adjust the width as needed */
+    height: auto;
+    transition: opacity .3s; /* Smooth transition for opacity */
+    border-radius: 3px;
+    margin: 0 8px;
+}
+
+.image-container button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    width: 80px;
+    height: 80px;
+    color: #22ca5d;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s; /* Smooth transition for opacity */
+}
+
+.image-container:hover img {
+    opacity: 0.7;
+}
+
+.image-container:hover button {
+    opacity: 1;
+    color: #22ca5d;
+}
+
+.info-icon {
+    margin-left: 4px;
+    margin-bottom: 2px;
+}

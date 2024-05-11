@@ -4,18 +4,19 @@ import Spinner from 'react-bootstrap/Spinner';
 import Tooltip from 'react-bootstrap/Tooltip';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Modal from 'react-modal';
+import { AddBox, IndeterminateCheckBox } from '@material-ui/icons';
 
 import TextInput from 'src/components/TextInput/TextInput'
 import { DEAN_URI } from 'src/constants';
 import { createSearchResultList } from 'src/components/ResultList/ResultList';
 import { isPlaylistLink, parseUriFromLink } from 'src/helpers/helpers';
+import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
 import { Playlist } from 'src/models/Playlist'
 import SpotifyApiService from 'src/utils/api/SpotifyApiService/SpotifyApiService'
 import en from 'src/static/additionalStrings';
 import { Nullable } from 'src/types/types';
 import './PlaylistCompare.css'
 import '../ResultList.css'
-import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
 
 let he = require('he');
 
@@ -33,6 +34,12 @@ export const PlaylistCompare = () => {
     let playlists = new Set(selectedPlaylists)
     playlists.add(playlist);
     setSelectedPlaylists(playlists);
+  }
+
+  const removePlaylist = (playlist: Playlist) => {
+    let playlists = new Set(selectedPlaylists)
+    playlists.delete(playlist);
+    setSelectedPlaylists(playlists.size ? playlists : null);
   }
 
   const searchSubmit = (query: string) => {
@@ -122,38 +129,77 @@ export const PlaylistCompare = () => {
     )
   }
 
-  const displaySearchResult = (result: Playlist) => (
-    <div key={result.uri}>
-      <Button variant='outline-secondary' onClick={() => {
-        addPlaylist(result)
-      }}>
-        <div className='result'>
-          <img className='cover-img' src={result.images[0].url} alt={`Cover for ${result.name}`} />
-          <section className='result-text'>
-            <div>
-              <b>{result.name}</b> by {result.owner.display_name}
-            </div>
-            {
-              result.description &&
-                <div>
-                    Description: {he.decode(result.description)}
-                </div>
-            }
-            <div>
-              {result.tracks.total} songs
-            </div>
-          </section>
+  const playlistText = (playlist: Playlist) => (
+    <div className='result-text'>
+      <div>
+        <b>{playlist.name}</b> by {playlist.owner.display_name}
+      </div>
+      {
+        playlist.description &&
+        <div>
+          {
+            he.decode(playlist.description).length > 140
+              ? he.decode(playlist.description).substring(0, 140) + '...'
+              : he.decode(playlist.description)
+          }
         </div>
-      </Button>
+      }
+      <div>
+        {playlist.tracks.total} songs
+      </div>
     </div>
   )
+
+  const displaySearchResult = (result: Playlist) => (
+    <div key={result.uri}>
+      <div className='result'>
+        <div className='image-container'>
+          <img
+            className='cover-img'
+            src={result.images[0].url}
+            alt={`Cover for ${result.name}`}
+          />
+          <Button
+            className='result-button'
+            variant='link'
+            onClick={() => addPlaylist(result)}
+          >
+            <AddBox/>
+          </Button>
+        </div>
+        {playlistText(result)}
+      </div>
+    </div>
+  );
+
+  const displaySelectedPlaylist = (result: Playlist) => (
+    <div key={result.uri}>
+      <div className='result'>
+        <div className='image-container'>
+          <img
+            className='cover-img'
+            src={result.images[0].url}
+            alt={`Cover for ${result.name}`}
+          />
+          <Button
+            className='result-button'
+            variant='link'
+            onClick={() => removePlaylist(result)}
+          >
+            <IndeterminateCheckBox />
+          </Button>
+        </div>
+        {playlistText(result)}
+      </div>
+    </div>
+  );
 
   const renderSelectedPlaylists = () => {
     if (!selectedPlaylists) return null;
 
     let playlistItems: JSX.Element[] = [];
     selectedPlaylists.forEach((playlist: Playlist) => {
-      playlistItems.push(displaySearchResult(playlist));
+      playlistItems.push(displaySelectedPlaylist(playlist));
     });
     return playlistItems;
   }
@@ -179,7 +225,7 @@ export const PlaylistCompare = () => {
           className="submit"
           type="button"
           variant="secondary"
-          onClick={() => setSelectedPlaylists(new Set())}
+          onClick={() => setSelectedPlaylists(null)}
         >
           Clear
         </Button>

@@ -17,7 +17,7 @@ export function createSearchResultList <T>(loading: boolean, searchResults: Null
     }
     return (
       <div className='result-list'>
-        {searchResults.map((result: T) => formatter(result))}
+        {searchResults.map((result: T, index) => formatter(result, index))}
       </div>
     );
   }
