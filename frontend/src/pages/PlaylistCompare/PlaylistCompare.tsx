@@ -71,9 +71,10 @@ export const PlaylistCompare = () => {
     })
     playlistUris.concat(additional);
     spotifyApiService.comparePlaylists(playlistUris).then(data => {
-      setCompareLoading(false);
       setModalIsOpen(true);
       setModalData(data);
+    }).finally(() => {
+      setCompareLoading(false);
     });
   }
 

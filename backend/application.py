@@ -71,10 +71,9 @@ def fetch_artist_metadata(artist_uri):
 
 
 @application.route('/playlists/compare', methods=['POST'])
-@cross_origin()
-def compare_playlists():
+async def compare_playlists():
     uris = request.get_json()["uris"]
-    return spotify.compare_playlists(uris)
+    return await spotify.compare_playlists(uris)
 
 
 if __name__ == "__main__":
