@@ -37,7 +37,8 @@ class Spotify:
         return self.spotify.playlist(playlist_uri)
 
     async def get_playlist_tracks(self, playlist_uri):
-        # TODO: can this be sped up by only specifying certain fields? spotipy impl seems buggy
+        # TODO: can this be sped up by only specifying certain fields?
+        #  spotipy impl seems buggy wrt `next` after filtering fields
         response = self.spotify.playlist(playlist_uri)
         tracks = response['tracks']
         items = tracks['items']
