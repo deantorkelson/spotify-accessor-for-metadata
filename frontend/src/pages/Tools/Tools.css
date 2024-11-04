@@ -10,3 +10,8 @@
 .column {
   width: 48%;
 }
+
+.random-value {
+  font-size: 3em;
+  font-weight: bold;
+}
