@@ -18,7 +18,7 @@ export class SpotifyApiService {
 
   constructor() {
     if (process.env.NODE_ENV === ENVIRONMENTS.DEV) {
-      this.api_url = "http://0.0.0.0:5001";
+      this.api_url = "http://127.0.0.1:5000";
     } else {
       this.api_url = "https://sam-backend-d60bd9ccf7b8.herokuapp.com";
     }
@@ -29,7 +29,7 @@ export class SpotifyApiService {
   }
 
   public searchPlaylists(
-    searchQuery: string,
+    searchQuery: string
   ): Promise<SearchPlaylistsResponse> {
     return this.get(this.api_url + `/search/playlists?q=${searchQuery}`);
   }
@@ -43,13 +43,13 @@ export class SpotifyApiService {
   }
 
   public fetchArtistMetadata(
-    artistUri: string,
+    artistUri: string
   ): Promise<ArtistMetadataResponse> {
     return this.get(this.api_url + `/artist/${artistUri}`);
   }
 
   public comparePlaylists(
-    playlistUris: string[],
+    playlistUris: string[]
   ): Promise<ComparePlaylistsResponse> {
     const body = JSON.stringify({
       uris: playlistUris,

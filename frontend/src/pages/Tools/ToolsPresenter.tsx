@@ -32,17 +32,14 @@ export const ToolsPresenter = (props: Props) => {
       <h1 className="header">Let the hands of fate guide you</h1>
       <div>
         Rick Rubin keeps a library of books in his recording studio. If you're
-        stuck, grab a book and find a random quote to inspire you. Rubin also
-        said,
-        <br />
-        <i>{rubinQuote}</i>
+        stuck, grab a book and find a random quote to inspire you.
         <br />
         <br />
-        May this quote help you resolve your creative conundrum:
-        <br />"{bookQuote.quote}" -{" "}
-        <span>
-          <i>{bookQuote.author}</i>
-        </span>
+        <b>"{rubinQuote}"</b> - <i>Rick Rubin</i>
+        <br />
+        <br />
+        <b>"{bookQuote.quote}"</b> -<i>{bookQuote.author}</i>
+        <span></span>
         <hr />
         <h1 className="header">Music tools</h1>
         <p>

@@ -11,10 +11,6 @@ spotify = Spotify()
 
 
 @application.route('/')
-def hello_world():
-    return "Hello world"
-
-
 @application.route('/status')
 def status():
     return "ok"
@@ -22,7 +18,7 @@ def status():
 
 @application.route('/random/book_quote')
 def random_quote():
-    quote = requests.get(url='https://api.quotable.io/random').json()
+    quote = requests.get(url='https://api.quotable.io/random',  verify=False).json()
     return {
         "quote": quote["content"],
         "author": quote["author"]
