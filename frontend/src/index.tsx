@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { HashRouter } from "react-router-dom";
 
-import App from 'src/App';
-import * as serviceWorker from 'src/serviceWorker';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css';
+import App from "src/App";
+import * as serviceWorker from "src/serviceWorker";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +13,7 @@ ReactDOM.render(
       <App />
     </HashRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root"),
 );
 
 // If you want your app to work offline and load faster, you can change

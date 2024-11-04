@@ -1,5 +1,5 @@
 export interface ArtistSimplified {
-    href: string;
-    name: string;
-    uri: string;
+  href: string;
+  name: string;
+  uri: string;
 }

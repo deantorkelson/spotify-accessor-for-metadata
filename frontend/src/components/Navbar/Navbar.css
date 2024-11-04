@@ -1,47 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 
 .navbar {
-    width: 100%;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    color: whitesmoke;
-    background-color: #222326;
-    padding: 8px;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: whitesmoke;
+  background-color: #222326;
+  padding: 8px;
 }
 
 .title {
-    font-weight: 800;
-    margin: 6px 0 5px 0;
+  font-weight: 800;
+  margin: 6px 0 5px 0;
 }
 
 .links {
-    display: flex;
-    padding-right: 15px;
-    margin: 5px 0 5px 0;
+  display: flex;
+  padding-right: 15px;
+  margin: 5px 0 5px 0;
 }
 
 .logo {
-    display: flex;
+  display: flex;
 }
 
 .logo-img {
-    padding-right: 10px;
-    height: 60px;
+  padding-right: 10px;
+  height: 60px;
 }
 
 li {
-    display: block;
-    padding: .5rem 1rem;
+  display: block;
+  padding: 0.5rem 1rem;
 }
 
 a {
-    color: whitesmoke !important;
-    text-decoration: none;
+  color: whitesmoke !important;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #66d68e !important;
+  color: #66d68e !important;
 }

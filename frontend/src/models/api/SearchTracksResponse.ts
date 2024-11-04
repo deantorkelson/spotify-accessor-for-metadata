@@ -1,4 +1,4 @@
-import { Track } from 'src/models/Track';
+import { Track } from "src/models/Track";
 
 export interface SearchTracksResponse {
   tracks: {
@@ -9,5 +9,5 @@ export interface SearchTracksResponse {
     offset: number;
     previous: string;
     total: number;
-  }
+  };
 }

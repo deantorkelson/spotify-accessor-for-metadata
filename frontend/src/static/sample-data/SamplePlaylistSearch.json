@@ -1,402 +1,402 @@
 {
-    "playlists": {
-        "href": "https://api.spotify.com/v1/search?query=miami+nights&type=playlist&offset=0&limit=10",
-        "items": [
-            {
-                "collaborative": false,
-                "description": "Nothing but neon lights, palm trees, and that cool summer breeze.",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/1esD0Qdh5REbkJTEEPNFmS"
-                },
-                "href": "https://api.spotify.com/v1/playlists/1esD0Qdh5REbkJTEEPNFmS",
-                "id": "1esD0Qdh5REbkJTEEPNFmS",
-                "images": [
-                    {
-                        "height": 300,
-                        "url": "https://i.scdn.co/image/ab67706c0000da847c4a40d24b27582dab643a07",
-                        "width": 300
-                    }
-                ],
-                "name": "Miami Nights 1984",
-                "owner": {
-                    "display_name": "tjnickerson",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/tjnickerson"
-                    },
-                    "href": "https://api.spotify.com/v1/users/tjnickerson",
-                    "id": "tjnickerson",
-                    "type": "user",
-                    "uri": "spotify:user:tjnickerson"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "NTk3LDA3MjU3NzhhY2Y4MDhhZDc5MTRiYWFjM2FjZDJkYjllOTUwMmIwMjM=",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/1esD0Qdh5REbkJTEEPNFmS/tracks",
-                    "total": 2324
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:1esD0Qdh5REbkJTEEPNFmS"
-            },
-            {
-                "collaborative": false,
-                "description": "",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/3DRehdPnkx5x3btRPQEwpF"
-                },
-                "href": "https://api.spotify.com/v1/playlists/3DRehdPnkx5x3btRPQEwpF",
-                "id": "3DRehdPnkx5x3btRPQEwpF",
-                "images": [
-                    {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706c0000bebb54b6b38dc947e75d96ed38dc",
-                        "width": null
-                    }
-                ],
-                "name": "Miami Nights 1984 - Accelerated",
-                "owner": {
-                    "display_name": "Micha\u0142 Czopek",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/michal3377"
-                    },
-                    "href": "https://api.spotify.com/v1/users/michal3377",
-                    "id": "michal3377",
-                    "type": "user",
-                    "uri": "spotify:user:michal3377"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "NDUsZWUzYjBiMTg2MWY0ZmU2MjM1NjZlYTMxZTQxODViM2M4OTA2ZjQ1NQ==",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/3DRehdPnkx5x3btRPQEwpF/tracks",
-                    "total": 28
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:3DRehdPnkx5x3btRPQEwpF"
-            },
-            {
-                "collaborative": false,
-                "description": "Training montages, lines of white powder, neon streaks off a Florida highway.  Turn the volume up.  We&#x27;re living loud.",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/1q1F0dXjiaZoS9pB6nxIBO"
-                },
-                "href": "https://api.spotify.com/v1/playlists/1q1F0dXjiaZoS9pB6nxIBO",
-                "id": "1q1F0dXjiaZoS9pB6nxIBO",
-                "images": [
-                    {
-                        "height": 300,
-                        "url": "https://i.scdn.co/image/ab67706c0000da84945926df100c9fd20f7b729e",
-                        "width": 300
-                    }
-                ],
-                "name": "80s:  Synth, Coke, & Miami Nights",
-                "owner": {
-                    "display_name": "Andy Long",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/1985_edition"
-                    },
-                    "href": "https://api.spotify.com/v1/users/1985_edition",
-                    "id": "1985_edition",
-                    "type": "user",
-                    "uri": "spotify:user:1985_edition"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "Mzc1LGRlZDI1NDg1NTM5ZDNhN2RiMjgzNTBiZTg4MTllNjFkM2E1YzgwMmE=",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/1q1F0dXjiaZoS9pB6nxIBO/tracks",
-                    "total": 372
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:1q1F0dXjiaZoS9pB6nxIBO"
-            },
-            {
-                "collaborative": false,
-                "description": "Here's some of the music that was in Miami Nights and some of the songs we used for intro and outro music on the road and from other tours.   And some stuff I like right now. Miami Nights is available on youtube now.  ",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/19jGjpAVsbA3ebo8jjVQFy"
-                },
-                "href": "https://api.spotify.com/v1/playlists/19jGjpAVsbA3ebo8jjVQFy",
-                "id": "19jGjpAVsbA3ebo8jjVQFy",
-                "images": [
-                    {
-                        "height": 300,
-                        "url": "https://i.scdn.co/image/ab67706c0000da8405d0120a6c713466746c4407",
-                        "width": 300
-                    }
-                ],
-                "name": "Hannibal Buress - Miami Nights playlist ",
-                "owner": {
-                    "display_name": "Hannibal Buress",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/hannibalburess"
-                    },
-                    "href": "https://api.spotify.com/v1/users/hannibalburess",
-                    "id": "hannibalburess",
-                    "type": "user",
-                    "uri": "spotify:user:hannibalburess"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "NTEsZjNiYjczMjI4YzAzNjhlZGQ5MWU0ODZiODBiNTk5NDJlMDMxN2RjZQ==",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/19jGjpAVsbA3ebo8jjVQFy/tracks",
-                    "total": 33
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:19jGjpAVsbA3ebo8jjVQFy"
-            },
-            {
-                "collaborative": false,
-                "description": "",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/5MxTtlg68xtdrZXwkqzhVZ"
-                },
-                "href": "https://api.spotify.com/v1/playlists/5MxTtlg68xtdrZXwkqzhVZ",
-                "id": "5MxTtlg68xtdrZXwkqzhVZ",
-                "images": [
-                    {
-                        "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d0000b2731d97ca7376f835055f828139ab67616d0000b273670f4666a378de834285eb33ab67616d0000b2738ac5768205ad97df3f4f4c0eab67616d0000b273e72715688f633bf309ce1142",
-                        "width": 640
-                    },
-                    {
-                        "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d0000b2731d97ca7376f835055f828139ab67616d0000b273670f4666a378de834285eb33ab67616d0000b2738ac5768205ad97df3f4f4c0eab67616d0000b273e72715688f633bf309ce1142",
-                        "width": 300
-                    },
-                    {
-                        "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d0000b2731d97ca7376f835055f828139ab67616d0000b273670f4666a378de834285eb33ab67616d0000b2738ac5768205ad97df3f4f4c0eab67616d0000b273e72715688f633bf309ce1142",
-                        "width": 60
-                    }
-                ],
-                "name": "Gotye \u2014 Somebody That I Used To Know - Miami Nights 1984 Remix",
-                "owner": {
-                    "display_name": "Heteis Israel",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/israel_hernandez.23"
-                    },
-                    "href": "https://api.spotify.com/v1/users/israel_hernandez.23",
-                    "id": "israel_hernandez.23",
-                    "type": "user",
-                    "uri": "spotify:user:israel_hernandez.23"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "ODUsNWNhZDA2NTk0MDRjYjc5YzBlYjE2YWMzYTE4NTk4NGU0OGVlY2I2Yg==",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/5MxTtlg68xtdrZXwkqzhVZ/tracks",
-                    "total": 83
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:5MxTtlg68xtdrZXwkqzhVZ"
-            },
-            {
-                "collaborative": false,
-                "description": "I love this City - You have no idea !!! The sound of Miami at night. A selection of deep, techy EDM club anthems heard in Pacha, Space, LIV, Nikki Beach, Heart Nightclub and Story. Including Riton, CamelPhat, Beeskov, Tiesto, Robbie Rivera, Weiss (UK) and many more.",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/6Jvv3LrtSVuYppTp3rpUnL"
-                },
-                "href": "https://api.spotify.com/v1/playlists/6Jvv3LrtSVuYppTp3rpUnL",
-                "id": "6Jvv3LrtSVuYppTp3rpUnL",
-                "images": [
-                    {
-                        "height": 300,
-                        "url": "https://i.scdn.co/image/ab67706c0000da848b2a7d6036971172397ddb85",
-                        "width": 300
-                    }
-                ],
-                "name": "Miami Club Nights",
-                "owner": {
-                    "display_name": "m-a-s-h",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/m-a-s-h"
-                    },
-                    "href": "https://api.spotify.com/v1/users/m-a-s-h",
-                    "id": "m-a-s-h",
-                    "type": "user",
-                    "uri": "spotify:user:m-a-s-h"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "MTg1NSwxYWVkNDVhZDIxNGMzZTA1ZjgwMDJkOWY3MmIzYTNhMGUwN2YzMzU5",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/6Jvv3LrtSVuYppTp3rpUnL/tracks",
-                    "total": 70
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:6Jvv3LrtSVuYppTp3rpUnL"
-            },
-            {
-                "collaborative": false,
-                "description": "Top Gear Theme (SNES) - Plasma3Music Remix - Miami Nights 1984 - Accelerated",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/1hGOHubHb4HfSp6uelOisS"
-                },
-                "href": "https://api.spotify.com/v1/playlists/1hGOHubHb4HfSp6uelOisS",
-                "id": "1hGOHubHb4HfSp6uelOisS",
-                "images": [
-                    {
-                        "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d0000b2730b0bd8a215dec9f663439ac7ab67616d0000b273674dce9398ee42d991cdf0cdab67616d0000b27380653284d41a9c3fbd5221a3ab67616d0000b273dceb5b3fc40ace98889fd583",
-                        "width": 640
-                    },
-                    {
-                        "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d0000b2730b0bd8a215dec9f663439ac7ab67616d0000b273674dce9398ee42d991cdf0cdab67616d0000b27380653284d41a9c3fbd5221a3ab67616d0000b273dceb5b3fc40ace98889fd583",
-                        "width": 300
-                    },
-                    {
-                        "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d0000b2730b0bd8a215dec9f663439ac7ab67616d0000b273674dce9398ee42d991cdf0cdab67616d0000b27380653284d41a9c3fbd5221a3ab67616d0000b273dceb5b3fc40ace98889fd583",
-                        "width": 60
-                    }
-                ],
-                "name": "80's synthwave",
-                "owner": {
-                    "display_name": "Henriette Hoving",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/hshoving"
-                    },
-                    "href": "https://api.spotify.com/v1/users/hshoving",
-                    "id": "hshoving",
-                    "type": "user",
-                    "uri": "spotify:user:hshoving"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "MjksZDkzOTY1NjM1YmM0MmRiMmFmY2ZmNzU1NjhjN2UxNTBhYmUyNjgwYQ==",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/1hGOHubHb4HfSp6uelOisS/tracks",
-                    "total": 23
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:1hGOHubHb4HfSp6uelOisS"
-            },
-            {
-                "collaborative": false,
-                "description": "The best tunes for driving into the Miami sunset. Featuring: Miami Nights 1984, Lazerhawk, VHS Dreams, Robert Parker, GUNSHIP, Mitch Murder, The Midnight, The Valerie Collective, and many more...",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/7tZoomBTfXO7STnflPo3ex"
-                },
-                "href": "https://api.spotify.com/v1/playlists/7tZoomBTfXO7STnflPo3ex",
-                "id": "7tZoomBTfXO7STnflPo3ex",
-                "images": [
-                    {
-                        "height": 300,
-                        "url": "https://i.scdn.co/image/ab67706c0000da8494a1cd0c13c1eb52bda990b1",
-                        "width": 300
-                    }
-                ],
-                "name": "Synthwave-/-Miami Nightdrive",
-                "owner": {
-                    "display_name": "tooby-fungus",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/tooby-fungus"
-                    },
-                    "href": "https://api.spotify.com/v1/users/tooby-fungus",
-                    "id": "tooby-fungus",
-                    "type": "user",
-                    "uri": "spotify:user:tooby-fungus"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "MTA1LGRlMmNlOTdhNzVmMzRhNDQwOGIzYTljYjMyNjZmZjk2MjE0YmUyMTg=",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/7tZoomBTfXO7STnflPo3ex/tracks",
-                    "total": 68
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:7tZoomBTfXO7STnflPo3ex"
-            },
-            {
-                "collaborative": false,
-                "description": "",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/7s1wPunq4LFhXTYXxr8bqd"
-                },
-                "href": "https://api.spotify.com/v1/playlists/7s1wPunq4LFhXTYXxr8bqd",
-                "id": "7s1wPunq4LFhXTYXxr8bqd",
-                "images": [
-                    {
-                        "height": 640,
-                        "url": "https://mosaic.scdn.co/640/ab67616d0000b2731310670cbb82f06474372cfdab67616d0000b2738ccc17f29764d812062204a8ab67616d0000b273cfe4163cbb6d12f3ec15898eab67616d0000b273e943d965e240f8385a2e5ec3",
-                        "width": 640
-                    },
-                    {
-                        "height": 300,
-                        "url": "https://mosaic.scdn.co/300/ab67616d0000b2731310670cbb82f06474372cfdab67616d0000b2738ccc17f29764d812062204a8ab67616d0000b273cfe4163cbb6d12f3ec15898eab67616d0000b273e943d965e240f8385a2e5ec3",
-                        "width": 300
-                    },
-                    {
-                        "height": 60,
-                        "url": "https://mosaic.scdn.co/60/ab67616d0000b2731310670cbb82f06474372cfdab67616d0000b2738ccc17f29764d812062204a8ab67616d0000b273cfe4163cbb6d12f3ec15898eab67616d0000b273e943d965e240f8385a2e5ec3",
-                        "width": 60
-                    }
-                ],
-                "name": "Miami Nights",
-                "owner": {
-                    "display_name": "Bastian Hartung",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/1121837941"
-                    },
-                    "href": "https://api.spotify.com/v1/users/1121837941",
-                    "id": "1121837941",
-                    "type": "user",
-                    "uri": "spotify:user:1121837941"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "MTEyLDhlMzY2ZDUwOGZhZWZmNzMwZTc0NWNmZDkwYjAzMzM3ODdhMDJiNTM=",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/7s1wPunq4LFhXTYXxr8bqd/tracks",
-                    "total": 69
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:7s1wPunq4LFhXTYXxr8bqd"
-            },
-            {
-                "collaborative": false,
-                "description": "The best old school synthwave playlist is back! Featuring artists like Waveshaper, Nightstop, Miami Nights 1984 and Mitch Murder.",
-                "external_urls": {
-                    "spotify": "https://open.spotify.com/playlist/4YRoNaFqs4oJgQHOmmc0jX"
-                },
-                "href": "https://api.spotify.com/v1/playlists/4YRoNaFqs4oJgQHOmmc0jX",
-                "id": "4YRoNaFqs4oJgQHOmmc0jX",
-                "images": [
-                    {
-                        "height": null,
-                        "url": "https://i.scdn.co/image/ab67706c0000bebb9c2a3ea178d0c6d0c735b5d4",
-                        "width": null
-                    }
-                ],
-                "name": "Ultimate Synthwave (Old School Edition)",
-                "owner": {
-                    "display_name": "Iron Skullet",
-                    "external_urls": {
-                        "spotify": "https://open.spotify.com/user/0won9icov379lso39a2a86h0w"
-                    },
-                    "href": "https://api.spotify.com/v1/users/0won9icov379lso39a2a86h0w",
-                    "id": "0won9icov379lso39a2a86h0w",
-                    "type": "user",
-                    "uri": "spotify:user:0won9icov379lso39a2a86h0w"
-                },
-                "primary_color": null,
-                "public": null,
-                "snapshot_id": "NTg1LDVjZjhiNTdhODkwMTM4MTk5NjMzNDgwYmY3ODhlZjJkNjM2OGM1N2I=",
-                "tracks": {
-                    "href": "https://api.spotify.com/v1/playlists/4YRoNaFqs4oJgQHOmmc0jX/tracks",
-                    "total": 1291
-                },
-                "type": "playlist",
-                "uri": "spotify:playlist:4YRoNaFqs4oJgQHOmmc0jX"
-            }
+  "playlists": {
+    "href": "https://api.spotify.com/v1/search?query=miami+nights&type=playlist&offset=0&limit=10",
+    "items": [
+      {
+        "collaborative": false,
+        "description": "Nothing but neon lights, palm trees, and that cool summer breeze.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/1esD0Qdh5REbkJTEEPNFmS"
+        },
+        "href": "https://api.spotify.com/v1/playlists/1esD0Qdh5REbkJTEEPNFmS",
+        "id": "1esD0Qdh5REbkJTEEPNFmS",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67706c0000da847c4a40d24b27582dab643a07",
+            "width": 300
+          }
         ],
-        "limit": 10,
-        "next": "https://api.spotify.com/v1/search?query=miami+nights&type=playlist&offset=10&limit=10",
-        "offset": 0,
-        "previous": null,
-        "total": 278
-    }
+        "name": "Miami Nights 1984",
+        "owner": {
+          "display_name": "tjnickerson",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/tjnickerson"
+          },
+          "href": "https://api.spotify.com/v1/users/tjnickerson",
+          "id": "tjnickerson",
+          "type": "user",
+          "uri": "spotify:user:tjnickerson"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NTk3LDA3MjU3NzhhY2Y4MDhhZDc5MTRiYWFjM2FjZDJkYjllOTUwMmIwMjM=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/1esD0Qdh5REbkJTEEPNFmS/tracks",
+          "total": 2324
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:1esD0Qdh5REbkJTEEPNFmS"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/3DRehdPnkx5x3btRPQEwpF"
+        },
+        "href": "https://api.spotify.com/v1/playlists/3DRehdPnkx5x3btRPQEwpF",
+        "id": "3DRehdPnkx5x3btRPQEwpF",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706c0000bebb54b6b38dc947e75d96ed38dc",
+            "width": null
+          }
+        ],
+        "name": "Miami Nights 1984 - Accelerated",
+        "owner": {
+          "display_name": "Micha\u0142 Czopek",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/michal3377"
+          },
+          "href": "https://api.spotify.com/v1/users/michal3377",
+          "id": "michal3377",
+          "type": "user",
+          "uri": "spotify:user:michal3377"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NDUsZWUzYjBiMTg2MWY0ZmU2MjM1NjZlYTMxZTQxODViM2M4OTA2ZjQ1NQ==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/3DRehdPnkx5x3btRPQEwpF/tracks",
+          "total": 28
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:3DRehdPnkx5x3btRPQEwpF"
+      },
+      {
+        "collaborative": false,
+        "description": "Training montages, lines of white powder, neon streaks off a Florida highway.  Turn the volume up.  We&#x27;re living loud.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/1q1F0dXjiaZoS9pB6nxIBO"
+        },
+        "href": "https://api.spotify.com/v1/playlists/1q1F0dXjiaZoS9pB6nxIBO",
+        "id": "1q1F0dXjiaZoS9pB6nxIBO",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67706c0000da84945926df100c9fd20f7b729e",
+            "width": 300
+          }
+        ],
+        "name": "80s:  Synth, Coke, & Miami Nights",
+        "owner": {
+          "display_name": "Andy Long",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/1985_edition"
+          },
+          "href": "https://api.spotify.com/v1/users/1985_edition",
+          "id": "1985_edition",
+          "type": "user",
+          "uri": "spotify:user:1985_edition"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "Mzc1LGRlZDI1NDg1NTM5ZDNhN2RiMjgzNTBiZTg4MTllNjFkM2E1YzgwMmE=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/1q1F0dXjiaZoS9pB6nxIBO/tracks",
+          "total": 372
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:1q1F0dXjiaZoS9pB6nxIBO"
+      },
+      {
+        "collaborative": false,
+        "description": "Here's some of the music that was in Miami Nights and some of the songs we used for intro and outro music on the road and from other tours.   And some stuff I like right now. Miami Nights is available on youtube now.  ",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/19jGjpAVsbA3ebo8jjVQFy"
+        },
+        "href": "https://api.spotify.com/v1/playlists/19jGjpAVsbA3ebo8jjVQFy",
+        "id": "19jGjpAVsbA3ebo8jjVQFy",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67706c0000da8405d0120a6c713466746c4407",
+            "width": 300
+          }
+        ],
+        "name": "Hannibal Buress - Miami Nights playlist ",
+        "owner": {
+          "display_name": "Hannibal Buress",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/hannibalburess"
+          },
+          "href": "https://api.spotify.com/v1/users/hannibalburess",
+          "id": "hannibalburess",
+          "type": "user",
+          "uri": "spotify:user:hannibalburess"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NTEsZjNiYjczMjI4YzAzNjhlZGQ5MWU0ODZiODBiNTk5NDJlMDMxN2RjZQ==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/19jGjpAVsbA3ebo8jjVQFy/tracks",
+          "total": 33
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:19jGjpAVsbA3ebo8jjVQFy"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/5MxTtlg68xtdrZXwkqzhVZ"
+        },
+        "href": "https://api.spotify.com/v1/playlists/5MxTtlg68xtdrZXwkqzhVZ",
+        "id": "5MxTtlg68xtdrZXwkqzhVZ",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b2731d97ca7376f835055f828139ab67616d0000b273670f4666a378de834285eb33ab67616d0000b2738ac5768205ad97df3f4f4c0eab67616d0000b273e72715688f633bf309ce1142",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b2731d97ca7376f835055f828139ab67616d0000b273670f4666a378de834285eb33ab67616d0000b2738ac5768205ad97df3f4f4c0eab67616d0000b273e72715688f633bf309ce1142",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b2731d97ca7376f835055f828139ab67616d0000b273670f4666a378de834285eb33ab67616d0000b2738ac5768205ad97df3f4f4c0eab67616d0000b273e72715688f633bf309ce1142",
+            "width": 60
+          }
+        ],
+        "name": "Gotye \u2014 Somebody That I Used To Know - Miami Nights 1984 Remix",
+        "owner": {
+          "display_name": "Heteis Israel",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/israel_hernandez.23"
+          },
+          "href": "https://api.spotify.com/v1/users/israel_hernandez.23",
+          "id": "israel_hernandez.23",
+          "type": "user",
+          "uri": "spotify:user:israel_hernandez.23"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "ODUsNWNhZDA2NTk0MDRjYjc5YzBlYjE2YWMzYTE4NTk4NGU0OGVlY2I2Yg==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/5MxTtlg68xtdrZXwkqzhVZ/tracks",
+          "total": 83
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:5MxTtlg68xtdrZXwkqzhVZ"
+      },
+      {
+        "collaborative": false,
+        "description": "I love this City - You have no idea !!! The sound of Miami at night. A selection of deep, techy EDM club anthems heard in Pacha, Space, LIV, Nikki Beach, Heart Nightclub and Story. Including Riton, CamelPhat, Beeskov, Tiesto, Robbie Rivera, Weiss (UK) and many more.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/6Jvv3LrtSVuYppTp3rpUnL"
+        },
+        "href": "https://api.spotify.com/v1/playlists/6Jvv3LrtSVuYppTp3rpUnL",
+        "id": "6Jvv3LrtSVuYppTp3rpUnL",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67706c0000da848b2a7d6036971172397ddb85",
+            "width": 300
+          }
+        ],
+        "name": "Miami Club Nights",
+        "owner": {
+          "display_name": "m-a-s-h",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/m-a-s-h"
+          },
+          "href": "https://api.spotify.com/v1/users/m-a-s-h",
+          "id": "m-a-s-h",
+          "type": "user",
+          "uri": "spotify:user:m-a-s-h"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTg1NSwxYWVkNDVhZDIxNGMzZTA1ZjgwMDJkOWY3MmIzYTNhMGUwN2YzMzU5",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/6Jvv3LrtSVuYppTp3rpUnL/tracks",
+          "total": 70
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:6Jvv3LrtSVuYppTp3rpUnL"
+      },
+      {
+        "collaborative": false,
+        "description": "Top Gear Theme (SNES) - Plasma3Music Remix - Miami Nights 1984 - Accelerated",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/1hGOHubHb4HfSp6uelOisS"
+        },
+        "href": "https://api.spotify.com/v1/playlists/1hGOHubHb4HfSp6uelOisS",
+        "id": "1hGOHubHb4HfSp6uelOisS",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b2730b0bd8a215dec9f663439ac7ab67616d0000b273674dce9398ee42d991cdf0cdab67616d0000b27380653284d41a9c3fbd5221a3ab67616d0000b273dceb5b3fc40ace98889fd583",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b2730b0bd8a215dec9f663439ac7ab67616d0000b273674dce9398ee42d991cdf0cdab67616d0000b27380653284d41a9c3fbd5221a3ab67616d0000b273dceb5b3fc40ace98889fd583",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b2730b0bd8a215dec9f663439ac7ab67616d0000b273674dce9398ee42d991cdf0cdab67616d0000b27380653284d41a9c3fbd5221a3ab67616d0000b273dceb5b3fc40ace98889fd583",
+            "width": 60
+          }
+        ],
+        "name": "80's synthwave",
+        "owner": {
+          "display_name": "Henriette Hoving",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/hshoving"
+          },
+          "href": "https://api.spotify.com/v1/users/hshoving",
+          "id": "hshoving",
+          "type": "user",
+          "uri": "spotify:user:hshoving"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MjksZDkzOTY1NjM1YmM0MmRiMmFmY2ZmNzU1NjhjN2UxNTBhYmUyNjgwYQ==",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/1hGOHubHb4HfSp6uelOisS/tracks",
+          "total": 23
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:1hGOHubHb4HfSp6uelOisS"
+      },
+      {
+        "collaborative": false,
+        "description": "The best tunes for driving into the Miami sunset. Featuring: Miami Nights 1984, Lazerhawk, VHS Dreams, Robert Parker, GUNSHIP, Mitch Murder, The Midnight, The Valerie Collective, and many more...",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/7tZoomBTfXO7STnflPo3ex"
+        },
+        "href": "https://api.spotify.com/v1/playlists/7tZoomBTfXO7STnflPo3ex",
+        "id": "7tZoomBTfXO7STnflPo3ex",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67706c0000da8494a1cd0c13c1eb52bda990b1",
+            "width": 300
+          }
+        ],
+        "name": "Synthwave-/-Miami Nightdrive",
+        "owner": {
+          "display_name": "tooby-fungus",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/tooby-fungus"
+          },
+          "href": "https://api.spotify.com/v1/users/tooby-fungus",
+          "id": "tooby-fungus",
+          "type": "user",
+          "uri": "spotify:user:tooby-fungus"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTA1LGRlMmNlOTdhNzVmMzRhNDQwOGIzYTljYjMyNjZmZjk2MjE0YmUyMTg=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/7tZoomBTfXO7STnflPo3ex/tracks",
+          "total": 68
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:7tZoomBTfXO7STnflPo3ex"
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/7s1wPunq4LFhXTYXxr8bqd"
+        },
+        "href": "https://api.spotify.com/v1/playlists/7s1wPunq4LFhXTYXxr8bqd",
+        "id": "7s1wPunq4LFhXTYXxr8bqd",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://mosaic.scdn.co/640/ab67616d0000b2731310670cbb82f06474372cfdab67616d0000b2738ccc17f29764d812062204a8ab67616d0000b273cfe4163cbb6d12f3ec15898eab67616d0000b273e943d965e240f8385a2e5ec3",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://mosaic.scdn.co/300/ab67616d0000b2731310670cbb82f06474372cfdab67616d0000b2738ccc17f29764d812062204a8ab67616d0000b273cfe4163cbb6d12f3ec15898eab67616d0000b273e943d965e240f8385a2e5ec3",
+            "width": 300
+          },
+          {
+            "height": 60,
+            "url": "https://mosaic.scdn.co/60/ab67616d0000b2731310670cbb82f06474372cfdab67616d0000b2738ccc17f29764d812062204a8ab67616d0000b273cfe4163cbb6d12f3ec15898eab67616d0000b273e943d965e240f8385a2e5ec3",
+            "width": 60
+          }
+        ],
+        "name": "Miami Nights",
+        "owner": {
+          "display_name": "Bastian Hartung",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/1121837941"
+          },
+          "href": "https://api.spotify.com/v1/users/1121837941",
+          "id": "1121837941",
+          "type": "user",
+          "uri": "spotify:user:1121837941"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTEyLDhlMzY2ZDUwOGZhZWZmNzMwZTc0NWNmZDkwYjAzMzM3ODdhMDJiNTM=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/7s1wPunq4LFhXTYXxr8bqd/tracks",
+          "total": 69
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:7s1wPunq4LFhXTYXxr8bqd"
+      },
+      {
+        "collaborative": false,
+        "description": "The best old school synthwave playlist is back! Featuring artists like Waveshaper, Nightstop, Miami Nights 1984 and Mitch Murder.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/4YRoNaFqs4oJgQHOmmc0jX"
+        },
+        "href": "https://api.spotify.com/v1/playlists/4YRoNaFqs4oJgQHOmmc0jX",
+        "id": "4YRoNaFqs4oJgQHOmmc0jX",
+        "images": [
+          {
+            "height": null,
+            "url": "https://i.scdn.co/image/ab67706c0000bebb9c2a3ea178d0c6d0c735b5d4",
+            "width": null
+          }
+        ],
+        "name": "Ultimate Synthwave (Old School Edition)",
+        "owner": {
+          "display_name": "Iron Skullet",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/0won9icov379lso39a2a86h0w"
+          },
+          "href": "https://api.spotify.com/v1/users/0won9icov379lso39a2a86h0w",
+          "id": "0won9icov379lso39a2a86h0w",
+          "type": "user",
+          "uri": "spotify:user:0won9icov379lso39a2a86h0w"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "NTg1LDVjZjhiNTdhODkwMTM4MTk5NjMzNDgwYmY3ODhlZjJkNjM2OGM1N2I=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/4YRoNaFqs4oJgQHOmmc0jX/tracks",
+          "total": 1291
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:4YRoNaFqs4oJgQHOmmc0jX"
+      }
+    ],
+    "limit": 10,
+    "next": "https://api.spotify.com/v1/search?query=miami+nights&type=playlist&offset=10&limit=10",
+    "offset": 0,
+    "previous": null,
+    "total": 278
+  }
 }

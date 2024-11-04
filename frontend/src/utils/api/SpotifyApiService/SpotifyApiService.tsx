@@ -1,16 +1,16 @@
-import { ENVIRONMENTS } from 'src/constants';
-import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
-import { SearchTracksResponse } from 'src/models/api/SearchTracksResponse';
-import { TrackMetadataResponse } from 'src/models/api/TrackMetadataResponse';
-import { SearchPlaylistsResponse } from 'src/models/api/SearchPlaylistsResponse';
-import { ComparePlaylistsResponse } from 'src/models/api/ComparePlaylistsResponse';
-import { Playlist } from 'src/models/Playlist';
-import { BookQuoteResponse } from 'src/models/api/BookQuoteResponse';
-import { RubinResponse } from 'src/models/api/RubinResponse';
+import { ENVIRONMENTS } from "src/constants";
+import { ArtistMetadataResponse } from "src/models/api/ArtistMetadataResponse";
+import { SearchTracksResponse } from "src/models/api/SearchTracksResponse";
+import { TrackMetadataResponse } from "src/models/api/TrackMetadataResponse";
+import { SearchPlaylistsResponse } from "src/models/api/SearchPlaylistsResponse";
+import { ComparePlaylistsResponse } from "src/models/api/ComparePlaylistsResponse";
+import { Playlist } from "src/models/Playlist";
+import { BookQuoteResponse } from "src/models/api/BookQuoteResponse";
+import { RubinResponse } from "src/models/api/RubinResponse";
 
 enum HttpMethod {
-  GET = 'GET',
-  POST = 'POST'
+  GET = "GET",
+  POST = "POST",
 }
 
 export class SpotifyApiService {
@@ -18,9 +18,9 @@ export class SpotifyApiService {
 
   constructor() {
     if (process.env.NODE_ENV === ENVIRONMENTS.DEV) {
-      this.api_url = 'http://0.0.0.0:5001'
+      this.api_url = "http://0.0.0.0:5001";
     } else {
-      this.api_url = 'https://sam-backend-d60bd9ccf7b8.herokuapp.com'
+      this.api_url = "https://sam-backend-d60bd9ccf7b8.herokuapp.com";
     }
   }
 
@@ -28,7 +28,9 @@ export class SpotifyApiService {
     return this.get(this.api_url + `/search/tracks?q=${searchQuery}`);
   }
 
-  public searchPlaylists(searchQuery: string): Promise<SearchPlaylistsResponse> {
+  public searchPlaylists(
+    searchQuery: string,
+  ): Promise<SearchPlaylistsResponse> {
     return this.get(this.api_url + `/search/playlists?q=${searchQuery}`);
   }
 
@@ -40,15 +42,19 @@ export class SpotifyApiService {
     return this.get(this.api_url + `/track/${trackUri}`);
   }
 
-  public fetchArtistMetadata(artistUri: string): Promise<ArtistMetadataResponse> {
+  public fetchArtistMetadata(
+    artistUri: string,
+  ): Promise<ArtistMetadataResponse> {
     return this.get(this.api_url + `/artist/${artistUri}`);
   }
 
-  public comparePlaylists(playlistUris: string[]): Promise<ComparePlaylistsResponse> {
+  public comparePlaylists(
+    playlistUris: string[],
+  ): Promise<ComparePlaylistsResponse> {
     const body = JSON.stringify({
-      "uris": playlistUris
-    })
-    return this.post(this.api_url + '/playlists/compare', body);
+      uris: playlistUris,
+    });
+    return this.post(this.api_url + "/playlists/compare", body);
   }
 
   public rubinQuote(): Promise<RubinResponse> {
@@ -67,10 +73,10 @@ export class SpotifyApiService {
     let options = {
       method: HttpMethod.POST,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
       body,
-    }
+    };
     return fetch(endpoint, options).then((response: any) => response.json());
   }
 }

@@ -1,18 +1,18 @@
 .result {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .btn-outline-secondary {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .submit {
-    padding: 3px !important;
+  padding: 3px !important;
 }
 
 .buttons > * {
-    margin-right: 4px;
+  margin-right: 4px;
 }

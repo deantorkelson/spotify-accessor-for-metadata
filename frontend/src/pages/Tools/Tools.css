@@ -1,0 +1,12 @@
+.header {
+  text-align: left;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 48%;
+}

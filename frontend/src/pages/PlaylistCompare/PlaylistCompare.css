@@ -1,71 +1,71 @@
 .main-content {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .column {
-    width: 48%;
+  width: 48%;
 }
 
 .column-30 {
-    width: 30%;
+  width: 30%;
 }
 
 .image-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .image-container img {
-    width: 80px;
-    height: auto;
-    transition: opacity .3s; /* Smooth transition for opacity */
-    border-radius: 3px;
-    margin: 0 8px;
+  width: 80px;
+  height: auto;
+  transition: opacity 0.3s; /* Smooth transition for opacity */
+  border-radius: 3px;
+  margin: 0 8px;
 }
 
 .image-container button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 8px;
-    width: 80px;
-    height: 80px;
-    color: #22ca5d;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity .3s; /* Smooth transition for opacity */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+  width: 80px;
+  height: 80px;
+  color: #22ca5d;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s; /* Smooth transition for opacity */
 }
 
 .image-container:hover img {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .image-container:hover button {
-    opacity: 1;
-    color: #22ca5d;
+  opacity: 1;
+  color: #22ca5d;
 }
 
 hr {
-    border-top: 3px solid #ababab !important;
-    width: 95%;
+  border-top: 3px solid #ababab !important;
+  width: 95%;
 }
 
 .modal-li {
-    padding: .2rem;
-    display: list-item;
+  padding: 0.2rem;
+  display: list-item;
 }
 
 .modal-body {
-    display: flex;
+  display: flex;
 }
 
 .uri-tooltip {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .uri-tooltip:hover {
-    color: #66d68e !important;    
+  color: #66d68e !important;
 }

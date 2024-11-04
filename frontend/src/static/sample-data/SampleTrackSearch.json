@@ -1,132 +1,10 @@
 {
-    "tracks": {
-      "href": "https://api.spotify.com/v1/search?query=steve+vai&type=track&offset=0&limit=10",
-      "items": [
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
-            },
-            "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
-            "id": "1fyrOcra2DI3quvnzAEQ45",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
-                "width": 64
-              }
-            ],
-            "name": "Passion And Warfare",
-            "release_date": "1990-07",
-            "release_date_precision": "month",
-            "total_tracks": 14,
-            "type": "album",
-            "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
-          },
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?query=steve+vai&type=track&offset=0&limit=10",
+    "items": [
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -220,148 +98,150 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 363333,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM19000148"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/5m5I3KcV83zf2p2qbsnr3y"
+            "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
           },
-          "href": "https://api.spotify.com/v1/tracks/5m5I3KcV83zf2p2qbsnr3y",
-          "id": "5m5I3KcV83zf2p2qbsnr3y",
-          "is_local": false,
-          "name": "For the Love of God",
-          "popularity": 54,
-          "preview_url": "https://p.scdn.co/mp3-preview/66401bf9dd6c0d0f13d8fd7c19fa5bac71a75078?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 7,
-          "type": "track",
-          "uri": "spotify:track:5m5I3KcV83zf2p2qbsnr3y"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1cBOYvZOaWzfNH2kfykjIe"
+          "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
+          "id": "1fyrOcra2DI3quvnzAEQ45",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/1cBOYvZOaWzfNH2kfykjIe",
-            "id": "1cBOYvZOaWzfNH2kfykjIe",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b27313431dcb3bc18c306dd7a58b",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e0213431dcb3bc18c306dd7a58b",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d0000485113431dcb3bc18c306dd7a58b",
-                "width": 64
-              }
-            ],
-            "name": "Alien Love Secrets",
-            "release_date": "1995-03-21",
-            "release_date_precision": "day",
-            "total_tracks": 7,
-            "type": "album",
-            "uri": "spotify:album:1cBOYvZOaWzfNH2kfykjIe"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
+              "width": 64
+            }
+          ],
+          "name": "Passion And Warfare",
+          "release_date": "1990-07",
+          "release_date_precision": "month",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 363333,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM19000148"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/5m5I3KcV83zf2p2qbsnr3y"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5m5I3KcV83zf2p2qbsnr3y",
+        "id": "5m5I3KcV83zf2p2qbsnr3y",
+        "is_local": false,
+        "name": "For the Love of God",
+        "popularity": 54,
+        "preview_url": "https://p.scdn.co/mp3-preview/66401bf9dd6c0d0f13d8fd7c19fa5bac71a75078?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 7,
+        "type": "track",
+        "uri": "spotify:track:5m5I3KcV83zf2p2qbsnr3y"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -453,148 +333,148 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 301066,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM19503536"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/1BpMzIbVYhLfXTQe7ob2sY"
+            "spotify": "https://open.spotify.com/album/1cBOYvZOaWzfNH2kfykjIe"
           },
-          "href": "https://api.spotify.com/v1/tracks/1BpMzIbVYhLfXTQe7ob2sY",
-          "id": "1BpMzIbVYhLfXTQe7ob2sY",
-          "is_local": false,
-          "name": "Tender Surrender",
-          "popularity": 52,
-          "preview_url": "https://p.scdn.co/mp3-preview/251364fa40fa4558271d6e8ba0a86c69f55ce3bf?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 7,
-          "type": "track",
-          "uri": "spotify:track:1BpMzIbVYhLfXTQe7ob2sY"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1cBOYvZOaWzfNH2kfykjIe"
+          "href": "https://api.spotify.com/v1/albums/1cBOYvZOaWzfNH2kfykjIe",
+          "id": "1cBOYvZOaWzfNH2kfykjIe",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27313431dcb3bc18c306dd7a58b",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/1cBOYvZOaWzfNH2kfykjIe",
-            "id": "1cBOYvZOaWzfNH2kfykjIe",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b27313431dcb3bc18c306dd7a58b",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e0213431dcb3bc18c306dd7a58b",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d0000485113431dcb3bc18c306dd7a58b",
-                "width": 64
-              }
-            ],
-            "name": "Alien Love Secrets",
-            "release_date": "1995-03-21",
-            "release_date_precision": "day",
-            "total_tracks": 7,
-            "type": "album",
-            "uri": "spotify:album:1cBOYvZOaWzfNH2kfykjIe"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0213431dcb3bc18c306dd7a58b",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485113431dcb3bc18c306dd7a58b",
+              "width": 64
+            }
+          ],
+          "name": "Alien Love Secrets",
+          "release_date": "1995-03-21",
+          "release_date_precision": "day",
+          "total_tracks": 7,
+          "type": "album",
+          "uri": "spotify:album:1cBOYvZOaWzfNH2kfykjIe"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 301066,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM19503536"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1BpMzIbVYhLfXTQe7ob2sY"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1BpMzIbVYhLfXTQe7ob2sY",
+        "id": "1BpMzIbVYhLfXTQe7ob2sY",
+        "is_local": false,
+        "name": "Tender Surrender",
+        "popularity": 52,
+        "preview_url": "https://p.scdn.co/mp3-preview/251364fa40fa4558271d6e8ba0a86c69f55ce3bf?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 7,
+        "type": "track",
+        "uri": "spotify:track:1BpMzIbVYhLfXTQe7ob2sY"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -686,150 +566,148 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 350840,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM19503532"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/2W5EvgsEBmBWqZz4GumrXA"
+            "spotify": "https://open.spotify.com/album/1cBOYvZOaWzfNH2kfykjIe"
           },
-          "href": "https://api.spotify.com/v1/tracks/2W5EvgsEBmBWqZz4GumrXA",
-          "id": "2W5EvgsEBmBWqZz4GumrXA",
-          "is_local": false,
-          "name": "Bad Horsie",
-          "popularity": 46,
-          "preview_url": "https://p.scdn.co/mp3-preview/8560a9f8a6a9a84b3341e6d15fbacc19de6a4ffb?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 1,
-          "type": "track",
-          "uri": "spotify:track:2W5EvgsEBmBWqZz4GumrXA"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/0QWrMNukfcVOmgEU0FEDyD"
-                },
-                "href": "https://api.spotify.com/v1/artists/0QWrMNukfcVOmgEU0FEDyD",
-                "id": "0QWrMNukfcVOmgEU0FEDyD",
-                "name": "Jacob Collier",
-                "type": "artist",
-                "uri": "spotify:artist:0QWrMNukfcVOmgEU0FEDyD"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/3zNi5dCpkbm4zv7h1vGOMy"
+          "href": "https://api.spotify.com/v1/albums/1cBOYvZOaWzfNH2kfykjIe",
+          "id": "1cBOYvZOaWzfNH2kfykjIe",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27313431dcb3bc18c306dd7a58b",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/3zNi5dCpkbm4zv7h1vGOMy",
-            "id": "3zNi5dCpkbm4zv7h1vGOMy",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b27354de35ac4fc5d8ed1ec1d956",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e0254de35ac4fc5d8ed1ec1d956",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d0000485154de35ac4fc5d8ed1ec1d956",
-                "width": 64
-              }
-            ],
-            "name": "Djesse Vol. 2",
-            "release_date": "2019-07-19",
-            "release_date_precision": "day",
-            "total_tracks": 16,
-            "type": "album",
-            "uri": "spotify:album:3zNi5dCpkbm4zv7h1vGOMy"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0213431dcb3bc18c306dd7a58b",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485113431dcb3bc18c306dd7a58b",
+              "width": 64
+            }
+          ],
+          "name": "Alien Love Secrets",
+          "release_date": "1995-03-21",
+          "release_date_precision": "day",
+          "total_tracks": 7,
+          "type": "album",
+          "uri": "spotify:album:1cBOYvZOaWzfNH2kfykjIe"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 350840,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM19503532"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2W5EvgsEBmBWqZz4GumrXA"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2W5EvgsEBmBWqZz4GumrXA",
+        "id": "2W5EvgsEBmBWqZz4GumrXA",
+        "is_local": false,
+        "name": "Bad Horsie",
+        "popularity": 46,
+        "preview_url": "https://p.scdn.co/mp3-preview/8560a9f8a6a9a84b3341e6d15fbacc19de6a4ffb?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:2W5EvgsEBmBWqZz4GumrXA"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -840,16 +718,6 @@
               "name": "Jacob Collier",
               "type": "artist",
               "uri": "spotify:artist:0QWrMNukfcVOmgEU0FEDyD"
-            },
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-              },
-              "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-              "id": "32Jb1X3wSmmoHj2epZReZA",
-              "name": "Steve Vai",
-              "type": "artist",
-              "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
             }
           ],
           "available_markets": [
@@ -933,147 +801,160 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 213293,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "GBUM71903199"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/5tR868MtMK0NXjMJZ9eCWw"
+            "spotify": "https://open.spotify.com/album/3zNi5dCpkbm4zv7h1vGOMy"
           },
-          "href": "https://api.spotify.com/v1/tracks/5tR868MtMK0NXjMJZ9eCWw",
-          "id": "5tR868MtMK0NXjMJZ9eCWw",
-          "is_local": false,
-          "name": "Do You Feel Love (feat. Steve Vai)",
-          "popularity": 39,
-          "preview_url": null,
-          "track_number": 14,
-          "type": "track",
-          "uri": "spotify:track:5tR868MtMK0NXjMJZ9eCWw"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/6Fi8CHfO8WGtu3yO8c2Mc4"
-                },
-                "href": "https://api.spotify.com/v1/artists/6Fi8CHfO8WGtu3yO8c2Mc4",
-                "id": "6Fi8CHfO8WGtu3yO8c2Mc4",
-                "name": "2CELLOS",
-                "type": "artist",
-                "uri": "spotify:artist:6Fi8CHfO8WGtu3yO8c2Mc4"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/7dg6d2sSCH28iHCdpdp30D"
+          "href": "https://api.spotify.com/v1/albums/3zNi5dCpkbm4zv7h1vGOMy",
+          "id": "3zNi5dCpkbm4zv7h1vGOMy",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b27354de35ac4fc5d8ed1ec1d956",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/7dg6d2sSCH28iHCdpdp30D",
-            "id": "7dg6d2sSCH28iHCdpdp30D",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b2739586c9ed3146fd34ea8c5aac",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e029586c9ed3146fd34ea8c5aac",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d000048519586c9ed3146fd34ea8c5aac",
-                "width": 64
-              }
-            ],
-            "name": "In2ition",
-            "release_date": "2013-01-11",
-            "release_date_precision": "day",
-            "total_tracks": 13,
-            "type": "album",
-            "uri": "spotify:album:7dg6d2sSCH28iHCdpdp30D"
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e0254de35ac4fc5d8ed1ec1d956",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d0000485154de35ac4fc5d8ed1ec1d956",
+              "width": 64
+            }
+          ],
+          "name": "Djesse Vol. 2",
+          "release_date": "2019-07-19",
+          "release_date_precision": "day",
+          "total_tracks": 16,
+          "type": "album",
+          "uri": "spotify:album:3zNi5dCpkbm4zv7h1vGOMy"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0QWrMNukfcVOmgEU0FEDyD"
+            },
+            "href": "https://api.spotify.com/v1/artists/0QWrMNukfcVOmgEU0FEDyD",
+            "id": "0QWrMNukfcVOmgEU0FEDyD",
+            "name": "Jacob Collier",
+            "type": "artist",
+            "uri": "spotify:artist:0QWrMNukfcVOmgEU0FEDyD"
           },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 213293,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "GBUM71903199"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/5tR868MtMK0NXjMJZ9eCWw"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5tR868MtMK0NXjMJZ9eCWw",
+        "id": "5tR868MtMK0NXjMJZ9eCWw",
+        "is_local": false,
+        "name": "Do You Feel Love (feat. Steve Vai)",
+        "popularity": 39,
+        "preview_url": null,
+        "track_number": 14,
+        "type": "track",
+        "uri": "spotify:track:5tR868MtMK0NXjMJZ9eCWw"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -1084,16 +965,6 @@
               "name": "2CELLOS",
               "type": "artist",
               "uri": "spotify:artist:6Fi8CHfO8WGtu3yO8c2Mc4"
-            },
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-              },
-              "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-              "id": "32Jb1X3wSmmoHj2epZReZA",
-              "name": "Steve Vai",
-              "type": "artist",
-              "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
             }
           ],
           "available_markets": [
@@ -1174,150 +1045,157 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 208213,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM11204852"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/04GYJU7q1Oww2i9784O9IP"
+            "spotify": "https://open.spotify.com/album/7dg6d2sSCH28iHCdpdp30D"
           },
-          "href": "https://api.spotify.com/v1/tracks/04GYJU7q1Oww2i9784O9IP",
-          "id": "04GYJU7q1Oww2i9784O9IP",
-          "is_local": false,
-          "name": "Highway to Hell (feat. Steve Vai)",
-          "popularity": 40,
-          "preview_url": "https://p.scdn.co/mp3-preview/96b384b57379fe4482dae934a2841a5c1b143bc4?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 3,
-          "type": "track",
-          "uri": "spotify:track:04GYJU7q1Oww2i9784O9IP"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
+          "href": "https://api.spotify.com/v1/albums/7dg6d2sSCH28iHCdpdp30D",
+          "id": "7dg6d2sSCH28iHCdpdp30D",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b2739586c9ed3146fd34ea8c5aac",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
-            "id": "1fyrOcra2DI3quvnzAEQ45",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
-                "width": 64
-              }
-            ],
-            "name": "Passion And Warfare",
-            "release_date": "1990-07",
-            "release_date_precision": "month",
-            "total_tracks": 14,
-            "type": "album",
-            "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e029586c9ed3146fd34ea8c5aac",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d000048519586c9ed3146fd34ea8c5aac",
+              "width": 64
+            }
+          ],
+          "name": "In2ition",
+          "release_date": "2013-01-11",
+          "release_date_precision": "day",
+          "total_tracks": 13,
+          "type": "album",
+          "uri": "spotify:album:7dg6d2sSCH28iHCdpdp30D"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6Fi8CHfO8WGtu3yO8c2Mc4"
+            },
+            "href": "https://api.spotify.com/v1/artists/6Fi8CHfO8WGtu3yO8c2Mc4",
+            "id": "6Fi8CHfO8WGtu3yO8c2Mc4",
+            "name": "2CELLOS",
+            "type": "artist",
+            "uri": "spotify:artist:6Fi8CHfO8WGtu3yO8c2Mc4"
           },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 208213,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM11204852"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/04GYJU7q1Oww2i9784O9IP"
+        },
+        "href": "https://api.spotify.com/v1/tracks/04GYJU7q1Oww2i9784O9IP",
+        "id": "04GYJU7q1Oww2i9784O9IP",
+        "is_local": false,
+        "name": "Highway to Hell (feat. Steve Vai)",
+        "popularity": 40,
+        "preview_url": "https://p.scdn.co/mp3-preview/96b384b57379fe4482dae934a2841a5c1b143bc4?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 3,
+        "type": "track",
+        "uri": "spotify:track:04GYJU7q1Oww2i9784O9IP"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -1411,150 +1289,150 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 255426,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM19000143"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/317QZc9FByYZWcNHAmduCm"
+            "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
           },
-          "href": "https://api.spotify.com/v1/tracks/317QZc9FByYZWcNHAmduCm",
-          "id": "317QZc9FByYZWcNHAmduCm",
-          "is_local": false,
-          "name": "Erotic Nightmares",
-          "popularity": 41,
-          "preview_url": "https://p.scdn.co/mp3-preview/b183c818d4d1319dca7ddae4be36c78b2bb813a0?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 2,
-          "type": "track",
-          "uri": "spotify:track:317QZc9FByYZWcNHAmduCm"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
+          "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
+          "id": "1fyrOcra2DI3quvnzAEQ45",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
-            "id": "1fyrOcra2DI3quvnzAEQ45",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
-                "width": 64
-              }
-            ],
-            "name": "Passion And Warfare",
-            "release_date": "1990-07",
-            "release_date_precision": "month",
-            "total_tracks": 14,
-            "type": "album",
-            "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
+              "width": 64
+            }
+          ],
+          "name": "Passion And Warfare",
+          "release_date": "1990-07",
+          "release_date_precision": "month",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 255426,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM19000143"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/317QZc9FByYZWcNHAmduCm"
+        },
+        "href": "https://api.spotify.com/v1/tracks/317QZc9FByYZWcNHAmduCm",
+        "id": "317QZc9FByYZWcNHAmduCm",
+        "is_local": false,
+        "name": "Erotic Nightmares",
+        "popularity": 41,
+        "preview_url": "https://p.scdn.co/mp3-preview/b183c818d4d1319dca7ddae4be36c78b2bb813a0?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:317QZc9FByYZWcNHAmduCm"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -1648,150 +1526,150 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 329973,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM19000149"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/2KjUp5M2Y0KnOo1BIto101"
+            "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
           },
-          "href": "https://api.spotify.com/v1/tracks/2KjUp5M2Y0KnOo1BIto101",
-          "id": "2KjUp5M2Y0KnOo1BIto101",
-          "is_local": false,
-          "name": "The Audience Is Listening",
-          "popularity": 37,
-          "preview_url": "https://p.scdn.co/mp3-preview/b6ca841b180f593cb5e3be7a1510b290def607b5?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 8,
-          "type": "track",
-          "uri": "spotify:track:2KjUp5M2Y0KnOo1BIto101"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/2FXs7KVwjUXkA8RJMKD4NO"
+          "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
+          "id": "1fyrOcra2DI3quvnzAEQ45",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/2FXs7KVwjUXkA8RJMKD4NO",
-            "id": "2FXs7KVwjUXkA8RJMKD4NO",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273b7ba5fc0811f7b01376fbe63",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02b7ba5fc0811f7b01376fbe63",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d00004851b7ba5fc0811f7b01376fbe63",
-                "width": 64
-              }
-            ],
-            "name": "Real Illusions: Reflections",
-            "release_date": "2005-02-22",
-            "release_date_precision": "day",
-            "total_tracks": 11,
-            "type": "album",
-            "uri": "spotify:album:2FXs7KVwjUXkA8RJMKD4NO"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
+              "width": 64
+            }
+          ],
+          "name": "Passion And Warfare",
+          "release_date": "1990-07",
+          "release_date_precision": "month",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 329973,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM19000149"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2KjUp5M2Y0KnOo1BIto101"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2KjUp5M2Y0KnOo1BIto101",
+        "id": "2KjUp5M2Y0KnOo1BIto101",
+        "is_local": false,
+        "name": "The Audience Is Listening",
+        "popularity": 37,
+        "preview_url": "https://p.scdn.co/mp3-preview/b6ca841b180f593cb5e3be7a1510b290def607b5?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 8,
+        "type": "track",
+        "uri": "spotify:track:2KjUp5M2Y0KnOo1BIto101"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -1885,150 +1763,150 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 298120,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM10408809"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/3JmHVFAJcOkHT3BlIQSXXA"
+            "spotify": "https://open.spotify.com/album/2FXs7KVwjUXkA8RJMKD4NO"
           },
-          "href": "https://api.spotify.com/v1/tracks/3JmHVFAJcOkHT3BlIQSXXA",
-          "id": "3JmHVFAJcOkHT3BlIQSXXA",
-          "is_local": false,
-          "name": "Building the Church",
-          "popularity": 36,
-          "preview_url": "https://p.scdn.co/mp3-preview/dcf4a501d5d859174194298db7b1287a5e7e080d?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 1,
-          "type": "track",
-          "uri": "spotify:track:3JmHVFAJcOkHT3BlIQSXXA"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "JP",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
+          "href": "https://api.spotify.com/v1/albums/2FXs7KVwjUXkA8RJMKD4NO",
+          "id": "2FXs7KVwjUXkA8RJMKD4NO",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273b7ba5fc0811f7b01376fbe63",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
-            "id": "1fyrOcra2DI3quvnzAEQ45",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
-                "width": 64
-              }
-            ],
-            "name": "Passion And Warfare",
-            "release_date": "1990-07",
-            "release_date_precision": "month",
-            "total_tracks": 14,
-            "type": "album",
-            "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02b7ba5fc0811f7b01376fbe63",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851b7ba5fc0811f7b01376fbe63",
+              "width": 64
+            }
+          ],
+          "name": "Real Illusions: Reflections",
+          "release_date": "2005-02-22",
+          "release_date_precision": "day",
+          "total_tracks": 11,
+          "type": "album",
+          "uri": "spotify:album:2FXs7KVwjUXkA8RJMKD4NO"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 298120,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM10408809"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3JmHVFAJcOkHT3BlIQSXXA"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3JmHVFAJcOkHT3BlIQSXXA",
+        "id": "3JmHVFAJcOkHT3BlIQSXXA",
+        "is_local": false,
+        "name": "Building the Church",
+        "popularity": 36,
+        "preview_url": "https://p.scdn.co/mp3-preview/dcf4a501d5d859174194298db7b1287a5e7e080d?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:3JmHVFAJcOkHT3BlIQSXXA"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -2122,149 +2000,150 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 248000,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USSM19000154"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/1gfoiAaz4XUHLqGysW9Sxi"
+            "spotify": "https://open.spotify.com/album/1fyrOcra2DI3quvnzAEQ45"
           },
-          "href": "https://api.spotify.com/v1/tracks/1gfoiAaz4XUHLqGysW9Sxi",
-          "id": "1gfoiAaz4XUHLqGysW9Sxi",
-          "is_local": false,
-          "name": "Sisters",
-          "popularity": 36,
-          "preview_url": "https://p.scdn.co/mp3-preview/a283a8681d73f20baf7b4b1b6aabcd0f5b036bfd?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 13,
-          "type": "track",
-          "uri": "spotify:track:1gfoiAaz4XUHLqGysW9Sxi"
-        },
-        {
-          "album": {
-            "album_type": "album",
-            "artists": [
-              {
-                "external_urls": {
-                  "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
-                },
-                "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
-                "id": "32Jb1X3wSmmoHj2epZReZA",
-                "name": "Steve Vai",
-                "type": "artist",
-                "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
-              }
-            ],
-            "available_markets": [
-              "AD",
-              "AE",
-              "AR",
-              "AT",
-              "AU",
-              "BE",
-              "BG",
-              "BH",
-              "BO",
-              "BR",
-              "CA",
-              "CH",
-              "CL",
-              "CO",
-              "CR",
-              "CY",
-              "CZ",
-              "DE",
-              "DK",
-              "DO",
-              "DZ",
-              "EC",
-              "EE",
-              "EG",
-              "ES",
-              "FI",
-              "FR",
-              "GB",
-              "GR",
-              "GT",
-              "HK",
-              "HN",
-              "HU",
-              "ID",
-              "IE",
-              "IL",
-              "IN",
-              "IS",
-              "IT",
-              "JO",
-              "KW",
-              "LB",
-              "LI",
-              "LT",
-              "LU",
-              "LV",
-              "MA",
-              "MC",
-              "MT",
-              "MX",
-              "MY",
-              "NI",
-              "NL",
-              "NO",
-              "NZ",
-              "OM",
-              "PA",
-              "PE",
-              "PH",
-              "PL",
-              "PS",
-              "PT",
-              "PY",
-              "QA",
-              "RO",
-              "SA",
-              "SE",
-              "SG",
-              "SK",
-              "SV",
-              "TH",
-              "TN",
-              "TR",
-              "TW",
-              "US",
-              "UY",
-              "VN",
-              "ZA"
-            ],
-            "external_urls": {
-              "spotify": "https://open.spotify.com/album/1QBwEou5SRg4nD9Ngd2loU"
+          "href": "https://api.spotify.com/v1/albums/1fyrOcra2DI3quvnzAEQ45",
+          "id": "1fyrOcra2DI3quvnzAEQ45",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c64cc8bd8c3f931eee69c6ca",
+              "width": 640
             },
-            "href": "https://api.spotify.com/v1/albums/1QBwEou5SRg4nD9Ngd2loU",
-            "id": "1QBwEou5SRg4nD9Ngd2loU",
-            "images": [
-              {
-                "height": 640,
-                "url": "https://i.scdn.co/image/ab67616d0000b273c02e9d86d43c8c3c9fd7db80",
-                "width": 640
-              },
-              {
-                "height": 300,
-                "url": "https://i.scdn.co/image/ab67616d00001e02c02e9d86d43c8c3c9fd7db80",
-                "width": 300
-              },
-              {
-                "height": 64,
-                "url": "https://i.scdn.co/image/ab67616d00004851c02e9d86d43c8c3c9fd7db80",
-                "width": 64
-              }
-            ],
-            "name": "Modern Primitive",
-            "release_date": "2016-06-24",
-            "release_date_precision": "day",
-            "total_tracks": 13,
-            "type": "album",
-            "uri": "spotify:album:1QBwEou5SRg4nD9Ngd2loU"
-          },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c64cc8bd8c3f931eee69c6ca",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c64cc8bd8c3f931eee69c6ca",
+              "width": 64
+            }
+          ],
+          "name": "Passion And Warfare",
+          "release_date": "1990-07",
+          "release_date_precision": "month",
+          "total_tracks": 14,
+          "type": "album",
+          "uri": "spotify:album:1fyrOcra2DI3quvnzAEQ45"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "JP",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 248000,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USSM19000154"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1gfoiAaz4XUHLqGysW9Sxi"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1gfoiAaz4XUHLqGysW9Sxi",
+        "id": "1gfoiAaz4XUHLqGysW9Sxi",
+        "is_local": false,
+        "name": "Sisters",
+        "popularity": 36,
+        "preview_url": "https://p.scdn.co/mp3-preview/a283a8681d73f20baf7b4b1b6aabcd0f5b036bfd?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 13,
+        "type": "track",
+        "uri": "spotify:track:1gfoiAaz4XUHLqGysW9Sxi"
+      },
+      {
+        "album": {
+          "album_type": "album",
           "artists": [
             {
               "external_urls": {
@@ -2357,30 +2236,151 @@
             "VN",
             "ZA"
           ],
-          "disc_number": 1,
-          "duration_ms": 233240,
-          "explicit": false,
-          "external_ids": {
-            "isrc": "USQX91601037"
-          },
           "external_urls": {
-            "spotify": "https://open.spotify.com/track/3rjBROIs1VgeUPcAq6ALn2"
+            "spotify": "https://open.spotify.com/album/1QBwEou5SRg4nD9Ngd2loU"
           },
-          "href": "https://api.spotify.com/v1/tracks/3rjBROIs1VgeUPcAq6ALn2",
-          "id": "3rjBROIs1VgeUPcAq6ALn2",
-          "is_local": false,
-          "name": "Dark Matter",
-          "popularity": 35,
-          "preview_url": "https://p.scdn.co/mp3-preview/7e4ad61ff3688234af924fefa6b64706aa4692f2?cid=bd8456f05dad436290f9ca89f3cf8d16",
-          "track_number": 2,
-          "type": "track",
-          "uri": "spotify:track:3rjBROIs1VgeUPcAq6ALn2"
-        }
-      ],
-      "limit": 10,
-      "next": "https://api.spotify.com/v1/search?query=steve+vai&type=track&offset=10&limit=10",
-      "offset": 0,
-      "previous": null,
-      "total": 737
-    }
+          "href": "https://api.spotify.com/v1/albums/1QBwEou5SRg4nD9Ngd2loU",
+          "id": "1QBwEou5SRg4nD9Ngd2loU",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/ab67616d0000b273c02e9d86d43c8c3c9fd7db80",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/ab67616d00001e02c02e9d86d43c8c3c9fd7db80",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/ab67616d00004851c02e9d86d43c8c3c9fd7db80",
+              "width": 64
+            }
+          ],
+          "name": "Modern Primitive",
+          "release_date": "2016-06-24",
+          "release_date_precision": "day",
+          "total_tracks": 13,
+          "type": "album",
+          "uri": "spotify:album:1QBwEou5SRg4nD9Ngd2loU"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/32Jb1X3wSmmoHj2epZReZA"
+            },
+            "href": "https://api.spotify.com/v1/artists/32Jb1X3wSmmoHj2epZReZA",
+            "id": "32Jb1X3wSmmoHj2epZReZA",
+            "name": "Steve Vai",
+            "type": "artist",
+            "uri": "spotify:artist:32Jb1X3wSmmoHj2epZReZA"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AE",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "IT",
+          "JO",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PT",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 233240,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USQX91601037"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/3rjBROIs1VgeUPcAq6ALn2"
+        },
+        "href": "https://api.spotify.com/v1/tracks/3rjBROIs1VgeUPcAq6ALn2",
+        "id": "3rjBROIs1VgeUPcAq6ALn2",
+        "is_local": false,
+        "name": "Dark Matter",
+        "popularity": 35,
+        "preview_url": "https://p.scdn.co/mp3-preview/7e4ad61ff3688234af924fefa6b64706aa4692f2?cid=bd8456f05dad436290f9ca89f3cf8d16",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:3rjBROIs1VgeUPcAq6ALn2"
+      }
+    ],
+    "limit": 10,
+    "next": "https://api.spotify.com/v1/search?query=steve+vai&type=track&offset=10&limit=10",
+    "offset": 0,
+    "previous": null,
+    "total": 737
   }
+}
