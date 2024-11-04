@@ -1,6 +1,6 @@
 {
   "name": "spotify-accessor-for-metadata",
-  "version": "1.0.1",
+  "version": "0.4.0",
   "private": true,
   "homepage": "http://deantorkelson.github.io/spotify-accessor-for-metadata",
   "dependencies": {
@@ -60,7 +60,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "set APP_ENV=dev && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
