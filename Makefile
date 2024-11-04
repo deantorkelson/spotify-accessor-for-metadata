@@ -17,4 +17,4 @@ run-be:
 	cd backend/ && make run
 
 deploy-be:
-	cd backend/ && eb deploy
+	git subtree push --prefix backend/ heroku master

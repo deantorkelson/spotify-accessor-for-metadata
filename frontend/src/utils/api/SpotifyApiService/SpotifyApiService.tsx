@@ -17,12 +17,10 @@ export class SpotifyApiService {
   readonly api_url: string;
 
   constructor() {
-    console.log(process.env.NODE_ENV)
-
     if (process.env.NODE_ENV === ENVIRONMENTS.DEV) {
-      this.api_url = 'http://127.0.0.1:5000'
+      this.api_url = 'http://0.0.0.0:5001'
     } else {
-      this.api_url = 'http://spotify-accessor-for-metadata.eba-7tn7wevk.us-east-2.elasticbeanstalk.com/'
+      this.api_url = 'https://sam-backend-d60bd9ccf7b8.herokuapp.com'
     }
   }
 

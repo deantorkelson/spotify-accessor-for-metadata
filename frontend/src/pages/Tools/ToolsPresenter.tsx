@@ -15,10 +15,10 @@ export const ToolsPresenter = (props: Props) => {
       <div className="header">Let the hands of fate guide you</div>
       <div>
         Rick Rubin keeps a library of books in his recording studio. If you're
-        stuck, grab a book and find a random quote and let it inspire you. Rubin
-        also said,
+        stuck, grab a book and find a random quote to inspire you. Rubin also
+        said,
         <br />
-        {rubinQuote}
+        <i>{rubinQuote}</i>
         <br />
         <br />
         May this quote help you resolve your creative conundrum:

@@ -1,37 +1,34 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-import Spinner from "react-bootstrap/Spinner";
 import Slider from '@material-ui/core/Slider'
 import Tooltip from '@material-ui/core/Tooltip';
-import InfoIconOutlined from '@material-ui/icons/InfoOutlined';
+import { InfoOutlined, Visibility } from '@material-ui/icons';
 
 import TextInput from 'src/components/TextInput/TextInput'
 import { ArtistMetadataResponse } from 'src/models/api/ArtistMetadataResponse';
 import { TrackMetadataResponse, getKeyAndMode } from 'src/models/api/TrackMetadataResponse';
 import { Track } from 'src/models/Track';
-import { AudioFeatureSliderData } from 'src/types/types';
+import { AudioFeatureSliderData, Nullable } from 'src/types/types';
 import en from 'src/static/additionalStrings'
 import './Search.css'
 import '../ResultList.css'
-
+import { createSearchResultList } from 'src/components/ResultList/ResultList';
 
 interface Props {
   artistName: string;
-  artistMetadata: ArtistMetadataResponse;
-  audioFeatureSliderData: AudioFeatureSliderData[];
+  artistMetadata: Nullable<ArtistMetadataResponse>;
   fetchMetadata: (trackUri: string, trackName: string, artistUri: string, artistName: string) => void;
   loading: boolean;
-  searchResults: Track[];
+  searchResults: Nullable<Track[]>;
   searchSubmit: (query: string) => void;
   trackName: string;
-  trackMetadata: TrackMetadataResponse;
+  trackMetadata: Nullable<TrackMetadataResponse>;
 }
 
 export const SearchPresenter = (props: Props) => {
   const {
     artistName,
     artistMetadata,
-    audioFeatureSliderData,
     fetchMetadata,
     loading,
     searchResults,
@@ -40,99 +37,133 @@ export const SearchPresenter = (props: Props) => {
     trackMetadata
   } = props;
 
-  const searchResultList = () => (
-    searchResults.length === 0 && !loading
-    ? <div key='-1'>No search results found.</div>
-    : <div>
-      {loading ?
-        <div>
-          <Spinner animation='border'/>
-          <div>
-            *note that the first search might take extra time while the Heroku dyno spins up.
-          </div>
-        </div> :
-        <div className='result-list'>
-          {searchResults.map((result: Track) => searchResult(result))}
-        </div>}
-      </div>
-  );
-
   const searchResult = (result: Track) => (
     <div key={result.uri}>
-      <Button variant='outline-secondary' onClick={() => {
-        fetchMetadata(result.uri, result.name, result.artists[0].uri, result.artists[0].name);
-      }}>
-        <div className='result'>
-          <img className='cover-img' src={result.album.images[0].url} alt={`Album art for ${result.album.name}`} />
-          <section className='result-text'>
-            <b>
-              {result.name}
-            </b>
-            <div>
-              {result.artists[0].name} • {result.album.name}
-            </div>
-          </section>
+      <div className='result'>
+        <div className='image-container'>
+          <img
+            className='cover-img'
+            src={result.album.images[0].url}
+            alt={`Cover for ${result.album.name}`}
+          />
+          <Button
+            className='result-button'
+            variant='link'
+            onClick={() => fetchMetadata(result.uri, result.name, result.artists[0].uri, result.artists[0].name)}
+          >
+            <Visibility className='select-logo-img'/>
+          </Button>
         </div>
-      </Button>
+        <section className='result-text'>
+          <b>
+            {result.name}
+          </b>
+          <div>
+            {result.artists[0].name} • {result.album.name}
+          </div>
+        </section>
+      </div>
     </div>
   );
+
+  const audioFeatureSliderData = (trackMetadata: TrackMetadataResponse): AudioFeatureSliderData[] => (
+    [
+      {
+        title: 'Acousticness',
+        tooltip: en.search.tooltips.acousticness,
+        value: trackMetadata.acousticness,
+      },
+      {
+        title: 'Danceability',
+        tooltip: en.search.tooltips.danceability,
+        value: trackMetadata.danceability,
+      },
+      {
+        title: 'Energy',
+        tooltip: en.search.tooltips.energy,
+        value: trackMetadata.energy,
+      },
+      {
+        title: 'Instrumentalness',
+        tooltip: en.search.tooltips.instrumentalness,
+        value: trackMetadata.instrumentalness,
+      },
+      {
+        title: 'Liveness',
+        tooltip: en.search.tooltips.liveness,
+        value: trackMetadata.liveness,
+      },
+      {
+        title: 'Loudness',
+        tooltip: en.search.tooltips.loudness,
+        value: trackMetadata.loudness / (-60),
+      },
+      {
+        title: 'Speechiness',
+        tooltip: en.search.tooltips.speechiness,
+        value: trackMetadata.acousticness,
+      },
+      {
+        title: 'Valence',
+        tooltip: en.search.tooltips.valence,
+        value: trackMetadata.valence,
+      },
+    ]
+  )
 
   const audioFeatureSlider = (title: string, tooltip: string, value: number) => (
     <>
       <span className='attribute-title'>{title}</span>
       <Tooltip title={tooltip}>
-        <InfoIconOutlined fontSize='small' />
+        <InfoOutlined className={'info-icon'} fontSize='small'/>
       </Tooltip>
-      <Slider disabled track={false} value={value} max={1} />
+      <Slider disabled track={false} value={value} max={1}/>
     </>
   )
 
   const displayTrackMetadata = () => {
-    if (!trackMetadata?.duration_ms)
-      return <div>Please search for and select a song to view its metadata.</div>
     const columnLength = 4;
-    return (
-      <div>
+    return (trackMetadata ?
+      (<div>
         <h3>Audio features for <span className='name'>{trackName}</span>:</h3>
         <h5>Key: {getKeyAndMode(trackMetadata.key, trackMetadata.mode)}</h5>
         <h5>Tempo: {trackMetadata.tempo}</h5>
         <h5>Beats/measure: {trackMetadata.time_signature}</h5>
         <div className='value-sliders'>
           <div className='reduced-column'>
-            {audioFeatureSliderData.slice(0, columnLength).map(sliderData => audioFeatureSlider(
+            {audioFeatureSliderData(trackMetadata).slice(0, columnLength).map(sliderData => audioFeatureSlider(
               sliderData.title,
               sliderData.tooltip,
               sliderData.value
             ))}
           </div>
           <div className='reduced-column'>
-            {audioFeatureSliderData.slice(columnLength, audioFeatureSliderData.length).map(
+            {audioFeatureSliderData(trackMetadata).slice(columnLength).map(
               sliderData => audioFeatureSlider(
                 sliderData.title,
                 sliderData.tooltip,
                 sliderData.value
-            ))}
+              ))}
           </div>
         </div>
-      </div>
-    );
+      </div>) : null);
   };
 
   const displayArtistMetadata = () => (
-    !artistMetadata?.followers
-    ? <div>Please search for and select a song to view its artist's metadata.</div>
-    : <div>
+    artistMetadata ? (
+      <div>
         <h3>Additional information on <span className='name'>{artistName}</span>:</h3>
         <h5>Genres: {displayGenres(artistMetadata.genres)}</h5>
         <h5>Followers: {artistMetadata.followers.total.toLocaleString()}</h5>
         <h5>Popularity: {artistMetadata.popularity}</h5>
       </div>
+    ) : null
   );
 
   const displayGenres = (genres: string[]) => (
     !genres.length
-    ? 'No genre information is available for this artist.'
-    : genres.join(', ')
+      ? 'No genre information is available for this artist.'
+      : genres.join(', ')
   );
 
   return (
@@ -140,17 +171,17 @@ export const SearchPresenter = (props: Props) => {
       <div className='header'>
         Enter the name of the track to search for:
       </div>
-      <TextInput 
+      <TextInput
         placeholder={en.search.placeholder}
         submit={searchSubmit}
       />
       <div className='main-content'>
         <div className='column'>
-          {searchResultList()}
+          {createSearchResultList<Track>(loading, searchResults, searchResult)}
         </div>
         <div className='column'>
           {displayTrackMetadata()}
-          <hr/>
+          {(artistMetadata && trackMetadata ? <hr/> : null)}
           {displayArtistMetadata()}
         </div>
       </div>

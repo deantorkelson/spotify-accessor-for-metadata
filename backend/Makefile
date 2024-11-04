@@ -1,9 +1,9 @@
 run:
 	. venv/bin/activate
-	python3 application.py
+	heroku local --port 5001
 	deactivate
 
 install:
 	. venv/bin/activate
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 	deactivate

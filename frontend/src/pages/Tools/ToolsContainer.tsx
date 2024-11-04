@@ -17,7 +17,8 @@ export const RubinContainer = () => {
     spotifyApiService.bookQuote().then((data) => {
       setBookQuote(data);
     });
-  }, [spotifyApiService]);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return <ToolsPresenter bookQuote={bookQuote} rubinQuote={rubinQuote} />;
 };

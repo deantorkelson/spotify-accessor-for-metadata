@@ -1,5 +1,5 @@
-import requests
 import json
+import requests
 from random import choice
 from spotify import Spotify
 from flask import Flask, request
@@ -10,9 +10,14 @@ application.config['CORS_HEADERS'] = 'Content-Type'
 spotify = Spotify()
 
 
-@application.route('/index')
+@application.route('/')
 def hello_world():
-    return '<p>Hello world!</p>\n'
+    return "Hello world"
+
+
+@application.route('/status')
+def status():
+    return "ok"
 
 
 @application.route('/random/book_quote')
@@ -66,10 +71,9 @@ def fetch_artist_metadata(artist_uri):
 
 
 @application.route('/playlists/compare', methods=['POST'])
-@cross_origin()
-def compare_playlists():
+async def compare_playlists():
     uris = request.get_json()["uris"]
-    return spotify.compare_playlists(uris)
+    return await spotify.compare_playlists(uris)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
-import requests
 import os
+import asyncio
+
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -35,7 +36,9 @@ class Spotify:
     def get_playlist_details(self, playlist_uri):
         return self.spotify.playlist(playlist_uri)
 
-    def get_playlist_tracks(self, playlist_uri):
+    async def get_playlist_tracks(self, playlist_uri):
+        # TODO: can this be sped up by only specifying certain fields?
+        #  spotipy impl seems buggy wrt `next` after filtering fields
         response = self.spotify.playlist(playlist_uri)
         tracks = response['tracks']
         items = tracks['items']
@@ -47,15 +50,16 @@ class Spotify:
             "items": items
         }
 
-    def compare_playlists(self, uris):
-        # TODO: this is really slow
+    async def compare_playlists(self, uris):
+        playlists_async = [self.get_playlist_tracks(uri) for uri in uris]
+        playlists = await asyncio.gather(*playlists_async)
+        # Fetch playlists
         artist_sets = []
         song_sets = []
         playlist_names = []
-        for uri in uris:
-            playlist_data = self.get_playlist_tracks(uri)
-            playlist_names.append(playlist_data['name'])
-            items = playlist_data['items']
+        for playlist in playlists:
+            playlist_names.append(playlist['name'])
+            items = playlist['items']
             artists = set()
             songs = set()
             for item in items:
